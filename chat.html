@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriAI – Chat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.svg" alt="NutriAI Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="chat.html" class="active">Chat</a></li>
+                <li><a href="meal-analysis.html">Meal Analysis</a></li>
+                <li><a href="alternatives.html">Healthy Alternatives</a></li>
+                <li><a href="history.html">Meal History</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <a href="chat.html" class="nav-cta">Start Chat</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Chat Layout -->
+    <div class="chat-layout">
+        <!-- Sidebar -->
+        <aside class="chat-sidebar">
+            <div class="sidebar-header">
+                <h3>NutriAI Chat</h3>
+                <button class="new-chat-btn">+ New Chat</button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="sidebar-nav-item">
+                    <span class="nav-icon">🏠</span>
+                    <span>Home</span>
+                </a>
+                <a href="chat.html" class="sidebar-nav-item active">
+                    <span class="nav-icon">💬</span>
+                    <span>Chat</span>
+                </a>
+                <a href="history.html" class="sidebar-nav-item">
+                    <span class="nav-icon">📋</span>
+                    <span>Meal History</span>
+                </a>
+                <a href="profile.html" class="sidebar-nav-item">
+                    <span class="nav-icon">👤</span>
+                    <span>Profile</span>
+                </a>
+                <a href="#" class="sidebar-nav-item">
+                    <span class="nav-icon">⚙️</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="chat-history">
+                <h4>Recent Chats</h4>
+                <div class="history-item">Nasi Lemak analysis</div>
+                <div class="history-item">Healthy lunch ideas</div>
+                <div class="history-item">Breakfast suggestions</div>
+                <div class="history-item">Mee goreng alternatives</div>
+                <div class="history-item">Protein-rich meals</div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-main">
+            <div class="chat-header">
+                <h2>💬 Chat with NutriAI</h2>
+                <button class="clear-chat-btn">Clear Chat</button>
+            </div>
+
+            <div class="chat-messages">
+                <div class="message message-ai">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-bubble">Hello! 👋 I'm NutriAI, your smart meal assistant. Tell me what you ate today, and I'll help analyse the nutrition and suggest healthier alternatives!</div>
+                </div>
+                <div class="message message-user">
+                    <div class="message-avatar">👤</div>
+                    <div class="message-bubble">I ate nasi lemak for lunch today.</div>
+                </div>
+                <div class="message message-ai">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-bubble">Nasi lemak is a popular local dish, but it's typically high in calories (~640 kcal) and saturated fat due to the coconut rice and fried items. Here are some suggestions:<br><br>✅ Choose grilled chicken instead of fried chicken<br>✅ Add extra vegetables or cucumber<br>✅ Ask for less sambal to reduce sodium<br>✅ Consider brown rice as a base<br><br>Would you like me to suggest a healthier alternative meal?</div>
+                </div>
+            </div>
+
+            <div class="suggested-prompts">
+                <button class="prompt-chip">I ate mee goreng</button>
+                <button class="prompt-chip">Suggest a healthy lunch</button>
+                <button class="prompt-chip">What's a good breakfast?</button>
+                <button class="prompt-chip">High protein meals</button>
+            </div>
+
+            <div class="chat-input-area">
+                <div class="chat-input-wrapper">
+                    <input type="text" class="chat-input" placeholder="Tell me what you ate today...">
+                    <button class="send-btn" aria-label="Send message">➤</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

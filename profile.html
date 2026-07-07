@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriAI – Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.svg" alt="NutriAI Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="meal-analysis.html">Meal Analysis</a></li>
+                <li><a href="alternatives.html">Healthy Alternatives</a></li>
+                <li><a href="history.html">Meal History</a></li>
+                <li><a href="profile.html" class="active">Profile</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <a href="chat.html" class="nav-cta">Start Chat</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Profile Page -->
+    <section class="profile-page">
+        <div class="container">
+            <div class="profile-header">
+                <h1>👤 My Profile</h1>
+                <p>Manage your preferences and settings</p>
+            </div>
+
+            <div class="profile-layout">
+                <!-- Profile Card -->
+                <div class="profile-card">
+                    <div class="profile-avatar">👤</div>
+                    <h2>Dhiya Alfiyyah</h2>
+                    <p class="profile-email">dhiya@mail.rp.edu.sg</p>
+                    <div class="profile-stats">
+                        <div class="profile-stat">
+                            <div class="stat-number">47</div>
+                            <div class="stat-text">Meals Logged</div>
+                        </div>
+                        <div class="profile-stat">
+                            <div class="stat-number">7.2</div>
+                            <div class="stat-text">Avg Score</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings -->
+                <div class="profile-settings">
+                    <!-- Personal Info -->
+                    <div class="settings-section">
+                        <h3>📝 Personal Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" class="form-input" value="Dhiya Alfiyyah">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-input" value="dhiya@mail.rp.edu.sg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Health Goals -->
+                    <div class="settings-section">
+                        <h3>🎯 Health Goals</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Health Goal</label>
+                                <select class="form-input">
+                                    <option>Eat healthier</option>
+                                    <option>Lose weight</option>
+                                    <option>Gain muscle</option>
+                                    <option>Maintain weight</option>
+                                    <option>Improve energy</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Daily Calorie Goal</label>
+                                <input type="number" class="form-input" value="2000" placeholder="e.g. 2000">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dietary Preferences -->
+                    <div class="settings-section">
+                        <h3>🍽️ Dietary Preferences</h3>
+                        <div class="form-group">
+                            <label>Diet Type</label>
+                            <select class="form-input">
+                                <option>No Restrictions</option>
+                                <option>Halal</option>
+                                <option>Vegetarian</option>
+                                <option>Vegan</option>
+                                <option>Pescatarian</option>
+                                <option>Keto</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Allergies</label>
+                            <div class="tags-input">
+                                <span class="tag">Peanuts <span class="remove-tag">×</span></span>
+                                <span class="tag">Shellfish <span class="remove-tag">×</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notification Settings -->
+                    <div class="settings-section">
+                        <h3>🔔 Settings</h3>
+                        <div class="toggle-row">
+                            <div class="toggle-info">
+                                <span class="toggle-label">Meal Reminders</span>
+                                <span class="toggle-desc">Get reminders to log your meals</span>
+                            </div>
+                            <div class="toggle-switch active"></div>
+                        </div>
+                        <div class="toggle-row">
+                            <div class="toggle-info">
+                                <span class="toggle-label">Weekly Report</span>
+                                <span class="toggle-desc">Receive a weekly nutrition summary</span>
+                            </div>
+                            <div class="toggle-switch active"></div>
+                        </div>
+                        <div class="toggle-row">
+                            <div class="toggle-info">
+                                <span class="toggle-label">Dark Mode</span>
+                                <span class="toggle-desc">Switch to dark theme</span>
+                            </div>
+                            <div class="toggle-switch"></div>
+                        </div>
+                        <div class="toggle-row">
+                            <div class="toggle-info">
+                                <span class="toggle-label">Email Notifications</span>
+                                <span class="toggle-desc">Get notified about tips and updates</span>
+                            </div>
+                            <div class="toggle-switch"></div>
+                        </div>
+                    </div>
+
+                    <!-- Save Button -->
+                    <div class="save-btn-wrapper">
+                        <button class="btn btn-primary">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 NutriAI by Team Unexpected4. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

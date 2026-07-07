@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriAI – Meal Analysis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/meal-analysis.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.svg" alt="NutriAI Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="meal-analysis.html" class="active">Meal Analysis</a></li>
+                <li><a href="alternatives.html">Healthy Alternatives</a></li>
+                <li><a href="history.html">Meal History</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <a href="chat.html" class="nav-cta">Start Chat</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Meal Analysis Page -->
+    <section class="analysis-page">
+        <div class="container">
+            <div class="analysis-header">
+                <h1>📊 Meal Analysis</h1>
+                <p>Detailed nutritional breakdown of your meal</p>
+            </div>
+
+            <!-- Meal Overview -->
+            <div class="meal-overview">
+                <div class="meal-image-card">
+                    <div class="meal-image-placeholder">🍛</div>
+                    <h3>Nasi Lemak</h3>
+                    <p class="meal-time">Lunch • Today, 12:30 PM</p>
+                </div>
+
+                <div class="meal-score-card">
+                    <div class="health-score">
+                        <div class="score-circle">
+                            <div class="score-circle-inner">
+                                <span class="score-value">6.0</span>
+                                <span class="score-label">/ 10</span>
+                            </div>
+                        </div>
+                        <div class="score-details">
+                            <h3>Health Score: Moderate</h3>
+                            <p>This meal provides good energy but is high in saturated fat and sodium. Consider healthier alternatives for a better nutritional balance.</p>
+                        </div>
+                    </div>
+                    <div class="nutrition-stats">
+                        <div class="stat-card">
+                            <div class="stat-value">640</div>
+                            <div class="stat-label">Calories</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">18g</div>
+                            <div class="stat-label">Protein</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">72g</div>
+                            <div class="stat-label">Carbs</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">32g</div>
+                            <div class="stat-label">Fat</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Nutrition -->
+            <div class="nutrition-detail">
+                <h3>Nutritional Breakdown</h3>
+                <div class="nutrient-bars">
+                    <div class="nutrient-row">
+                        <span class="nutrient-label">Calories</span>
+                        <div class="nutrient-bar">
+                            <div class="nutrient-fill calories" style="width: 75%;"></div>
+                        </div>
+                        <span class="nutrient-value">640 kcal</span>
+                    </div>
+                    <div class="nutrient-row">
+                        <span class="nutrient-label">Protein</span>
+                        <div class="nutrient-bar">
+                            <div class="nutrient-fill protein" style="width: 36%;"></div>
+                        </div>
+                        <span class="nutrient-value">18g</span>
+                    </div>
+                    <div class="nutrient-row">
+                        <span class="nutrient-label">Carbs</span>
+                        <div class="nutrient-bar">
+                            <div class="nutrient-fill carbs" style="width: 65%;"></div>
+                        </div>
+                        <span class="nutrient-value">72g</span>
+                    </div>
+                    <div class="nutrient-row">
+                        <span class="nutrient-label">Fat</span>
+                        <div class="nutrient-bar">
+                            <div class="nutrient-fill fat" style="width: 70%;"></div>
+                        </div>
+                        <span class="nutrient-value">32g</span>
+                    </div>
+                    <div class="nutrient-row">
+                        <span class="nutrient-label">Sugar</span>
+                        <div class="nutrient-bar">
+                            <div class="nutrient-fill sugar" style="width: 25%;"></div>
+                        </div>
+                        <span class="nutrient-value">8g</span>
+                    </div>
+                    <div class="nutrient-row">
+                        <span class="nutrient-label">Sodium</span>
+                        <div class="nutrient-bar">
+                            <div class="nutrient-fill sodium" style="width: 80%;"></div>
+                        </div>
+                        <span class="nutrient-value">1200mg</span>
+                    </div>
+                    <div class="nutrient-row">
+                        <span class="nutrient-label">Fibre</span>
+                        <div class="nutrient-bar">
+                            <div class="nutrient-fill fibre" style="width: 20%;"></div>
+                        </div>
+                        <span class="nutrient-value">3g</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strengths & Improvements -->
+            <div class="feedback-grid">
+                <div class="feedback-card strengths">
+                    <h3>✅ Strengths</h3>
+                    <ul>
+                        <li>Provides a good source of energy for the afternoon</li>
+                        <li>Contains protein from egg and chicken</li>
+                        <li>Includes small amounts of vegetables (cucumber)</li>
+                        <li>Satisfying meal that prevents excessive snacking</li>
+                    </ul>
+                </div>
+                <div class="feedback-card improvements">
+                    <h3>⚠️ Areas for Improvement</h3>
+                    <ul>
+                        <li>High in saturated fat from coconut milk and fried items</li>
+                        <li>High sodium content from sambal and ikan bilis</li>
+                        <li>Low fibre content – needs more vegetables</li>
+                        <li>Could benefit from lean protein instead of fried chicken</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Action -->
+            <div class="analysis-action">
+                <a href="alternatives.html" class="btn btn-primary btn-lg">Get Healthy Alternatives →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 NutriAI by Team Unexpected4. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 90" fill="none">
+  <!-- Apple body - wider, rounder apple shape with indent at top -->
+  <path d="M25 38C25 22 33 14 44 12C50 11 55 13 58 17C61 13 66 11 72 12C83 14 91 22 91 38C91 58 58 78 58 78C58 78 25 58 25 38Z" fill="#31B81C"/>
+  <!-- Top indent of apple -->
+  <path d="M52 17C54 14 56 13 58 13C60 13 62 14 64 17" fill="#31B81C"/>
+  <!-- Stem -->
+  <path d="M58 13L56 6" stroke="#228B22" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Leaf 1 -->
+  <path d="M56 7C56 7 48 2 45 6C45 6 50 10 56 7Z" fill="#228B22"/>
+  <!-- Leaf 2 -->
+  <path d="M55 5C55 5 50 0 47 3" stroke="#1a7a1a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <!-- Speech bubble triangle at bottom-left -->
+  <path d="M30 62L20 78L40 65Z" fill="#31B81C"/>
+  <!-- White N inside apple -->
+  <text x="58" y="56" font-family="Arial Black, Arial, sans-serif" font-size="36" font-weight="900" fill="white" text-anchor="middle">N</text>
+  <!-- "utri" in dark green, aligned with bottom of N -->
+  <text x="97" y="64" font-family="'Poppins', Arial, sans-serif" font-size="34" font-weight="700" fill="#2E7D1B">utri</text>
+  <!-- Small orange heart above the A -->
+  <path d="M197 30C197 28.5 198 27 199.5 27C201 27 202 28.5 202 30C202 28.5 203 27 204.5 27C206 27 207 28.5 207 30C207 33 202 36 202 36C202 36 197 33 197 30Z" fill="#FF7A1A"/>
+  <!-- "AI" in cyan blue -->
+  <text x="192" y="64" font-family="'Poppins', Arial, sans-serif" font-size="34" font-weight="700" fill="#1DB8D8">AI</text>
+</svg>
