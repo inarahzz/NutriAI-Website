@@ -196,23 +196,24 @@
 
 .choose-meal-btn {
     width: 100%;
-    padding: 13px;
+    padding: 16px;
     background: var(--primary-green);
     color: var(--white);
     border: none;
     border-radius: var(--radius-full);
     font-family: 'Fredoka', sans-serif;
-    font-weight: 500;
-    font-size: 0.9rem;
+    font-weight: 600;
+    font-size: 1.05rem;
     cursor: pointer;
     transition: var(--transition);
-    box-shadow: 0 3px 12px rgba(45, 138, 78, 0.2);
+    box-shadow: 0 4px 16px rgba(45, 138, 78, 0.25);
+    letter-spacing: 0.3px;
 }
 
 .choose-meal-btn:hover {
     background: #236b3e;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(45, 138, 78, 0.3);
+    box-shadow: 0 8px 24px rgba(45, 138, 78, 0.35);
 }
 
 /* Arrow Connector */

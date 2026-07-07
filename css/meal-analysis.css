@@ -385,6 +385,119 @@
     transform: translateY(-1px);
 }
 
+/* Health Score Gauge */
+.health-score-gauge {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: var(--shadow-card);
+    text-align: center;
+    margin-bottom: 40px;
+    border: 1.5px solid rgba(45, 138, 78, 0.06);
+}
+
+.health-score-gauge h3 {
+    font-size: 1.3rem;
+    margin-bottom: 24px;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.gauge-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.gauge {
+    width: 220px;
+    height: 110px;
+    overflow: hidden;
+    position: relative;
+}
+
+.gauge-body {
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+    background: rgba(45, 138, 78, 0.06);
+    border-top-left-radius: 110px;
+    border-top-right-radius: 110px;
+    position: relative;
+    overflow: hidden;
+}
+
+.gauge-fill {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: inherit;
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-orange), var(--accent-yellow), var(--primary-green));
+    transform-origin: center top;
+    transform: rotate(0.5turn);
+    transition: transform 1s ease;
+}
+
+.gauge-cover {
+    width: 150px;
+    height: 75px;
+    background: var(--white);
+    border-top-left-radius: 75px;
+    border-top-right-radius: 75px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 12px;
+    gap: 2px;
+}
+
+.gauge-value {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-green);
+}
+
+.gauge-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.gauge-labels {
+    display: flex;
+    justify-content: space-between;
+    width: 220px;
+    padding: 0 8px;
+}
+
+.gauge-labels span {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-family: 'Nunito', sans-serif;
+}
+
+.gauge-hint {
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Dark mode gauge adjustments */
+body.dark-mode .gauge-cover {
+    background: #1e3a1e;
+}
+
+body.dark-mode .gauge-body {
+    background: rgba(76, 175, 80, 0.1);
+}
+
 /* Loading State */
 .analysis-loading {
     text-align: center;

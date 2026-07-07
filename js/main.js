@@ -92,6 +92,9 @@ document.addEventListener('DOMContentLoaded', () => {
             tab.classList.add('active');
         });
     });
+
+    // Tip category filters
+    initTipFilters();
 });
 
 // ============================
@@ -239,6 +242,52 @@ const mealDatabase = {
         ]
     }
 };
+
+// ============================
+// Tip Category Filters
+// ============================
+function initTipFilters() {
+    const categoryBtns = document.querySelectorAll('.tip-category-btn');
+    const tipCards = document.querySelectorAll('.tip-card');
+
+    if (!categoryBtns.length || !tipCards.length) return;
+
+    // Map button text to card class names
+    const categoryMap = {
+        'All Tips': 'all',
+        'Balanced Diet': 'balanced',
+        'Hydration': 'hydration',
+        'Mindful Eating': 'mindful',
+        'Protein': 'protein',
+        'Sugar & Sodium': 'sugar',
+        'Fibre': 'fibre'
+    };
+
+    categoryBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active button
+            categoryBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const category = categoryMap[btn.textContent.trim()] || 'all';
+
+            // Filter tip cards
+            tipCards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = '';
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(10px)';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+}
 
 // ============================
 // Settings & Dark Mode

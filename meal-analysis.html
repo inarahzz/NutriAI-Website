@@ -21,10 +21,10 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="chat.html">Chat</a></li>
                 <li><a href="meal-analysis.html" class="active">Meal Analysis</a></li>
-                <li><a href="alternatives.html">Alternatives</a></li>
+                <li><a href="alternatives.html">Healthy Alternatives</a></li>
                 <li><a href="history.html">Meal History</a></li>
                 <li><a href="tips.html">Nutrition Tips</a></li>
-                <li><a href="compare.html">Compare</a></li>
+                <li><a href="compare.html">Compare Meals</a></li>
             </ul>
             <a href="chat.html" class="nav-cta">Start Chat</a>
             <button class="nav-toggle" aria-label="Toggle navigation">
@@ -60,6 +60,28 @@
                         <button class="quick-meal-chip" data-meal="Oatmeal with Banana">Oatmeal</button>
                     </div>
                 </div>
+            </div>
+
+            <!-- Health Score Gauge -->
+            <div class="health-score-gauge" id="health-score-gauge">
+                <h3>Health Score</h3>
+                <div class="gauge-wrapper">
+                    <div class="gauge">
+                        <div class="gauge-body">
+                            <div class="gauge-fill" id="gauge-fill"></div>
+                            <div class="gauge-cover">
+                                <span class="gauge-value" id="gauge-value">—</span>
+                                <span class="gauge-label">/ 10</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gauge-labels">
+                        <span class="gauge-min">Poor</span>
+                        <span class="gauge-mid">Moderate</span>
+                        <span class="gauge-max">Excellent</span>
+                    </div>
+                </div>
+                <p class="gauge-hint">Analyse a meal above to see its health score</p>
             </div>
 
             <!-- Loading State -->

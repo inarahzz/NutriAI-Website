@@ -148,7 +148,8 @@ body.dark-mode .meal-input-card,
 body.dark-mode .contact-form-card,
 body.dark-mode .info-card,
 body.dark-mode .history-empty,
-body.dark-mode .analysis-error {
+body.dark-mode .analysis-error,
+body.dark-mode .health-score-gauge {
     background: #1e3a1e;
 }
 
