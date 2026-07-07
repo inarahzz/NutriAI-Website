@@ -1,0 +1,322 @@
+/* ============================
+   Meal Comparison Tool Styles
+   ============================ */
+
+.compare-page {
+    padding: 100px 0 60px;
+    background: var(--light-grey);
+    min-height: 100vh;
+}
+
+.compare-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.compare-header h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.compare-header p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Meal Selectors */
+.meal-selectors {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 24px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.meal-selector {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+}
+
+.meal-selector h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #888;
+    margin-bottom: 14px;
+}
+
+.meal-select-dropdown {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: var(--radius-md);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--dark-grey);
+    background: var(--white);
+    cursor: pointer;
+    transition: var(--transition);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+}
+
+.meal-select-dropdown:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(49, 184, 28, 0.1);
+}
+
+.vs-badge {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--accent-orange), #e56a10);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(255, 122, 26, 0.3);
+}
+
+.compare-btn-wrapper {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+/* Comparison Results */
+.comparison-results {
+    display: none;
+}
+
+.comparison-results.visible {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Result Cards Side by Side */
+.result-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.result-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+}
+
+.result-card.meal-a {
+    border-top: 4px solid var(--accent-orange);
+}
+
+.result-card.meal-b {
+    border-top: 4px solid var(--primary-green);
+}
+
+.result-meal-emoji {
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+.result-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.result-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.result-stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background: var(--light-grey);
+    border-radius: var(--radius-sm);
+}
+
+.result-stat-label {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.result-stat-value {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--dark-grey);
+}
+
+.result-stat-value.better {
+    color: var(--primary-green);
+}
+
+.result-stat-value.worse {
+    color: #FF6B6B;
+}
+
+/* Verdict Section */
+.verdict-section {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+}
+
+.verdict-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.verdict-winner {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, rgba(49, 184, 28, 0.1), rgba(29, 184, 216, 0.1));
+    border-radius: var(--radius-full);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--primary-green);
+    margin-bottom: 16px;
+}
+
+.verdict-text {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Bar Comparison */
+.bar-comparison {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 24px;
+}
+
+.bar-comparison h3 {
+    font-size: 1rem;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.bar-label {
+    width: 80px;
+    font-size: 0.85rem;
+    color: #666;
+    text-align: right;
+}
+
+.bar-track {
+    flex: 1;
+    display: flex;
+    height: 28px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #eee;
+}
+
+.bar-fill-a {
+    background: var(--accent-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: white;
+    font-weight: 600;
+    transition: width 0.8s ease;
+}
+
+.bar-fill-b {
+    background: var(--primary-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: white;
+    font-weight: 600;
+    transition: width 0.8s ease;
+}
+
+.bar-legend {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.legend-dot.a { background: var(--accent-orange); }
+.legend-dot.b { background: var(--primary-green); }
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .meal-selectors {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .vs-badge {
+        margin: 0 auto;
+    }
+
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .compare-page {
+        padding: 90px 0 40px;
+    }
+}

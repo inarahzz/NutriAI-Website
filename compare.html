@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriAI – Compare Meals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/compare.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.svg" alt="NutriAI Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="meal-analysis.html">Meal Analysis</a></li>
+                <li><a href="alternatives.html">Healthy Alternatives</a></li>
+                <li><a href="history.html">Meal History</a></li>
+                <li><a href="tips.html">Nutrition Tips</a></li>
+                <li><a href="compare.html" class="active">Compare Meals</a></li>
+            </ul>
+            <a href="chat.html" class="nav-cta">Start Chat</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Compare Meals Page -->
+    <section class="compare-page">
+        <div class="container">
+            <div class="compare-header">
+                <h1>⚖️ Compare Meals</h1>
+                <p>Pick two meals and see which one is the healthier choice</p>
+            </div>
+
+            <!-- Meal Selectors -->
+            <div class="meal-selectors">
+                <div class="meal-selector">
+                    <h3>Meal A</h3>
+                    <select class="meal-select-dropdown" id="mealA">
+                        <option value="">Choose a meal...</option>
+                        <option value="nasi-lemak">Nasi Lemak with Fried Chicken</option>
+                        <option value="chicken-rice">Chicken Rice</option>
+                        <option value="mee-goreng">Mee Goreng</option>
+                        <option value="burger-fries">Burger & Fries</option>
+                        <option value="char-kway-teow">Char Kway Teow</option>
+                        <option value="roti-prata">Roti Prata (2 pcs with curry)</option>
+                        <option value="bubble-tea">Bubble Tea (Regular)</option>
+                        <option value="nasi-padang">Nasi Padang</option>
+                    </select>
+                </div>
+
+                <div class="vs-badge">VS</div>
+
+                <div class="meal-selector">
+                    <h3>Meal B</h3>
+                    <select class="meal-select-dropdown" id="mealB">
+                        <option value="">Choose a meal...</option>
+                        <option value="grilled-chicken-rice">Grilled Chicken with Brown Rice</option>
+                        <option value="soup-noodles">Soup Noodles with Vegetables</option>
+                        <option value="chicken-rice">Chicken Rice</option>
+                        <option value="salad-bowl">Salad Bowl with Protein</option>
+                        <option value="oatmeal">Oatmeal with Banana</option>
+                        <option value="sandwich">Whole Wheat Chicken Sandwich</option>
+                        <option value="green-tea">Green Tea (No Sugar)</option>
+                        <option value="fish-soup">Sliced Fish Soup with Rice</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="compare-btn-wrapper">
+                <button class="btn btn-primary btn-lg" id="compareBtn">Compare Now →</button>
+            </div>
+
+            <!-- Comparison Results -->
+            <div class="comparison-results" id="comparisonResults">
+                <!-- Bar Comparison -->
+                <div class="bar-comparison">
+                    <h3>Nutritional Comparison</h3>
+                    <div id="barRows"></div>
+                    <div class="bar-legend">
+                        <div class="legend-item">
+                            <span class="legend-dot a"></span>
+                            <span id="legendA">Meal A</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot b"></span>
+                            <span id="legendB">Meal B</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Side by Side Cards -->
+                <div class="result-grid">
+                    <div class="result-card meal-a" id="resultCardA"></div>
+                    <div class="result-card meal-b" id="resultCardB"></div>
+                </div>
+
+                <!-- Verdict -->
+                <div class="verdict-section" id="verdictSection"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 NutriAI by Team Unexpected4. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/compare.js"></script>
+</body>
+</html>

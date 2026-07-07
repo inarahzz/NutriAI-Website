@@ -6,27 +6,18 @@
     <title>NutriAI – Chat</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/chat.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+    <!-- Navigation (hidden on chat - sidebar handles navigation) -->
+    <nav class="navbar chat-navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
                 <img src="images/logo.svg" alt="NutriAI Logo" class="logo-img">
             </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="chat.html" class="active">Chat</a></li>
-                <li><a href="meal-analysis.html">Meal Analysis</a></li>
-                <li><a href="alternatives.html">Healthy Alternatives</a></li>
-                <li><a href="history.html">Meal History</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <a href="chat.html" class="nav-cta">Start Chat</a>
+            <a href="index.html" class="nav-cta" style="background: var(--ai-blue);">← Back to Home</a>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
@@ -53,17 +44,29 @@
                     <span class="nav-icon">💬</span>
                     <span>Chat</span>
                 </a>
+                <a href="meal-analysis.html" class="sidebar-nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span>Meal Analysis</span>
+                </a>
+                <a href="alternatives.html" class="sidebar-nav-item">
+                    <span class="nav-icon">🥗</span>
+                    <span>Healthy Alternatives</span>
+                </a>
                 <a href="history.html" class="sidebar-nav-item">
                     <span class="nav-icon">📋</span>
                     <span>Meal History</span>
                 </a>
+                <a href="tips.html" class="sidebar-nav-item">
+                    <span class="nav-icon">💡</span>
+                    <span>Nutrition Tips</span>
+                </a>
+                <a href="compare.html" class="sidebar-nav-item">
+                    <span class="nav-icon">⚖️</span>
+                    <span>Compare Meals</span>
+                </a>
                 <a href="profile.html" class="sidebar-nav-item">
                     <span class="nav-icon">👤</span>
                     <span>Profile</span>
-                </a>
-                <a href="#" class="sidebar-nav-item">
-                    <span class="nav-icon">⚙️</span>
-                    <span>Settings</span>
                 </a>
             </nav>
 

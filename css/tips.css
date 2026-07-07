@@ -1,0 +1,212 @@
+/* ============================
+   Nutrition Tips Page Styles
+   ============================ */
+
+.tips-page {
+    padding: 100px 0 60px;
+    background: var(--light-grey);
+    min-height: 100vh;
+}
+
+.tips-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.tips-header h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.tips-header p {
+    color: #666;
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Daily Tip Banner */
+.daily-tip-banner {
+    background: linear-gradient(135deg, var(--primary-green), #28a016);
+    color: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 32px 40px;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    box-shadow: 0 4px 20px rgba(49, 184, 28, 0.2);
+}
+
+.daily-tip-icon {
+    font-size: 3rem;
+    flex-shrink: 0;
+}
+
+.daily-tip-content h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    margin-bottom: 8px;
+}
+
+.daily-tip-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Category Tabs */
+.tip-categories {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+}
+
+.tip-category-btn {
+    padding: 10px 22px;
+    background: var(--white);
+    border: 1px solid #e0e0e0;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.tip-category-btn:hover,
+.tip-category-btn.active {
+    background: var(--primary-green);
+    color: var(--white);
+    border-color: var(--primary-green);
+}
+
+/* Tips Grid */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.tip-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border-top: 3px solid transparent;
+}
+
+.tip-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.tip-card.balanced { border-top-color: var(--primary-green); }
+.tip-card.hydration { border-top-color: var(--ai-blue); }
+.tip-card.mindful { border-top-color: var(--accent-orange); }
+.tip-card.protein { border-top-color: #9B59B6; }
+.tip-card.sugar { border-top-color: #FF6B6B; }
+.tip-card.fibre { border-top-color: #27AE60; }
+
+.tip-card-icon {
+    font-size: 2rem;
+    margin-bottom: 14px;
+}
+
+.tip-card h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: var(--dark-grey);
+}
+
+.tip-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.7;
+}
+
+.tip-tag {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 4px 12px;
+    background: var(--light-grey);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    color: #888;
+    font-weight: 500;
+}
+
+/* Did You Know Section */
+.did-you-know {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 48px;
+}
+
+.did-you-know h2 {
+    font-size: 1.3rem;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.fact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: var(--light-grey);
+    border-radius: var(--radius-md);
+}
+
+.fact-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.fact-text {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .tips-page {
+        padding: 90px 0 40px;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .facts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .daily-tip-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px;
+    }
+}

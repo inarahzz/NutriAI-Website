@@ -1,10 +1,11 @@
 /* ============================
    Meal Analysis Page Styles
+   Fresh, nature-themed design
    ============================ */
 
 .analysis-page {
     padding: 100px 0 60px;
-    background: var(--light-grey);
+    background: var(--warm-cream);
     min-height: 100vh;
 }
 
@@ -16,10 +17,11 @@
 .analysis-header h1 {
     font-size: 2rem;
     margin-bottom: 8px;
+    font-family: 'Fredoka', sans-serif;
 }
 
 .analysis-header p {
-    color: #666;
+    color: var(--text-muted);
     font-size: 1rem;
 }
 
@@ -35,14 +37,15 @@
     background: var(--white);
     border-radius: var(--radius-lg);
     padding: 24px;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-card);
     text-align: center;
+    border: 1.5px solid rgba(45, 138, 78, 0.06);
 }
 
 .meal-image-placeholder {
     width: 100%;
     height: 200px;
-    background: linear-gradient(135deg, #f0fdf0, #f0faff);
+    background: linear-gradient(135deg, #f0f9e8, #fdf6ec);
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
@@ -54,11 +57,12 @@
 .meal-image-card h3 {
     font-size: 1.2rem;
     margin-bottom: 8px;
+    font-family: 'Fredoka', sans-serif;
 }
 
 .meal-image-card .meal-time {
     font-size: 0.85rem;
-    color: #888;
+    color: var(--text-muted);
 }
 
 /* Health Score */
@@ -66,10 +70,11 @@
     background: var(--white);
     border-radius: var(--radius-lg);
     padding: 32px;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-card);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border: 1.5px solid rgba(45, 138, 78, 0.06);
 }
 
 .health-score {
@@ -102,7 +107,7 @@
 }
 
 .score-value {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Fredoka', sans-serif;
     font-size: 2rem;
     font-weight: 700;
     color: var(--accent-orange);
@@ -110,18 +115,19 @@
 
 .score-label {
     font-size: 0.75rem;
-    color: #888;
+    color: var(--text-muted);
 }
 
 .score-details h3 {
     font-size: 1.1rem;
     margin-bottom: 8px;
+    font-family: 'Fredoka', sans-serif;
 }
 
 .score-details p {
     font-size: 0.9rem;
-    color: #666;
-    line-height: 1.6;
+    color: var(--text-muted);
+    line-height: 1.7;
 }
 
 /* Nutrition Stats */
@@ -132,14 +138,15 @@
 }
 
 .stat-card {
-    background: var(--light-grey);
+    background: var(--warm-cream);
     padding: 16px;
     border-radius: var(--radius-md);
     text-align: center;
+    border: 1px solid rgba(45, 138, 78, 0.06);
 }
 
 .stat-value {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Fredoka', sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--dark-grey);
@@ -147,8 +154,9 @@
 
 .stat-label {
     font-size: 0.8rem;
-    color: #888;
+    color: var(--text-muted);
     margin-top: 4px;
+    font-weight: 600;
 }
 
 /* Detailed Nutrition */
@@ -156,13 +164,15 @@
     background: var(--white);
     border-radius: var(--radius-lg);
     padding: 32px;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-card);
     margin-bottom: 30px;
+    border: 1.5px solid rgba(45, 138, 78, 0.06);
 }
 
 .nutrition-detail h3 {
     font-size: 1.1rem;
     margin-bottom: 24px;
+    font-family: 'Fredoka', sans-serif;
 }
 
 .nutrient-bars {
@@ -180,14 +190,14 @@
 .nutrient-label {
     width: 100px;
     font-size: 0.9rem;
-    color: #555;
-    font-weight: 500;
+    color: var(--text-body);
+    font-weight: 600;
 }
 
 .nutrient-bar {
     flex: 1;
     height: 12px;
-    background: #eee;
+    background: rgba(45, 138, 78, 0.06);
     border-radius: 6px;
     overflow: hidden;
 }
@@ -199,18 +209,19 @@
 }
 
 .nutrient-fill.calories { background: var(--accent-orange); }
-.nutrient-fill.protein { background: var(--ai-blue); }
-.nutrient-fill.carbs { background: var(--primary-green); }
-.nutrient-fill.fat { background: #FF6B6B; }
-.nutrient-fill.sugar { background: #FFD93D; }
-.nutrient-fill.sodium { background: #9B59B6; }
-.nutrient-fill.fibre { background: #27AE60; }
+.nutrient-fill.protein { background: #4caf50; }
+.nutrient-fill.carbs { background: var(--accent-yellow); }
+.nutrient-fill.fat { background: #e57373; }
+.nutrient-fill.sugar { background: #ffb74d; }
+.nutrient-fill.sodium { background: #ba68c8; }
+.nutrient-fill.fibre { background: var(--primary-green); }
 
 .nutrient-value {
-    width: 60px;
+    width: 70px;
     font-size: 0.85rem;
-    color: #888;
+    color: var(--text-muted);
     text-align: right;
+    font-weight: 600;
 }
 
 /* Strengths & Improvements */
@@ -225,7 +236,16 @@
     background: var(--white);
     border-radius: var(--radius-lg);
     padding: 28px;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-card);
+    border: 1.5px solid rgba(45, 138, 78, 0.06);
+}
+
+.feedback-card.strengths {
+    border-top: 3px solid var(--primary-green);
+}
+
+.feedback-card.improvements {
+    border-top: 3px solid var(--accent-orange);
 }
 
 .feedback-card h3 {
@@ -234,6 +254,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    font-family: 'Fredoka', sans-serif;
 }
 
 .feedback-card ul {
@@ -247,8 +268,8 @@
     align-items: flex-start;
     gap: 10px;
     font-size: 0.9rem;
-    color: #555;
-    line-height: 1.5;
+    color: var(--text-body);
+    line-height: 1.6;
 }
 
 .feedback-card ul li::before {
@@ -256,7 +277,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    margin-top: 6px;
+    margin-top: 7px;
     flex-shrink: 0;
 }
 
@@ -286,18 +307,20 @@
 .meal-input-card {
     background: var(--white);
     border-radius: var(--radius-lg);
-    padding: 36px;
-    box-shadow: var(--shadow-sm);
+    padding: 40px;
+    box-shadow: var(--shadow-card);
     text-align: center;
+    border: 1.5px solid rgba(45, 138, 78, 0.06);
 }
 
 .meal-input-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin-bottom: 8px;
+    font-family: 'Fredoka', sans-serif;
 }
 
 .meal-input-card > p {
-    color: #666;
+    color: var(--text-muted);
     font-size: 0.95rem;
     margin-bottom: 24px;
 }
@@ -311,19 +334,21 @@
 
 .meal-input-field {
     flex: 1;
-    padding: 14px 20px;
-    border: 2px solid #e0e0e0;
+    padding: 14px 22px;
+    border: 2px solid rgba(45, 138, 78, 0.12);
     border-radius: var(--radius-full);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: 1rem;
     color: var(--dark-grey);
     transition: var(--transition);
     outline: none;
+    background: var(--warm-cream);
 }
 
 .meal-input-field:focus {
     border-color: var(--primary-green);
-    box-shadow: 0 0 0 4px rgba(49, 184, 28, 0.1);
+    box-shadow: 0 0 0 4px rgba(45, 138, 78, 0.08);
+    background: var(--white);
 }
 
 .quick-meals {
@@ -336,25 +361,28 @@
 
 .quick-label {
     font-size: 0.85rem;
-    color: #888;
-    font-weight: 500;
+    color: var(--text-muted);
+    font-weight: 600;
 }
 
 .quick-meal-chip {
-    padding: 6px 14px;
-    background: var(--light-grey);
-    border: 1px solid #e8e8e8;
+    padding: 6px 16px;
+    background: var(--warm-cream);
+    border: 1.5px solid rgba(45, 138, 78, 0.1);
     border-radius: var(--radius-full);
-    font-size: 0.8rem;
-    color: #666;
+    font-size: 0.82rem;
+    color: var(--text-body);
     cursor: pointer;
     transition: var(--transition);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
 }
 
 .quick-meal-chip:hover {
     background: var(--white);
     border-color: var(--primary-green);
     color: var(--primary-green);
+    transform: translateY(-1px);
 }
 
 /* Loading State */
@@ -366,7 +394,7 @@
 .loading-spinner {
     width: 48px;
     height: 48px;
-    border: 4px solid #e0e0e0;
+    border: 4px solid rgba(45, 138, 78, 0.15);
     border-top-color: var(--primary-green);
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
@@ -378,8 +406,9 @@
 }
 
 .analysis-loading p {
-    color: #666;
+    color: var(--text-muted);
     font-size: 1rem;
+    font-weight: 600;
 }
 
 /* Error State */
@@ -388,7 +417,8 @@
     padding: 40px 20px;
     background: var(--white);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-card);
+    border: 1.5px solid rgba(244, 132, 95, 0.15);
 }
 
 .error-icon {
@@ -397,7 +427,7 @@
 }
 
 .analysis-error p {
-    color: #666;
+    color: var(--text-muted);
     font-size: 0.95rem;
     margin-bottom: 16px;
 }
