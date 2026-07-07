@@ -165,6 +165,7 @@ select.form-input {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin-bottom: 12px;
 }
 
 .tag {
@@ -182,6 +183,20 @@ select.form-input {
     cursor: pointer;
     color: #999;
     font-weight: bold;
+}
+
+.tag .remove-tag:hover {
+    color: #ff4444;
+}
+
+.add-tag-wrapper {
+    margin-top: 4px;
+}
+
+.add-tag-input {
+    max-width: 250px;
+    font-size: 0.85rem !important;
+    padding: 8px 14px !important;
 }
 
 /* Toggle Switch */

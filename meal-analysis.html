@@ -24,7 +24,7 @@
                 <li><a href="alternatives.html">Healthy Alternatives</a></li>
                 <li><a href="history.html">Meal History</a></li>
                 <li><a href="profile.html">Profile</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <a href="chat.html" class="nav-cta">Start Chat</a>
             <button class="nav-toggle" aria-label="Toggle navigation">
@@ -40,132 +40,168 @@
         <div class="container">
             <div class="analysis-header">
                 <h1>📊 Meal Analysis</h1>
-                <p>Detailed nutritional breakdown of your meal</p>
+                <p>Enter a meal to get a detailed nutritional breakdown</p>
             </div>
 
-            <!-- Meal Overview -->
-            <div class="meal-overview">
-                <div class="meal-image-card">
-                    <div class="meal-image-placeholder">🍛</div>
-                    <h3>Nasi Lemak</h3>
-                    <p class="meal-time">Lunch • Today, 12:30 PM</p>
+            <!-- Meal Input Form -->
+            <div class="meal-input-section">
+                <div class="meal-input-card">
+                    <h3>What did you eat?</h3>
+                    <p>Describe your meal and we'll analyse its nutritional content.</p>
+                    <div class="meal-input-wrapper">
+                        <input type="text" id="meal-input" class="meal-input-field" placeholder="e.g. Nasi Lemak with Fried Chicken">
+                        <button id="analyse-btn" class="btn btn-primary">Analyse Meal</button>
+                    </div>
+                    <div class="quick-meals">
+                        <span class="quick-label">Try:</span>
+                        <button class="quick-meal-chip" data-meal="Nasi Lemak">Nasi Lemak</button>
+                        <button class="quick-meal-chip" data-meal="Mee Goreng">Mee Goreng</button>
+                        <button class="quick-meal-chip" data-meal="Burger and Fries">Burger & Fries</button>
+                        <button class="quick-meal-chip" data-meal="Oatmeal with Banana">Oatmeal</button>
+                    </div>
                 </div>
+            </div>
 
-                <div class="meal-score-card">
-                    <div class="health-score">
-                        <div class="score-circle">
-                            <div class="score-circle-inner">
-                                <span class="score-value">6.0</span>
-                                <span class="score-label">/ 10</span>
+            <!-- Loading State -->
+            <div class="analysis-loading" id="analysis-loading" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p>Analysing your meal...</p>
+            </div>
+
+            <!-- Error State -->
+            <div class="analysis-error" id="analysis-error" style="display: none;">
+                <div class="error-icon">⚠️</div>
+                <p>Sorry, we couldn't analyse that meal. Please try a different description.</p>
+                <button class="btn btn-secondary btn-sm" id="try-again-btn">Try Again</button>
+            </div>
+
+            <!-- Analysis Results (hidden by default) -->
+            <div id="analysis-results" style="display: none;">
+                <!-- Meal Overview -->
+                <div class="meal-overview">
+                    <div class="meal-image-card">
+                        <div class="meal-image-placeholder" id="meal-emoji">🍛</div>
+                        <h3 id="meal-name">Nasi Lemak</h3>
+                        <p class="meal-time" id="meal-time">Lunch • Today</p>
+                    </div>
+
+                    <div class="meal-score-card">
+                        <div class="health-score">
+                            <div class="score-circle" id="score-circle">
+                                <div class="score-circle-inner">
+                                    <span class="score-value" id="score-value">6.0</span>
+                                    <span class="score-label">/ 10</span>
+                                </div>
+                            </div>
+                            <div class="score-details">
+                                <h3 id="score-title">Health Score: Moderate</h3>
+                                <p id="score-description">This meal provides good energy but is high in saturated fat and sodium.</p>
                             </div>
                         </div>
-                        <div class="score-details">
-                            <h3>Health Score: Moderate</h3>
-                            <p>This meal provides good energy but is high in saturated fat and sodium. Consider healthier alternatives for a better nutritional balance.</p>
-                        </div>
-                    </div>
-                    <div class="nutrition-stats">
-                        <div class="stat-card">
-                            <div class="stat-value">640</div>
-                            <div class="stat-label">Calories</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value">18g</div>
-                            <div class="stat-label">Protein</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value">72g</div>
-                            <div class="stat-label">Carbs</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value">32g</div>
-                            <div class="stat-label">Fat</div>
+                        <div class="nutrition-stats">
+                            <div class="stat-card">
+                                <div class="stat-value" id="stat-calories">640</div>
+                                <div class="stat-label">Calories</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="stat-protein">18g</div>
+                                <div class="stat-label">Protein</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="stat-carbs">72g</div>
+                                <div class="stat-label">Carbs</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="stat-fat">32g</div>
+                                <div class="stat-label">Fat</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Detailed Nutrition -->
-            <div class="nutrition-detail">
-                <h3>Nutritional Breakdown</h3>
-                <div class="nutrient-bars">
-                    <div class="nutrient-row">
-                        <span class="nutrient-label">Calories</span>
-                        <div class="nutrient-bar">
-                            <div class="nutrient-fill calories" style="width: 75%;"></div>
+                <!-- Detailed Nutrition -->
+                <div class="nutrition-detail">
+                    <h3>Nutritional Breakdown</h3>
+                    <div class="nutrient-bars">
+                        <div class="nutrient-row">
+                            <span class="nutrient-label">Calories</span>
+                            <div class="nutrient-bar">
+                                <div class="nutrient-fill calories" id="bar-calories" style="width: 75%;"></div>
+                            </div>
+                            <span class="nutrient-value" id="val-calories">640 kcal</span>
                         </div>
-                        <span class="nutrient-value">640 kcal</span>
-                    </div>
-                    <div class="nutrient-row">
-                        <span class="nutrient-label">Protein</span>
-                        <div class="nutrient-bar">
-                            <div class="nutrient-fill protein" style="width: 36%;"></div>
+                        <div class="nutrient-row">
+                            <span class="nutrient-label">Protein</span>
+                            <div class="nutrient-bar">
+                                <div class="nutrient-fill protein" id="bar-protein" style="width: 36%;"></div>
+                            </div>
+                            <span class="nutrient-value" id="val-protein">18g</span>
                         </div>
-                        <span class="nutrient-value">18g</span>
-                    </div>
-                    <div class="nutrient-row">
-                        <span class="nutrient-label">Carbs</span>
-                        <div class="nutrient-bar">
-                            <div class="nutrient-fill carbs" style="width: 65%;"></div>
+                        <div class="nutrient-row">
+                            <span class="nutrient-label">Carbs</span>
+                            <div class="nutrient-bar">
+                                <div class="nutrient-fill carbs" id="bar-carbs" style="width: 65%;"></div>
+                            </div>
+                            <span class="nutrient-value" id="val-carbs">72g</span>
                         </div>
-                        <span class="nutrient-value">72g</span>
-                    </div>
-                    <div class="nutrient-row">
-                        <span class="nutrient-label">Fat</span>
-                        <div class="nutrient-bar">
-                            <div class="nutrient-fill fat" style="width: 70%;"></div>
+                        <div class="nutrient-row">
+                            <span class="nutrient-label">Fat</span>
+                            <div class="nutrient-bar">
+                                <div class="nutrient-fill fat" id="bar-fat" style="width: 70%;"></div>
+                            </div>
+                            <span class="nutrient-value" id="val-fat">32g</span>
                         </div>
-                        <span class="nutrient-value">32g</span>
-                    </div>
-                    <div class="nutrient-row">
-                        <span class="nutrient-label">Sugar</span>
-                        <div class="nutrient-bar">
-                            <div class="nutrient-fill sugar" style="width: 25%;"></div>
+                        <div class="nutrient-row">
+                            <span class="nutrient-label">Sugar</span>
+                            <div class="nutrient-bar">
+                                <div class="nutrient-fill sugar" id="bar-sugar" style="width: 25%;"></div>
+                            </div>
+                            <span class="nutrient-value" id="val-sugar">8g</span>
                         </div>
-                        <span class="nutrient-value">8g</span>
-                    </div>
-                    <div class="nutrient-row">
-                        <span class="nutrient-label">Sodium</span>
-                        <div class="nutrient-bar">
-                            <div class="nutrient-fill sodium" style="width: 80%;"></div>
+                        <div class="nutrient-row">
+                            <span class="nutrient-label">Sodium</span>
+                            <div class="nutrient-bar">
+                                <div class="nutrient-fill sodium" id="bar-sodium" style="width: 80%;"></div>
+                            </div>
+                            <span class="nutrient-value" id="val-sodium">1200mg</span>
                         </div>
-                        <span class="nutrient-value">1200mg</span>
-                    </div>
-                    <div class="nutrient-row">
-                        <span class="nutrient-label">Fibre</span>
-                        <div class="nutrient-bar">
-                            <div class="nutrient-fill fibre" style="width: 20%;"></div>
+                        <div class="nutrient-row">
+                            <span class="nutrient-label">Fibre</span>
+                            <div class="nutrient-bar">
+                                <div class="nutrient-fill fibre" id="bar-fibre" style="width: 20%;"></div>
+                            </div>
+                            <span class="nutrient-value" id="val-fibre">3g</span>
                         </div>
-                        <span class="nutrient-value">3g</span>
                     </div>
                 </div>
-            </div>
 
-            <!-- Strengths & Improvements -->
-            <div class="feedback-grid">
-                <div class="feedback-card strengths">
-                    <h3>✅ Strengths</h3>
-                    <ul>
-                        <li>Provides a good source of energy for the afternoon</li>
-                        <li>Contains protein from egg and chicken</li>
-                        <li>Includes small amounts of vegetables (cucumber)</li>
-                        <li>Satisfying meal that prevents excessive snacking</li>
-                    </ul>
+                <!-- Strengths & Improvements -->
+                <div class="feedback-grid">
+                    <div class="feedback-card strengths">
+                        <h3>✅ Strengths</h3>
+                        <ul id="strengths-list">
+                            <li>Provides a good source of energy for the afternoon</li>
+                            <li>Contains protein from egg and chicken</li>
+                            <li>Includes small amounts of vegetables (cucumber)</li>
+                            <li>Satisfying meal that prevents excessive snacking</li>
+                        </ul>
+                    </div>
+                    <div class="feedback-card improvements">
+                        <h3>⚠️ Areas for Improvement</h3>
+                        <ul id="improvements-list">
+                            <li>High in saturated fat from coconut milk and fried items</li>
+                            <li>High sodium content from sambal and ikan bilis</li>
+                            <li>Low fibre content – needs more vegetables</li>
+                            <li>Could benefit from lean protein instead of fried chicken</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="feedback-card improvements">
-                    <h3>⚠️ Areas for Improvement</h3>
-                    <ul>
-                        <li>High in saturated fat from coconut milk and fried items</li>
-                        <li>High sodium content from sambal and ikan bilis</li>
-                        <li>Low fibre content – needs more vegetables</li>
-                        <li>Could benefit from lean protein instead of fried chicken</li>
-                    </ul>
-                </div>
-            </div>
 
-            <!-- Action -->
-            <div class="analysis-action">
-                <a href="alternatives.html" class="btn btn-primary btn-lg">Get Healthy Alternatives →</a>
+                <!-- Actions -->
+                <div class="analysis-actions">
+                    <button class="btn btn-primary btn-lg" id="save-meal-btn">💾 Save to History</button>
+                    <a href="alternatives.html" class="btn btn-blue btn-lg">Get Healthy Alternatives →</a>
+                </div>
             </div>
         </div>
     </section>

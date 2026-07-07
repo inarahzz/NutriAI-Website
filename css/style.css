@@ -127,6 +127,48 @@ body.dark-mode .btn-secondary:hover {
     color: var(--primary-green);
 }
 
+body.dark-mode .meal-input-card,
+body.dark-mode .contact-form-card,
+body.dark-mode .info-card,
+body.dark-mode .history-empty,
+body.dark-mode .analysis-error {
+    background: #1a2740;
+}
+
+body.dark-mode .meal-input-field {
+    background: #16213e;
+    border-color: #2a3a5e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .meal-input-field:focus {
+    border-color: var(--primary-green);
+}
+
+body.dark-mode .quick-meal-chip,
+body.dark-mode .prompt-chip {
+    background: #1a2740;
+    border-color: #2a3a5e;
+    color: #bbb;
+}
+
+body.dark-mode .disclaimer-box {
+    background: #1a2740;
+    border-color: rgba(255, 122, 26, 0.3);
+}
+
+body.dark-mode .disclaimer-box p {
+    color: #bbb;
+}
+
+body.dark-mode .problem-card {
+    background: #16213e;
+}
+
+body.dark-mode .problem-card:hover {
+    background: #1a2740;
+}
+
 /* Reset */
 *, *::before, *::after {
     margin: 0;

@@ -98,7 +98,7 @@
 
 .nutrition-mini {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
     margin-bottom: 16px;
 }
@@ -123,18 +123,66 @@
 }
 
 .health-benefits {
-    padding: 12px 16px;
+    padding: 16px;
     background: #f0fdf0;
     border-radius: var(--radius-sm);
     margin-bottom: 16px;
+}
+
+.health-benefits h4 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary-green);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
 }
 
 .health-benefits p {
     font-size: 0.85rem;
     color: #444;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 6px;
+    margin-bottom: 4px;
+    line-height: 1.5;
+}
+
+.health-benefits p:last-child {
+    margin-bottom: 0;
+}
+
+/* Nutrition Difference Tags */
+.nutrition-diff {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.diff-item {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.diff-item.good {
+    background: #e8f8e6;
+    color: #1a8c0a;
+}
+
+.diff-item.bad {
+    background: #fff3e8;
+    color: var(--accent-orange);
+}
+
+/* Highlight values */
+.nutrition-mini-item .value.highlight-green {
+    color: var(--primary-green);
+    font-weight: 700;
 }
 
 .choose-meal-btn {
@@ -197,6 +245,10 @@
 
     .arrow-icon {
         transform: rotate(90deg);
+    }
+
+    .nutrition-mini {
+        grid-template-columns: 1fr 1fr;
     }
 }
 

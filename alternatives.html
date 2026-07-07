@@ -24,7 +24,7 @@
                 <li><a href="alternatives.html" class="active">Healthy Alternatives</a></li>
                 <li><a href="history.html">Meal History</a></li>
                 <li><a href="profile.html">Profile</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <a href="chat.html" class="nav-cta">Start Chat</a>
             <button class="nav-toggle" aria-label="Toggle navigation">
@@ -40,10 +40,10 @@
         <div class="container">
             <div class="alternatives-header">
                 <h1>🥗 Healthy Alternatives</h1>
-                <p>Swap your meals for healthier options without sacrificing taste</p>
+                <p>Personalised healthier meal recommendations based on your analysed meals</p>
             </div>
 
-            <div class="comparison-list">
+            <div class="comparison-list" id="alternatives-list">
                 <!-- Comparison 1 -->
                 <div class="comparison-item">
                     <div class="comparison-card original">
@@ -67,6 +67,14 @@
                                 <span class="label">Sugar</span>
                                 <span class="value">8g</span>
                             </div>
+                            <div class="nutrition-mini-item">
+                                <span class="label">Sodium</span>
+                                <span class="value">1200mg</span>
+                            </div>
+                            <div class="nutrition-mini-item">
+                                <span class="label">Fibre</span>
+                                <span class="value">3g</span>
+                            </div>
                         </div>
                     </div>
 
@@ -82,23 +90,40 @@
                         <div class="nutrition-mini">
                             <div class="nutrition-mini-item">
                                 <span class="label">Calories</span>
-                                <span class="value">420 kcal</span>
+                                <span class="value highlight-green">420 kcal</span>
                             </div>
                             <div class="nutrition-mini-item">
                                 <span class="label">Protein</span>
-                                <span class="value">35g</span>
+                                <span class="value highlight-green">35g</span>
                             </div>
                             <div class="nutrition-mini-item">
                                 <span class="label">Fat</span>
-                                <span class="value">12g</span>
+                                <span class="value highlight-green">12g</span>
                             </div>
                             <div class="nutrition-mini-item">
                                 <span class="label">Sugar</span>
-                                <span class="value">4g</span>
+                                <span class="value highlight-green">4g</span>
+                            </div>
+                            <div class="nutrition-mini-item">
+                                <span class="label">Sodium</span>
+                                <span class="value highlight-green">450mg</span>
+                            </div>
+                            <div class="nutrition-mini-item">
+                                <span class="label">Fibre</span>
+                                <span class="value highlight-green">8g</span>
                             </div>
                         </div>
+                        <div class="nutrition-diff">
+                            <span class="diff-item good">↓ 220 kcal</span>
+                            <span class="diff-item good">↑ +17g protein</span>
+                            <span class="diff-item good">↓ 20g fat</span>
+                        </div>
                         <div class="health-benefits">
-                            <p>✅ Higher protein, lower fat, more fibre from vegetables and brown rice</p>
+                            <h4>Why this is better:</h4>
+                            <p>✅ Higher protein supports muscle recovery and keeps you full longer</p>
+                            <p>✅ Brown rice provides more fibre and sustained energy</p>
+                            <p>✅ Grilling eliminates excess oil compared to deep frying</p>
+                            <p>✅ Added vegetables boost vitamin and mineral intake</p>
                         </div>
                         <button class="choose-meal-btn">Choose This Meal</button>
                     </div>
@@ -127,6 +152,14 @@
                                 <span class="label">Sugar</span>
                                 <span class="value">12g</span>
                             </div>
+                            <div class="nutrition-mini-item">
+                                <span class="label">Sodium</span>
+                                <span class="value">1400mg</span>
+                            </div>
+                            <div class="nutrition-mini-item">
+                                <span class="label">Fibre</span>
+                                <span class="value">2g</span>
+                            </div>
                         </div>
                     </div>
 
@@ -142,23 +175,40 @@
                         <div class="nutrition-mini">
                             <div class="nutrition-mini-item">
                                 <span class="label">Calories</span>
-                                <span class="value">380 kcal</span>
+                                <span class="value highlight-green">380 kcal</span>
                             </div>
                             <div class="nutrition-mini-item">
                                 <span class="label">Protein</span>
-                                <span class="value">28g</span>
+                                <span class="value highlight-green">28g</span>
                             </div>
                             <div class="nutrition-mini-item">
                                 <span class="label">Fat</span>
-                                <span class="value">8g</span>
+                                <span class="value highlight-green">8g</span>
                             </div>
                             <div class="nutrition-mini-item">
                                 <span class="label">Sugar</span>
-                                <span class="value">3g</span>
+                                <span class="value highlight-green">3g</span>
+                            </div>
+                            <div class="nutrition-mini-item">
+                                <span class="label">Sodium</span>
+                                <span class="value highlight-green">800mg</span>
+                            </div>
+                            <div class="nutrition-mini-item">
+                                <span class="label">Fibre</span>
+                                <span class="value highlight-green">5g</span>
                             </div>
                         </div>
+                        <div class="nutrition-diff">
+                            <span class="diff-item good">↓ 170 kcal</span>
+                            <span class="diff-item good">↑ +14g protein</span>
+                            <span class="diff-item good">↓ 16g fat</span>
+                        </div>
                         <div class="health-benefits">
-                            <p>✅ Soup-based means less oil, more hydration, and better nutrient absorption</p>
+                            <h4>Why this is better:</h4>
+                            <p>✅ Soup-based means less oil and better hydration</p>
+                            <p>✅ Lean meat provides protein without excess saturated fat</p>
+                            <p>✅ Lower sodium than stir-fried alternatives</p>
+                            <p>✅ Vegetables add fibre and essential nutrients</p>
                         </div>
                         <button class="choose-meal-btn">Choose This Meal</button>
                     </div>
@@ -187,6 +237,14 @@
                                 <span class="label">Sugar</span>
                                 <span class="value">18g</span>
                             </div>
+                            <div class="nutrition-mini-item">
+                                <span class="label">Sodium</span>
+                                <span class="value">1600mg</span>
+                            </div>
+                            <div class="nutrition-mini-item">
+                                <span class="label">Fibre</span>
+                                <span class="value">2g</span>
+                            </div>
                         </div>
                     </div>
 
@@ -202,23 +260,40 @@
                         <div class="nutrition-mini">
                             <div class="nutrition-mini-item">
                                 <span class="label">Calories</span>
-                                <span class="value">450 kcal</span>
+                                <span class="value highlight-green">450 kcal</span>
                             </div>
                             <div class="nutrition-mini-item">
                                 <span class="label">Protein</span>
-                                <span class="value">32g</span>
+                                <span class="value highlight-green">32g</span>
                             </div>
                             <div class="nutrition-mini-item">
                                 <span class="label">Fat</span>
-                                <span class="value">14g</span>
+                                <span class="value highlight-green">14g</span>
                             </div>
                             <div class="nutrition-mini-item">
                                 <span class="label">Sugar</span>
-                                <span class="value">6g</span>
+                                <span class="value highlight-green">6g</span>
+                            </div>
+                            <div class="nutrition-mini-item">
+                                <span class="label">Sodium</span>
+                                <span class="value highlight-green">650mg</span>
+                            </div>
+                            <div class="nutrition-mini-item">
+                                <span class="label">Fibre</span>
+                                <span class="value highlight-green">7g</span>
                             </div>
                         </div>
+                        <div class="nutrition-diff">
+                            <span class="diff-item good">↓ 440 kcal</span>
+                            <span class="diff-item good">↑ +10g protein</span>
+                            <span class="diff-item good">↓ 34g fat</span>
+                        </div>
                         <div class="health-benefits">
-                            <p>✅ Much less fat & calories while still filling and high in protein</p>
+                            <h4>Why this is better:</h4>
+                            <p>✅ Almost half the calories while remaining filling</p>
+                            <p>✅ Whole wheat wrap provides complex carbs and fibre</p>
+                            <p>✅ Side salad adds vitamins, minerals, and antioxidants</p>
+                            <p>✅ Much lower sodium reduces bloating and blood pressure risk</p>
                         </div>
                         <button class="choose-meal-btn">Choose This Meal</button>
                     </div>

@@ -1,0 +1,255 @@
+/* ============================
+   Contact Page Styles
+   ============================ */
+
+.contact-page {
+    padding: 100px 0 60px;
+    background: var(--light-grey);
+    min-height: 100vh;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.contact-header h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.contact-header p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Contact Layout */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* Contact Form */
+.contact-form-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    box-shadow: var(--shadow-sm);
+}
+
+.contact-form-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+    color: var(--dark-grey);
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form .form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.contact-form .form-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: var(--radius-md);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--dark-grey);
+    transition: var(--transition);
+    background: var(--white);
+}
+
+.contact-form .form-input:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(49, 184, 28, 0.1);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+}
+
+.contact-submit-btn {
+    width: 100%;
+}
+
+/* Form Success */
+.form-success {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.form-success .success-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.form-success h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: var(--primary-green);
+}
+
+.form-success p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.info-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.info-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.info-card h4 {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: var(--dark-grey);
+}
+
+.info-card p {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* FAQ Section */
+.contact-faq {
+    margin-top: 60px;
+}
+
+.contact-faq .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-faq .section-header h2 {
+    font-size: 1.75rem;
+    margin-bottom: 8px;
+}
+
+.contact-faq .section-header p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.contact-faq .faq-list {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-faq .faq-item {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    margin-bottom: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.contact-faq .faq-question {
+    width: 100%;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--dark-grey);
+    text-align: left;
+    transition: var(--transition);
+}
+
+.contact-faq .faq-question:hover {
+    color: var(--primary-green);
+}
+
+.contact-faq .faq-toggle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--primary-green);
+    transition: var(--transition);
+}
+
+.contact-faq .faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.contact-faq .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.contact-faq .faq-item.active .faq-answer {
+    max-height: 200px;
+    padding: 0 24px 20px;
+}
+
+.contact-faq .faq-answer p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .info-card {
+        flex: 1;
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-page {
+        padding: 90px 0 40px;
+    }
+
+    .contact-info {
+        flex-direction: column;
+    }
+}

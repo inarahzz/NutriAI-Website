@@ -131,6 +131,22 @@
     50% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.8; }
 }
 
+/* Hero Badge */
+.hero-problem {
+    margin-bottom: 16px;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 8px 18px;
+    background: rgba(49, 184, 28, 0.1);
+    border: 1px solid rgba(49, 184, 28, 0.2);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--primary-green);
+}
+
 /* Features Section */
 .features {
     padding: 100px 0;
@@ -425,5 +441,98 @@
 
     .step {
         max-width: 100%;
+    }
+
+    .problem-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Problem Section */
+.problem-section {
+    padding: 100px 0;
+    background: var(--white);
+}
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.problem-card {
+    background: var(--light-grey);
+    padding: 36px 28px;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: var(--transition);
+    border-top: 3px solid transparent;
+}
+
+.problem-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    background: var(--white);
+    border-top-color: var(--accent-orange);
+}
+
+.problem-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.problem-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    color: var(--dark-grey);
+}
+
+.problem-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Disclaimer Section */
+.disclaimer-section {
+    padding: 40px 0;
+    background: var(--white);
+}
+
+.disclaimer-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px 32px;
+    background: #fff8f0;
+    border: 1px solid rgba(255, 122, 26, 0.2);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--accent-orange);
+}
+
+.disclaimer-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.disclaimer-box p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+.disclaimer-box p strong {
+    color: var(--dark-grey);
+}
+
+@media (max-width: 768px) {
+    .problem-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .disclaimer-box {
+        flex-direction: column;
+        gap: 12px;
     }
 }

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriAI – Contact Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.svg" alt="NutriAI Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="meal-analysis.html">Meal Analysis</a></li>
+                <li><a href="alternatives.html">Healthy Alternatives</a></li>
+                <li><a href="history.html">Meal History</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <a href="chat.html" class="nav-cta">Start Chat</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contact Page -->
+    <section class="contact-page">
+        <div class="container">
+            <div class="contact-header">
+                <h1>📬 Contact Us</h1>
+                <p>Have a question or feedback? We'd love to hear from you.</p>
+            </div>
+
+            <div class="contact-layout">
+                <!-- Contact Form -->
+                <div class="contact-form-card">
+                    <h3>Send us a message</h3>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="contact-name">Name</label>
+                            <input type="text" id="contact-name" class="form-input" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" class="form-input" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <select id="contact-subject" class="form-input" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="bug">Report a Bug</option>
+                                <option value="feature">Feature Request</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" class="form-input form-textarea" placeholder="Tell us how we can help..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg contact-submit-btn">Send Message</button>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div class="form-success" id="form-success" style="display: none;">
+                        <div class="success-icon">✅</div>
+                        <h3>Message Sent!</h3>
+                        <p>Thank you for reaching out. We'll get back to you within 24-48 hours.</p>
+                        <button class="btn btn-secondary btn-sm" id="send-another-btn">Send Another Message</button>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">📧</div>
+                        <h4>Email</h4>
+                        <p>nutriai@unexpected4.sg</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <h4>Location</h4>
+                        <p>Republic Polytechnic, Singapore</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">⏰</div>
+                        <h4>Response Time</h4>
+                        <p>Within 24-48 hours</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="contact-faq">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Quick answers to common questions.</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Is NutriAI free to use?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! NutriAI is completely free for students. We believe everyone deserves access to healthier eating guidance.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Does NutriAI replace professional dietary advice?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No. NutriAI provides general meal suggestions and nutritional information. For medical or dietary conditions, please consult a healthcare professional.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What kind of meals can NutriAI analyse?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>NutriAI can analyse most common meals including local hawker food, fast food, home-cooked meals, and more. Just describe what you ate!</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How accurate are the nutritional estimates?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our AI provides estimates based on standard nutritional databases. While not exact, they give you a good overview of your meal's nutritional profile.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I track my meals over time?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely! NutriAI saves your meal history so you can track your eating patterns and see improvements over time.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Is my data safe and private?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Your data is stored locally on your device using localStorage. We do not collect or share your personal information with third parties.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 NutriAI by Team Unexpected4. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
