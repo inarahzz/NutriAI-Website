@@ -2,6 +2,17 @@
    NutriAI - Main JavaScript
    ============================ */
 
+// Apply dark mode immediately to prevent flash of light mode
+(function() {
+    const saved = localStorage.getItem('nutriai_settings');
+    if (saved) {
+        const settings = JSON.parse(saved);
+        if (settings.darkMode) {
+            document.body.classList.add('dark-mode');
+        }
+    }
+})();
+
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.querySelector('.nav-toggle');
@@ -68,12 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Toggle switches
-    document.querySelectorAll('.toggle-switch').forEach(toggle => {
-        toggle.addEventListener('click', () => {
-            toggle.classList.toggle('active');
-        });
-    });
+    // Toggle switches with functionality
+    initSettings();
 
     // Filter tabs
     document.querySelectorAll('.filter-tab').forEach(tab => {
@@ -83,6 +90,152 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// ============================
+// Settings & Dark Mode
+// ============================
+
+function initSettings() {
+    // Load saved settings from localStorage
+    const settings = loadSettings();
+
+    // Apply dark mode on page load (works on all pages)
+    if (settings.darkMode) {
+        document.body.classList.add('dark-mode');
+    }
+
+    // Set up toggle switches on profile page
+    const toggleRows = document.querySelectorAll('.toggle-row');
+    toggleRows.forEach(row => {
+        const label = row.querySelector('.toggle-label');
+        const toggle = row.querySelector('.toggle-switch');
+        if (!label || !toggle) return;
+
+        const settingKey = getSettingKey(label.textContent);
+
+        // Apply saved state
+        if (settings[settingKey]) {
+            toggle.classList.add('active');
+        } else {
+            toggle.classList.remove('active');
+        }
+
+        // Handle click
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('active');
+            const isActive = toggle.classList.contains('active');
+            settings[settingKey] = isActive;
+            saveSettings(settings);
+
+            // Apply dark mode immediately
+            if (settingKey === 'darkMode') {
+                if (isActive) {
+                    document.body.classList.add('dark-mode');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                }
+            }
+
+            // Show feedback for other toggles
+            if (settingKey === 'mealReminders') {
+                showToast(isActive ? 'Meal reminders enabled' : 'Meal reminders disabled');
+            } else if (settingKey === 'weeklyReport') {
+                showToast(isActive ? 'Weekly reports enabled' : 'Weekly reports disabled');
+            } else if (settingKey === 'emailNotifications') {
+                showToast(isActive ? 'Email notifications enabled' : 'Email notifications disabled');
+            } else if (settingKey === 'darkMode') {
+                showToast(isActive ? 'Dark mode enabled' : 'Dark mode disabled');
+            }
+        });
+    });
+
+    // Save button functionality
+    const saveBtn = document.querySelector('.save-btn-wrapper .btn');
+    if (saveBtn) {
+        saveBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Save form data
+            const nameInput = document.querySelector('.form-group input[type="text"]');
+            const emailInput = document.querySelector('.form-group input[type="email"]');
+            const calorieInput = document.querySelector('.form-group input[type="number"]');
+            const goalSelect = document.querySelectorAll('.form-input')[2]; // Health Goal select
+            const dietSelect = document.querySelectorAll('select.form-input')[1]; // Diet Type select
+
+            const profileData = {
+                name: nameInput ? nameInput.value : '',
+                email: emailInput ? emailInput.value : '',
+                calories: calorieInput ? calorieInput.value : '',
+                goal: goalSelect ? goalSelect.value : '',
+                diet: dietSelect ? dietSelect.value : ''
+            };
+
+            localStorage.setItem('nutriai_profile', JSON.stringify(profileData));
+            showToast('Settings saved successfully!');
+        });
+    }
+
+    // Load saved profile data
+    const savedProfile = localStorage.getItem('nutriai_profile');
+    if (savedProfile) {
+        const profileData = JSON.parse(savedProfile);
+        const nameInput = document.querySelector('.form-group input[type="text"]');
+        const emailInput = document.querySelector('.form-group input[type="email"]');
+        const calorieInput = document.querySelector('.form-group input[type="number"]');
+
+        if (nameInput && profileData.name) nameInput.value = profileData.name;
+        if (emailInput && profileData.email) emailInput.value = profileData.email;
+        if (calorieInput && profileData.calories) calorieInput.value = profileData.calories;
+    }
+}
+
+function getSettingKey(label) {
+    const map = {
+        'Meal Reminders': 'mealReminders',
+        'Weekly Report': 'weeklyReport',
+        'Dark Mode': 'darkMode',
+        'Email Notifications': 'emailNotifications'
+    };
+    return map[label] || label.toLowerCase().replace(/\s+/g, '');
+}
+
+function loadSettings() {
+    const saved = localStorage.getItem('nutriai_settings');
+    if (saved) {
+        return JSON.parse(saved);
+    }
+    // Defaults
+    return {
+        mealReminders: true,
+        weeklyReport: true,
+        darkMode: false,
+        emailNotifications: false
+    };
+}
+
+function saveSettings(settings) {
+    localStorage.setItem('nutriai_settings', JSON.stringify(settings));
+}
+
+function showToast(message) {
+    // Remove existing toast
+    const existing = document.querySelector('.toast-notification');
+    if (existing) existing.remove();
+
+    const toast = document.createElement('div');
+    toast.className = 'toast-notification';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+
+    // Trigger animation
+    setTimeout(() => toast.classList.add('show'), 10);
+
+    // Remove after 3 seconds
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
 
 // Chat functionality
 function initChat() {
@@ -186,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Add CSS for scroll animations
+// Add CSS for scroll animations and toast
 const style = document.createElement('style');
 style.textContent = `
     .animate-on-scroll {
@@ -200,6 +353,29 @@ style.textContent = `
     }
     .navbar.scrolled {
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+    .toast-notification {
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%) translateY(20px);
+        background: #333;
+        color: #fff;
+        padding: 14px 28px;
+        border-radius: 50px;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.9rem;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        z-index: 9999;
+    }
+    .toast-notification.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    body.dark-mode .toast-notification {
+        background: #4a4a6a;
     }
 `;
 document.head.appendChild(style);
