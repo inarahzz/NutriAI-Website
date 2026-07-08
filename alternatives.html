@@ -40,265 +40,47 @@
         <div class="container">
             <div class="alternatives-header">
                 <h1>🥗 Healthy Alternatives</h1>
-                <p>Personalised healthier meal recommendations based on your analysed meals</p>
+                <p>Type a food you're craving and we'll suggest a healthier swap</p>
             </div>
 
-            <div class="comparison-list" id="alternatives-list">
-                <!-- Comparison 1 -->
-                <div class="comparison-item">
-                    <div class="comparison-card original">
-                        <span class="card-badge">Original Meal</span>
-                        <div class="card-meal-image">🍛</div>
-                        <h3>Nasi Lemak with Fried Chicken</h3>
-                        <div class="nutrition-mini">
-                            <div class="nutrition-mini-item">
-                                <span class="label">Calories</span>
-                                <span class="value">640 kcal</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Protein</span>
-                                <span class="value">18g</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Fat</span>
-                                <span class="value">32g</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Sugar</span>
-                                <span class="value">8g</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Sodium</span>
-                                <span class="value">1200mg</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Fibre</span>
-                                <span class="value">3g</span>
-                            </div>
-                        </div>
+            <!-- Search Input -->
+            <div class="search-section">
+                <form class="search-form" id="search-form">
+                    <div class="search-input-wrapper">
+                        <span class="search-icon">🔍</span>
+                        <input 
+                            type="text" 
+                            id="food-input" 
+                            class="search-input" 
+                            placeholder="e.g. Fried rice, Bubble tea, Roti prata..." 
+                            autocomplete="off"
+                            aria-label="Enter a food to find healthier alternatives"
+                        >
+                        <button type="submit" class="search-btn">Find Alternative</button>
                     </div>
+                </form>
+            </div>
 
-                    <div class="comparison-arrow">
-                        <div class="arrow-icon">→</div>
-                        <span class="arrow-text">Try this</span>
-                    </div>
+            <!-- Search Result -->
+            <div class="search-result" id="search-result" style="display: none;"></div>
 
-                    <div class="comparison-card recommended">
-                        <span class="card-badge">Recommended</span>
-                        <div class="card-meal-image">🥙</div>
-                        <h3>Grilled Chicken with Brown Rice & Vegetables</h3>
-                        <div class="nutrition-mini">
-                            <div class="nutrition-mini-item">
-                                <span class="label">Calories</span>
-                                <span class="value highlight-green">420 kcal</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Protein</span>
-                                <span class="value highlight-green">35g</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Fat</span>
-                                <span class="value highlight-green">12g</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Sugar</span>
-                                <span class="value highlight-green">4g</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Sodium</span>
-                                <span class="value highlight-green">450mg</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Fibre</span>
-                                <span class="value highlight-green">8g</span>
-                            </div>
-                        </div>
-                        <div class="nutrition-diff">
-                            <span class="diff-item good">↓ 220 kcal</span>
-                            <span class="diff-item good">↑ +17g protein</span>
-                            <span class="diff-item good">↓ 20g fat</span>
-                        </div>
-                        <div class="health-benefits">
-                            <h4>Why this is better:</h4>
-                            <p>✅ Higher protein supports muscle recovery and keeps you full longer</p>
-                            <p>✅ Brown rice provides more fibre and sustained energy</p>
-                            <p>✅ Grilling eliminates excess oil compared to deep frying</p>
-                            <p>✅ Added vegetables boost vitamin and mineral intake</p>
-                        </div>
-                        <button class="choose-meal-btn">Choose This Meal</button>
-                    </div>
-                </div>
-
-                <!-- Comparison 2 -->
-                <div class="comparison-item">
-                    <div class="comparison-card original">
-                        <span class="card-badge">Original Meal</span>
-                        <div class="card-meal-image">🍜</div>
-                        <h3>Mee Goreng</h3>
-                        <div class="nutrition-mini">
-                            <div class="nutrition-mini-item">
-                                <span class="label">Calories</span>
-                                <span class="value">550 kcal</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Protein</span>
-                                <span class="value">14g</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Fat</span>
-                                <span class="value">24g</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Sugar</span>
-                                <span class="value">12g</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Sodium</span>
-                                <span class="value">1400mg</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Fibre</span>
-                                <span class="value">2g</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="comparison-arrow">
-                        <div class="arrow-icon">→</div>
-                        <span class="arrow-text">Try this</span>
-                    </div>
-
-                    <div class="comparison-card recommended">
-                        <span class="card-badge">Recommended</span>
-                        <div class="card-meal-image">🍲</div>
-                        <h3>Soup Noodles with Lean Meat & Vegetables</h3>
-                        <div class="nutrition-mini">
-                            <div class="nutrition-mini-item">
-                                <span class="label">Calories</span>
-                                <span class="value highlight-green">380 kcal</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Protein</span>
-                                <span class="value highlight-green">28g</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Fat</span>
-                                <span class="value highlight-green">8g</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Sugar</span>
-                                <span class="value highlight-green">3g</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Sodium</span>
-                                <span class="value highlight-green">800mg</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Fibre</span>
-                                <span class="value highlight-green">5g</span>
-                            </div>
-                        </div>
-                        <div class="nutrition-diff">
-                            <span class="diff-item good">↓ 170 kcal</span>
-                            <span class="diff-item good">↑ +14g protein</span>
-                            <span class="diff-item good">↓ 16g fat</span>
-                        </div>
-                        <div class="health-benefits">
-                            <h4>Why this is better:</h4>
-                            <p>✅ Soup-based means less oil and better hydration</p>
-                            <p>✅ Lean meat provides protein without excess saturated fat</p>
-                            <p>✅ Lower sodium than stir-fried alternatives</p>
-                            <p>✅ Vegetables add fibre and essential nutrients</p>
-                        </div>
-                        <button class="choose-meal-btn">Choose This Meal</button>
-                    </div>
-                </div>
-
-                <!-- Comparison 3 -->
-                <div class="comparison-item">
-                    <div class="comparison-card original">
-                        <span class="card-badge">Original Meal</span>
-                        <div class="card-meal-image">🍔</div>
-                        <h3>Fast Food Burger & Fries</h3>
-                        <div class="nutrition-mini">
-                            <div class="nutrition-mini-item">
-                                <span class="label">Calories</span>
-                                <span class="value">890 kcal</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Protein</span>
-                                <span class="value">22g</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Fat</span>
-                                <span class="value">48g</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Sugar</span>
-                                <span class="value">18g</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Sodium</span>
-                                <span class="value">1600mg</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Fibre</span>
-                                <span class="value">2g</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="comparison-arrow">
-                        <div class="arrow-icon">→</div>
-                        <span class="arrow-text">Try this</span>
-                    </div>
-
-                    <div class="comparison-card recommended">
-                        <span class="card-badge">Recommended</span>
-                        <div class="card-meal-image">🥪</div>
-                        <h3>Grilled Chicken Wrap with Side Salad</h3>
-                        <div class="nutrition-mini">
-                            <div class="nutrition-mini-item">
-                                <span class="label">Calories</span>
-                                <span class="value highlight-green">450 kcal</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Protein</span>
-                                <span class="value highlight-green">32g</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Fat</span>
-                                <span class="value highlight-green">14g</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Sugar</span>
-                                <span class="value highlight-green">6g</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Sodium</span>
-                                <span class="value highlight-green">650mg</span>
-                            </div>
-                            <div class="nutrition-mini-item">
-                                <span class="label">Fibre</span>
-                                <span class="value highlight-green">7g</span>
-                            </div>
-                        </div>
-                        <div class="nutrition-diff">
-                            <span class="diff-item good">↓ 440 kcal</span>
-                            <span class="diff-item good">↑ +10g protein</span>
-                            <span class="diff-item good">↓ 34g fat</span>
-                        </div>
-                        <div class="health-benefits">
-                            <h4>Why this is better:</h4>
-                            <p>✅ Almost half the calories while remaining filling</p>
-                            <p>✅ Whole wheat wrap provides complex carbs and fibre</p>
-                            <p>✅ Side salad adds vitamins, minerals, and antioxidants</p>
-                            <p>✅ Much lower sodium reduces bloating and blood pressure risk</p>
-                        </div>
-                        <button class="choose-meal-btn">Choose This Meal</button>
-                    </div>
+            <!-- Category Tabs -->
+            <div class="category-section">
+                <h2 class="section-title">Browse by Category</h2>
+                <div class="category-tabs" id="category-tabs">
+                    <button class="category-tab active" data-category="all">All</button>
+                    <button class="category-tab" data-category="rice">🍚 Rice</button>
+                    <button class="category-tab" data-category="noodles">🍜 Noodles</button>
+                    <button class="category-tab" data-category="fast-food">🍔 Fast Food</button>
+                    <button class="category-tab" data-category="snacks">🍿 Snacks</button>
+                    <button class="category-tab" data-category="drinks">🧋 Drinks</button>
+                    <button class="category-tab" data-category="desserts">🍦 Desserts</button>
+                    <button class="category-tab" data-category="breakfast">🥞 Breakfast</button>
                 </div>
             </div>
+
+            <!-- Swap Cards (rendered by JS) -->
+            <div class="comparison-list" id="alternatives-list"></div>
         </div>
     </section>
 
@@ -312,5 +94,343 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        // Food alternatives database - categorised
+        const alternatives = [
+            // === RICE ===
+            {
+                category: 'rice',
+                keywords: ['nasi lemak', 'nasi', 'coconut rice'],
+                original: { name: 'Nasi Lemak with Fried Chicken', emoji: '🍛', calories: 640, protein: 18, fat: 32 },
+                alternative: { name: 'Grilled Chicken with Brown Rice & Veg', emoji: '🥙', calories: 420, protein: 35, fat: 12 },
+                benefits: ['Higher protein keeps you full longer', 'Brown rice provides more fibre', 'Grilling eliminates excess oil']
+            },
+            {
+                category: 'rice',
+                keywords: ['fried rice', 'nasi goreng'],
+                original: { name: 'Fried Rice', emoji: '🍳', calories: 580, protein: 12, fat: 22 },
+                alternative: { name: 'Steamed Brown Rice with Stir-Fried Veg', emoji: '🥦', calories: 350, protein: 10, fat: 8 },
+                benefits: ['Steaming uses no oil at all', 'Brown rice has more fibre and nutrients', 'Stir-fried vegetables keep vitamins intact']
+            },
+            {
+                category: 'rice',
+                keywords: ['chicken rice', 'roasted chicken'],
+                original: { name: 'Chicken Rice (Roasted)', emoji: '🍗', calories: 600, protein: 28, fat: 22 },
+                alternative: { name: 'Steamed Chicken with Plain Rice & Cucumber', emoji: '🥒', calories: 420, protein: 35, fat: 8 },
+                benefits: ['Steamed chicken eliminates oil from roasting', 'Skinless breast is leaner protein', 'Cucumber adds hydration and freshness']
+            },
+            {
+                category: 'rice',
+                keywords: ['biryani', 'briyani'],
+                original: { name: 'Chicken Biryani', emoji: '🍛', calories: 700, protein: 25, fat: 30 },
+                alternative: { name: 'Grilled Chicken with Jeera Rice & Raita', emoji: '🥗', calories: 450, protein: 30, fat: 12 },
+                benefits: ['Jeera rice is lighter and less oily', 'Raita adds probiotics', 'Grilled chicken is leaner than fried pieces']
+            },
+
+            // === NOODLES ===
+            {
+                category: 'noodles',
+                keywords: ['mee goreng', 'fried noodles', 'fried mee', 'mee'],
+                original: { name: 'Mee Goreng', emoji: '🍜', calories: 550, protein: 14, fat: 24 },
+                alternative: { name: 'Soup Noodles with Lean Meat & Veg', emoji: '🍲', calories: 380, protein: 28, fat: 8 },
+                benefits: ['Soup-based means less oil and better hydration', 'Lean meat provides protein without excess fat', 'Lower sodium than stir-fried alternatives']
+            },
+            {
+                category: 'noodles',
+                keywords: ['char kway teow', 'kway teow', 'ckw'],
+                original: { name: 'Char Kway Teow', emoji: '🍝', calories: 740, protein: 18, fat: 38 },
+                alternative: { name: 'Kuay Teow Soup with Fish Slices', emoji: '🍜', calories: 350, protein: 25, fat: 8 },
+                benefits: ['Soup-based cuts out lard and dark soy sauce', 'Fish provides lean protein and omega-3', 'Less than half the sodium']
+            },
+            {
+                category: 'noodles',
+                keywords: ['laksa', 'curry noodles'],
+                original: { name: 'Curry Laksa', emoji: '🍜', calories: 680, protein: 20, fat: 35 },
+                alternative: { name: 'Asam Laksa (Sour Fish Soup Noodles)', emoji: '🥣', calories: 380, protein: 22, fat: 10 },
+                benefits: ['Tamarind-based broth has no coconut milk', 'Fish provides lean protein', 'Much lower in saturated fat']
+            },
+            {
+                category: 'noodles',
+                keywords: ['instant noodles', 'maggi', 'cup noodle'],
+                original: { name: 'Instant Noodles (with seasoning)', emoji: '🍜', calories: 480, protein: 8, fat: 20 },
+                alternative: { name: 'Rice Vermicelli Soup with Egg & Veg', emoji: '🍲', calories: 280, protein: 14, fat: 6 },
+                benefits: ['No deep-fried noodle block', 'Egg adds quality protein', 'Fresh vegetables add fibre and vitamins']
+            },
+
+            // === FAST FOOD ===
+            {
+                category: 'fast-food',
+                keywords: ['burger', 'fast food', 'fries', 'mcdonalds'],
+                original: { name: 'Fast Food Burger & Fries', emoji: '🍔', calories: 890, protein: 22, fat: 48 },
+                alternative: { name: 'Grilled Chicken Wrap with Side Salad', emoji: '🥪', calories: 450, protein: 32, fat: 14 },
+                benefits: ['Almost half the calories', 'Whole wheat wrap provides complex carbs', 'Side salad adds vitamins and antioxidants']
+            },
+            {
+                category: 'fast-food',
+                keywords: ['pizza', 'pepperoni'],
+                original: { name: 'Pizza (2 slices, pepperoni)', emoji: '🍕', calories: 570, protein: 20, fat: 28 },
+                alternative: { name: 'Whole Wheat Pita with Grilled Veggies & Hummus', emoji: '🥙', calories: 320, protein: 12, fat: 10 },
+                benefits: ['Whole wheat pita provides complex carbs', 'Hummus offers plant-based protein', 'Grilled veggies add fibre and nutrients']
+            },
+            {
+                category: 'fast-food',
+                keywords: ['fried chicken', 'kfc', 'popeyes'],
+                original: { name: 'Fried Chicken (2 pieces)', emoji: '🍗', calories: 620, protein: 35, fat: 38 },
+                alternative: { name: 'Air-Fried Chicken Thigh with Coleslaw', emoji: '🥗', calories: 380, protein: 32, fat: 16 },
+                benefits: ['Air frying uses 80% less oil', 'Still crispy and satisfying', 'Coleslaw adds crunch and fibre']
+            },
+            {
+                category: 'fast-food',
+                keywords: ['hotdog', 'hot dog', 'sausage'],
+                original: { name: 'Hotdog with Sauces & Bun', emoji: '🌭', calories: 450, protein: 14, fat: 28 },
+                alternative: { name: 'Turkey Sausage in Lettuce Wrap', emoji: '🥬', calories: 220, protein: 18, fat: 10 },
+                benefits: ['Turkey sausage is much leaner', 'Lettuce wrap cuts refined carbs', 'Lower sodium overall']
+            },
+
+            // === SNACKS ===
+            {
+                category: 'snacks',
+                keywords: ['chips', 'potato chips', 'crisps'],
+                original: { name: 'Potato Chips (1 bag)', emoji: '🥔', calories: 320, protein: 4, fat: 20 },
+                alternative: { name: 'Air-Popped Popcorn (lightly salted)', emoji: '🍿', calories: 120, protein: 4, fat: 2 },
+                benefits: ['Still crunchy and satisfying', 'Whole grain with fibre', 'Fraction of the fat and calories']
+            },
+            {
+                category: 'snacks',
+                keywords: ['curry puff', 'goreng pisang', 'fried snack'],
+                original: { name: 'Curry Puff (2 pieces)', emoji: '🥟', calories: 440, protein: 8, fat: 28 },
+                alternative: { name: 'Steamed Pau (Chicken)', emoji: '🥟', calories: 220, protein: 10, fat: 6 },
+                benefits: ['Steamed instead of deep-fried', 'Half the calories', 'Still a satisfying savoury snack']
+            },
+            {
+                category: 'snacks',
+                keywords: ['chocolate', 'candy', 'sweets'],
+                original: { name: 'Chocolate Bar', emoji: '🍫', calories: 280, protein: 4, fat: 16 },
+                alternative: { name: 'Dark Chocolate (2 squares) + Almonds', emoji: '🥜', calories: 160, protein: 5, fat: 10 },
+                benefits: ['Dark chocolate has more antioxidants', 'Almonds add healthy fats and protein', 'More satisfying in smaller portions']
+            },
+
+            // === DRINKS ===
+            {
+                category: 'drinks',
+                keywords: ['bubble tea', 'boba', 'milk tea'],
+                original: { name: 'Bubble Tea (Large, Full Sugar)', emoji: '🧋', calories: 450, protein: 2, fat: 8 },
+                alternative: { name: 'Iced Green Tea (0% sugar) with Aloe Vera', emoji: '🍵', calories: 80, protein: 1, fat: 0 },
+                benefits: ['Dramatically less sugar (55g vs 8g)', 'Green tea provides antioxidants', 'Aloe vera adds texture without the calories']
+            },
+            {
+                category: 'drinks',
+                keywords: ['kopi', 'coffee', 'teh', 'tea', 'milo'],
+                original: { name: 'Kopi / Teh with Condensed Milk', emoji: '☕', calories: 180, protein: 3, fat: 6 },
+                alternative: { name: 'Kopi-O Kosong / Teh-O (no sugar)', emoji: '🍵', calories: 10, protein: 0, fat: 0 },
+                benefits: ['Almost zero calories', 'No added sugar or condensed milk', 'Same caffeine boost you need']
+            },
+            {
+                category: 'drinks',
+                keywords: ['soda', 'soft drink', 'coke', 'sprite', 'fanta'],
+                original: { name: 'Soft Drink (can)', emoji: '🥤', calories: 150, protein: 0, fat: 0 },
+                alternative: { name: 'Sparkling Water with Lemon', emoji: '💧', calories: 5, protein: 0, fat: 0 },
+                benefits: ['Still fizzy and refreshing', 'Zero added sugar', 'Lemon adds vitamin C and flavour']
+            },
+
+            // === DESSERTS ===
+            {
+                category: 'desserts',
+                keywords: ['ice cream', 'gelato'],
+                original: { name: 'Ice Cream (2 scoops)', emoji: '🍦', calories: 380, protein: 5, fat: 22 },
+                alternative: { name: 'Greek Yogurt with Fresh Fruits & Honey', emoji: '🍓', calories: 180, protein: 15, fat: 4 },
+                benefits: ['Triple the protein', 'Probiotics support gut health', 'Fresh fruits give natural sweetness']
+            },
+            {
+                category: 'desserts',
+                keywords: ['cake', 'cheesecake', 'pastry'],
+                original: { name: 'Slice of Cake', emoji: '🍰', calories: 420, protein: 5, fat: 22 },
+                alternative: { name: 'Chia Seed Pudding with Berries', emoji: '🫐', calories: 180, protein: 6, fat: 8 },
+                benefits: ['Chia seeds are rich in omega-3 and fibre', 'Berries add antioxidants', 'Naturally sweetened, no refined sugar']
+            },
+            {
+                category: 'desserts',
+                keywords: ['donut', 'doughnut'],
+                original: { name: 'Glazed Donut', emoji: '🍩', calories: 350, protein: 4, fat: 18 },
+                alternative: { name: 'Banana Oat Muffin (homemade)', emoji: '🧁', calories: 180, protein: 5, fat: 6 },
+                benefits: ['Oats provide slow-release energy', 'Banana adds natural sweetness', 'No deep-frying involved']
+            },
+
+            // === BREAKFAST ===
+            {
+                category: 'breakfast',
+                keywords: ['roti prata', 'prata', 'roti'],
+                original: { name: 'Roti Prata with Curry (2 pieces)', emoji: '🫓', calories: 520, protein: 10, fat: 28 },
+                alternative: { name: 'Thosai with Sambar & Chutney', emoji: '🥞', calories: 250, protein: 8, fat: 6 },
+                benefits: ['Thosai is made without oil kneaded in', 'Sambar adds lentil-based protein and fibre', 'Less than half the fat']
+            },
+            {
+                category: 'breakfast',
+                keywords: ['nasi lemak breakfast', 'heavy breakfast'],
+                original: { name: 'Nasi Lemak Set (Breakfast)', emoji: '🍛', calories: 640, protein: 18, fat: 32 },
+                alternative: { name: 'Overnight Oats with Banana & Peanut Butter', emoji: '🥣', calories: 350, protein: 12, fat: 14 },
+                benefits: ['Oats give sustained energy all morning', 'Peanut butter adds healthy fats', 'Easy to prep the night before']
+            },
+            {
+                category: 'breakfast',
+                keywords: ['croissant', 'pastry breakfast'],
+                original: { name: 'Butter Croissant', emoji: '🥐', calories: 360, protein: 6, fat: 20 },
+                alternative: { name: 'Whole Wheat Toast with Avocado & Egg', emoji: '🥑', calories: 280, protein: 14, fat: 14 },
+                benefits: ['Whole wheat provides fibre', 'Egg adds quality protein', 'Avocado has heart-healthy fats']
+            }
+        ];
+
+        // DOM elements
+        const searchForm = document.getElementById('search-form');
+        const foodInput = document.getElementById('food-input');
+        const searchResult = document.getElementById('search-result');
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const alternativesList = document.getElementById('alternatives-list');
+
+        // Search functionality
+        function findAlternative(query) {
+            query = query.toLowerCase().trim();
+            if (!query) return null;
+            
+            let bestMatch = null;
+            let bestScore = 0;
+            
+            for (const item of alternatives) {
+                for (const keyword of item.keywords) {
+                    if (query.includes(keyword) || keyword.includes(query)) {
+                        const score = keyword === query ? 10 : keyword.includes(query) ? 5 : 3;
+                        if (score > bestScore) {
+                            bestScore = score;
+                            bestMatch = item;
+                        }
+                    }
+                }
+            }
+            return bestMatch;
+        }
+
+        function renderSearchResult(match) {
+            if (!match) {
+                searchResult.style.display = 'block';
+                searchResult.innerHTML = `
+                    <div class="no-result">
+                        <span class="no-result-emoji">🤔</span>
+                        <h3>No match found</h3>
+                        <p>Try a different food, or browse the categories below!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const calDiff = match.original.calories - match.alternative.calories;
+            const proteinDiff = match.alternative.protein - match.original.protein;
+            const fatDiff = match.original.fat - match.alternative.fat;
+
+            searchResult.style.display = 'block';
+            searchResult.innerHTML = `
+                <div class="swap-card result-card">
+                    <div class="swap-top">
+                        <div class="swap-meal original-meal">
+                            <span class="meal-emoji">${match.original.emoji}</span>
+                            <div class="meal-info">
+                                <span class="swap-label">Instead of</span>
+                                <h3>${match.original.name}</h3>
+                                <span class="calorie-tag">${match.original.calories} kcal</span>
+                            </div>
+                        </div>
+                        <div class="swap-arrow">→</div>
+                        <div class="swap-meal recommended-meal">
+                            <span class="meal-emoji">${match.alternative.emoji}</span>
+                            <div class="meal-info">
+                                <span class="swap-label">Try this</span>
+                                <h3>${match.alternative.name}</h3>
+                                <span class="calorie-tag green">${match.alternative.calories} kcal</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swap-highlights">
+                        <span class="highlight-pill good">↓ ${calDiff} kcal</span>
+                        ${proteinDiff > 0 ? `<span class="highlight-pill good">↑ +${proteinDiff}g protein</span>` : ''}
+                        ${fatDiff > 0 ? `<span class="highlight-pill good">↓ ${fatDiff}g fat</span>` : ''}
+                    </div>
+                    <div class="result-benefits">
+                        <h4>Why this is better:</h4>
+                        <ul class="benefits-list">
+                            ${match.benefits.map(b => `<li>${b}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+
+            searchResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Render category cards
+        function renderCards(category) {
+            const filtered = category === 'all' 
+                ? alternatives 
+                : alternatives.filter(item => item.category === category);
+
+            alternativesList.innerHTML = filtered.map(item => {
+                const calDiff = item.original.calories - item.alternative.calories;
+                const proteinDiff = item.alternative.protein - item.original.protein;
+                const fatDiff = item.original.fat - item.alternative.fat;
+
+                return `
+                    <div class="swap-card">
+                        <div class="swap-top">
+                            <div class="swap-meal original-meal">
+                                <span class="meal-emoji">${item.original.emoji}</span>
+                                <div class="meal-info">
+                                    <span class="swap-label">Instead of</span>
+                                    <h3>${item.original.name}</h3>
+                                    <span class="calorie-tag">${item.original.calories} kcal</span>
+                                </div>
+                            </div>
+                            <div class="swap-arrow">→</div>
+                            <div class="swap-meal recommended-meal">
+                                <span class="meal-emoji">${item.alternative.emoji}</span>
+                                <div class="meal-info">
+                                    <span class="swap-label">Try this</span>
+                                    <h3>${item.alternative.name}</h3>
+                                    <span class="calorie-tag green">${item.alternative.calories} kcal</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swap-highlights">
+                            <span class="highlight-pill good">↓ ${calDiff} kcal</span>
+                            ${proteinDiff > 0 ? `<span class="highlight-pill good">↑ +${proteinDiff}g protein</span>` : ''}
+                            ${fatDiff > 0 ? `<span class="highlight-pill good">↓ ${fatDiff}g fat</span>` : ''}
+                        </div>
+                        <details class="swap-details">
+                            <summary>Why this is better</summary>
+                            <ul class="benefits-list">
+                                ${item.benefits.map(b => `<li>${b}</li>`).join('')}
+                            </ul>
+                        </details>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Event listeners
+        searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const query = foodInput.value;
+            const match = findAlternative(query);
+            renderSearchResult(match);
+        });
+
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                renderCards(this.getAttribute('data-category'));
+            });
+        });
+
+        // Initial render - show all
+        renderCards('all');
+    </script>
 </body>
 </html>
