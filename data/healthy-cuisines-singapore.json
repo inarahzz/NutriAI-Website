@@ -1,0 +1,622 @@
+{
+  "metadata": {
+    "title": "Healthier Food Options Across Cuisines in Singapore",
+    "description": "A curated guide to healthier dining choices across various cuisines available in Singapore",
+    "lastUpdated": "2026-07-09",
+    "sources": [
+      "https://www.healthhub.sg",
+      "https://www.hpb.gov.sg",
+      "https://healthxchange.sg",
+      "https://sethlui.com",
+      "https://www.timeout.com/singapore",
+      "https://eatbook.sg",
+      "https://secretsingapore.co"
+    ]
+  },
+  "cuisines": [
+    {
+      "cuisine": "Chinese / Local Singaporean",
+      "healthierOptions": [
+        {
+          "dish": "Sliced Fish Soup (Hor Fun / Bee Hoon)",
+          "calories": "~212 kcal",
+          "whyHealthy": "Low fat, high protein, light broth-based dish with fresh vegetables",
+          "tips": "Ask for bee hoon instead of hor fun to reduce calories. Skip the fried fish option.",
+          "whereToFind": [
+            {"name": "T.G. Fish Porridge", "location": "Various hawker centres"},
+            {"name": "Beach Road Fish Head Bee Hoon", "location": "Whampoa Makan Place"},
+            {"name": "Whampoa 87 Fish Soup", "location": "Whampoa Drive Block 87"}
+          ]
+        },
+        {
+          "dish": "Yong Tau Foo (Clear Soup)",
+          "calories": "~297 kcal",
+          "whyHealthy": "Customizable - load up on vegetables and tofu. Clear soup base is low in fat.",
+          "tips": "Choose clear soup over curry or laksa broth. Pick tofu, leafy greens, mushrooms. Avoid fried items.",
+          "whereToFind": [
+            {"name": "Hakka Fun HamCha & Yong Tou Fu", "location": "Chinatown"},
+            {"name": "Most hawker centres", "location": "Island-wide"}
+          ]
+        },
+        {
+          "dish": "Teochew Porridge with Steamed Fish & Vegetables",
+          "calories": "~350-400 kcal",
+          "whyHealthy": "Light, easy to digest, can pair with steamed dishes and greens",
+          "tips": "Choose steamed fish, braised tofu, and leafy vegetables as sides. Avoid fried and preserved items.",
+          "whereToFind": [
+            {"name": "Teochew porridge stalls", "location": "Most hawker centres island-wide"}
+          ]
+        }
+      ,
+        {
+          "dish": "Thunder Tea Rice (Lei Cha Fan)",
+          "calories": "~350 kcal",
+          "whyHealthy": "Packed with vegetables, tofu, and green tea soup. High fibre, plant-based.",
+          "tips": "A naturally healthy Hakka dish. Opt for brown rice if available.",
+          "whereToFind": [
+            {"name": "Koufu food courts", "location": "Various locations"},
+            {"name": "Hakka stalls in hawker centres", "location": "Chinatown Complex, Old Airport Road"}
+          ]
+        },
+        {
+          "dish": "Steamed Chicken Rice (Roasted/Steamed, no skin)",
+          "calories": "~450 kcal (with skin removed)",
+          "whyHealthy": "Choose steamed over roasted. Remove skin to cut fat significantly.",
+          "tips": "Ask for less rice, extra cucumber. Choose breast meat. Request chilli on the side.",
+          "whereToFind": [
+            {"name": "Tian Tian Chicken Rice", "location": "Maxwell Food Centre"},
+            {"name": "Boon Tong Kee", "location": "Multiple outlets"}
+          ]
+        },
+        {
+          "dish": "Popiah (Fresh Spring Rolls)",
+          "calories": "~150-170 kcal per roll",
+          "whyHealthy": "Fresh (not fried), filled with vegetables like turnip, beansprouts, and lettuce.",
+          "tips": "Choose fresh popiah over fried spring rolls. Ask for less sweet sauce.",
+          "whereToFind": [
+            {"name": "Kway Guan Huat Popiah", "location": "Joo Chiat"},
+            {"name": "Popiah stalls", "location": "Most hawker centres"}
+          ]
+        },
+        {
+          "dish": "Chinese Herbal Tonic Soup",
+          "calories": "~100-200 kcal",
+          "whyHealthy": "Nourishing soups with goji berries, red dates, and herbs. Low fat and hydrating.",
+          "tips": "Watercress soup or lotus root soup are great options. Don't finish all the broth (sodium).",
+          "whereToFind": [
+            {"name": "Herbal soup stalls", "location": "Chinatown Complex, Tiong Bahru Market"}
+          ]
+        }
+      ]
+    },
+    {
+      "cuisine": "Malay / Nasi Padang",
+      "healthierOptions": [
+        {
+          "dish": "Mee Soto",
+          "calories": "~300 kcal",
+          "whyHealthy": "Light turmeric-based broth with noodles, chicken, and beansprouts. Lower fat than most Malay dishes.",
+          "tips": "Skip the fried shallots and limit the sambal. Choose yellow noodles over fried noodles.",
+          "whereToFind": [
+            {"name": "Malay food stalls", "location": "Geylang Serai Market, Adam Road Food Centre"}
+          ]
+        },
+        {
+          "dish": "Soto Ayam (Chicken Soup)",
+          "calories": "~280 kcal",
+          "whyHealthy": "Spiced chicken broth with vegetables and rice cakes. Light and nourishing.",
+          "tips": "Limit fried toppings. Choose vermicelli over lontong for fewer carbs.",
+          "whereToFind": [
+            {"name": "Geylang Serai hawker stalls", "location": "Geylang Serai Market"},
+            {"name": "Malay BBQ stalls", "location": "Chomp Chomp, East Coast Lagoon"}
+          ]
+        },
+        {
+          "dish": "Grilled Satay (Chicken, limit to 5 sticks)",
+          "calories": "~250 kcal (5 sticks without rice cake)",
+          "whyHealthy": "Grilled lean protein. Healthier than fried options when portion-controlled.",
+          "tips": "Choose chicken over mutton. Limit peanut sauce. Skip the ketupat (rice cake) or have just one.",
+          "whereToFind": [
+            {"name": "Lau Pa Sat Satay Street", "location": "18 Raffles Quay"},
+            {"name": "Chomp Chomp Food Centre", "location": "20 Kensington Park Rd"}
+          ]
+        },
+        {
+          "dish": "Gado-Gado",
+          "calories": "~320 kcal",
+          "whyHealthy": "Indonesian/Malay salad with blanched vegetables, tofu, and peanut dressing.",
+          "tips": "Request less peanut sauce to reduce calories. Rich in fibre and plant protein.",
+          "whereToFind": [
+            {"name": "Warung Nasi Pariaman", "location": "738 North Bridge Rd"},
+            {"name": "Nasi Padang stalls", "location": "Various hawker centres"}
+          ]
+        },
+        {
+          "dish": "Nasi Padang (Healthier Selection)",
+          "calories": "~450-550 kcal (with smart choices)",
+          "whyHealthy": "Choose grilled fish, sayur lodeh (vegetable curry), and limit coconut-rich dishes.",
+          "tips": "Pick grilled ayam panggang instead of rendang. Choose one vegetable dish, one lean protein. Avoid deep-fried items.",
+          "whereToFind": [
+            {"name": "Hjh Maimunah", "location": "11 Jalan Pisang"},
+            {"name": "Selera Rasa Nasi Lemak", "location": "Adam Road Food Centre"}
+          ]
+        }
+      ]
+    },
+    {
+      "cuisine": "Indian",
+      "healthierOptions": [
+        {
+          "dish": "Plain Thosai with Dhal Curry",
+          "calories": "~250-300 kcal",
+          "whyHealthy": "Fermented crepe made from rice and lentil batter. Dhal is high protein, low fat.",
+          "tips": "Choose plain thosai over masala or paper thosai. Pair with dhal or fish curry (without coconut milk).",
+          "whereToFind": [
+            {"name": "Ananda Bhavan", "location": "Multiple outlets (Little India, Serangoon)"},
+            {"name": "Komala Vilas", "location": "76-78 Serangoon Rd"}
+          ]
+        },
+        {
+          "dish": "Tandoori Chicken (without skin)",
+          "calories": "~250 kcal per serving",
+          "whyHealthy": "Grilled in clay oven without oil. Yogurt-marinated lean protein.",
+          "tips": "Remove the skin. Pair with raita (yogurt) instead of butter-based curries.",
+          "whereToFind": [
+            {"name": "Zam Zam Restaurant", "location": "697 North Bridge Rd"},
+            {"name": "Bismillah Biryani", "location": "50 Dunlop St"}
+          ]
+        },
+        {
+          "dish": "Vegetarian Biryani",
+          "calories": "~380 kcal",
+          "whyHealthy": "Spiced rice with vegetables. Lower in fat than meat biryani with rich gravies.",
+          "tips": "Choose vegetable biryani over mutton. Ask for less oil. Pair with raita.",
+          "whereToFind": [
+            {"name": "Ananda Bhavan", "location": "Multiple branches island-wide"},
+            {"name": "MTR Singapore", "location": "438 Serangoon Road"}
+          ]
+        },
+        {
+          "dish": "Idli with Sambar",
+          "calories": "~150-200 kcal",
+          "whyHealthy": "Steamed rice cakes - no oil used in cooking. Sambar is a nutritious lentil-based soup.",
+          "tips": "A naturally healthy breakfast option. Light, easy to digest, and filling.",
+          "whereToFind": [
+            {"name": "Saravana Bhavan", "location": "Multiple outlets"},
+            {"name": "Komala Vilas", "location": "76-78 Serangoon Rd"}
+          ]
+        },
+        {
+          "dish": "Chapati with Vegetable Curry",
+          "calories": "~300 kcal",
+          "whyHealthy": "Whole wheat flatbread with less oil than prata. Vegetable curry adds fibre.",
+          "tips": "Choose chapati over prata (much less oil). Pair with dhal or dry vegetable curry.",
+          "whereToFind": [
+            {"name": "Indian hawker stalls", "location": "Tekka Centre, Little India"},
+            {"name": "Al-Ameen Eating House", "location": "Opposite Mustafa Centre"}
+          ]
+        }
+      ]
+    },
+    {
+      "cuisine": "Japanese",
+      "healthierOptions": [
+        {
+          "dish": "Sashimi Set",
+          "calories": "~200-300 kcal",
+          "whyHealthy": "Raw fish is high in omega-3, protein, with zero added fat from cooking.",
+          "tips": "Limit soy sauce (sodium). Choose salmon, tuna, or yellowtail for best omega-3 content.",
+          "whereToFind": [
+            {"name": "Sushi Express", "location": "Multiple outlets island-wide"},
+            {"name": "Genki Sushi", "location": "Multiple outlets"}
+          ]
+        },
+        {
+          "dish": "Chirashi Don",
+          "calories": "~400-450 kcal",
+          "whyHealthy": "Assorted fresh fish over rice. High protein, rich in omega-3 fatty acids.",
+          "tips": "Ask for less rice or brown rice if available. Great protein-to-calorie ratio.",
+          "whereToFind": [
+            {"name": "Sushiro", "location": "Multiple outlets"},
+            {"name": "Standing Sushi Bar", "location": "8 Queen Street"}
+          ]
+        },
+        {
+          "dish": "Miso Soup with Tofu",
+          "calories": "~50-70 kcal",
+          "whyHealthy": "Fermented soy base with probiotics. Low calorie, warming, and satisfying.",
+          "tips": "Great as a starter to reduce overall meal intake. Contains beneficial probiotics.",
+          "whereToFind": [
+            {"name": "Most Japanese restaurants", "location": "Island-wide"}
+          ]
+        },
+        {
+          "dish": "Grilled Fish Set (Yakizakana)",
+          "calories": "~350-400 kcal",
+          "whyHealthy": "Grilled fish with rice, miso soup, and pickles. Balanced macronutrients.",
+          "tips": "Choose mackerel (saba) or salmon for omega-3. A well-balanced Japanese set meal.",
+          "whereToFind": [
+            {"name": "Nakajima Suisan Grilled Fish", "location": "100AM, Tanjong Pagar"},
+            {"name": "Ootoya", "location": "Multiple outlets"}
+          ]
+        },
+        {
+          "dish": "Soba Noodles (Cold/Hot)",
+          "calories": "~300-350 kcal",
+          "whyHealthy": "Buckwheat noodles with more fibre and protein than regular wheat noodles.",
+          "tips": "Choose zaru soba (cold) for fewer calories. Tempura on the side adds significant calories.",
+          "whereToFind": [
+            {"name": "Soba Ichi", "location": "Duxton Hill"},
+            {"name": "Fumizen", "location": "Guoco Tower"}
+          ]
+        }
+      ]
+    },
+    {
+      "cuisine": "Korean",
+      "healthierOptions": [
+        {
+          "dish": "Samgyetang (Ginseng Chicken Soup)",
+          "calories": "~400 kcal",
+          "whyHealthy": "Whole chicken stuffed with rice, ginseng, and jujubes in clear broth. Nourishing and low fat.",
+          "tips": "A traditional Korean health food. Light broth without heavy oils or spice.",
+          "whereToFind": [
+            {"name": "JIHO Samgyetang SBCD", "location": "Tanjong Pagar"},
+            {"name": "Hanwoori Korean Restaurant", "location": "207 Telok Ayer St"}
+          ]
+        },
+        {
+          "dish": "Bibimbap",
+          "calories": "~450 kcal",
+          "whyHealthy": "Mixed rice bowl with various vegetables, egg, and lean protein. Well-balanced.",
+          "tips": "Go easy on the gochujang (chilli paste) and sesame oil. Load up on vegetables.",
+          "whereToFind": [
+            {"name": "Baro Baro", "location": "Multiple outlets"},
+            {"name": "Seoul Garden", "location": "Multiple outlets"}
+          ]
+        },
+        {
+          "dish": "Kimchi Jjigae (Kimchi Stew)",
+          "calories": "~300 kcal",
+          "whyHealthy": "Fermented kimchi provides probiotics. Tofu version is lower in fat.",
+          "tips": "Choose tofu-based over pork belly version. Kimchi offers probiotics for gut health.",
+          "whereToFind": [
+            {"name": "SOT Korean Restaurant", "location": "Telok Ayer"},
+            {"name": "Kim Dae Mun", "location": "226H Tanjong Katong Rd"}
+          ]
+        },
+        {
+          "dish": "Japchae (Glass Noodles)",
+          "calories": "~250 kcal per serving",
+          "whyHealthy": "Sweet potato noodles stir-fried with vegetables and lean meat. Gluten-free.",
+          "tips": "Rich in vegetables. Sweet potato noodles are lighter than wheat noodles.",
+          "whereToFind": [
+            {"name": "Most Korean restaurants", "location": "Tanjong Pagar Korean town"}
+          ]
+        },
+        {
+          "dish": "Haemul Pajeon (Seafood Pancake - shared)",
+          "calories": "~200 kcal per serving (shared)",
+          "whyHealthy": "When shared, provides seafood protein with spring onions. Better than fried chicken appetizers.",
+          "tips": "Share as a side dish rather than eating a whole one. Good source of seafood protein.",
+          "whereToFind": [
+            {"name": "Guiga Korean BBQ", "location": "5 Koek Rd"},
+            {"name": "Jang Korean BBQ", "location": "Multiple outlets"}
+          ]
+        }
+      ]
+    },
+    {
+      "cuisine": "Thai",
+      "healthierOptions": [
+        {
+          "dish": "Tom Yum Soup (Clear - Nam Sai)",
+          "calories": "~150-200 kcal",
+          "whyHealthy": "Spicy and sour clear broth with shrimp, mushrooms, and lemongrass. Low fat.",
+          "tips": "Choose Tom Yum Nam Sai (clear) over Nam Khon (creamy). Loaded with herbs and spices.",
+          "whereToFind": [
+            {"name": "Nakhon Kitchen", "location": "Multiple outlets"},
+            {"name": "Sakon Thai", "location": "Orchard/Novena areas"}
+          ]
+        },
+        {
+          "dish": "Som Tum (Green Papaya Salad)",
+          "calories": "~150 kcal",
+          "whyHealthy": "Fresh, raw vegetables with a tangy dressing. High fibre, low calorie.",
+          "tips": "Ask for less sugar in the dressing. A refreshing and light starter.",
+          "whereToFind": [
+            {"name": "Soi Aroy", "location": "Golden Mile Complex"},
+            {"name": "Super Thai", "location": "Multiple outlets"}
+          ]
+        },
+        {
+          "dish": "Larb (Minced Meat Salad)",
+          "calories": "~250 kcal",
+          "whyHealthy": "Minced chicken or pork with fresh herbs, lime, and toasted rice. Light and protein-rich.",
+          "tips": "Choose chicken larb over pork for less fat. Eat with fresh vegetables instead of sticky rice.",
+          "whereToFind": [
+            {"name": "Nakhon Kitchen", "location": "219 Upper Thomson Rd and others"},
+            {"name": "Thai food stalls", "location": "Golden Mile Complex"}
+          ]
+        },
+        {
+          "dish": "Steamed Fish with Lime and Chilli",
+          "calories": "~200-250 kcal",
+          "whyHealthy": "Steamed preparation preserves nutrients without added oil. Fresh citrus flavours.",
+          "tips": "A much healthier option than deep-fried fish dishes. Rich in protein and omega-3.",
+          "whereToFind": [
+            {"name": "Thanying Thai Restaurant", "location": "Amara Hotel, Tanjong Pagar"},
+            {"name": "Nakhon Kitchen", "location": "Multiple outlets"}
+          ]
+        },
+        {
+          "dish": "Pad Thai (portion-controlled)",
+          "calories": "~400 kcal",
+          "whyHealthy": "Rice noodles with shrimp, tofu, and beansprouts. Moderate when portion-controlled.",
+          "tips": "Share a portion. Ask for less oil and sugar. Add extra beansprouts and lime.",
+          "whereToFind": [
+            {"name": "Thai Express", "location": "Multiple outlets island-wide"},
+            {"name": "Soi Aroy", "location": "Golden Mile Complex"}
+          ]
+        }
+      ]
+    },
+    {
+      "cuisine": "Vietnamese",
+      "healthierOptions": [
+        {
+          "dish": "Pho (Beef or Chicken)",
+          "calories": "~350-400 kcal",
+          "whyHealthy": "Light aromatic broth with rice noodles, lean meat, and fresh herbs. Naturally nutritious.",
+          "tips": "Load up on fresh herbs (basil, mint, coriander). Choose lean cuts. Limit hoisin/sriracha.",
+          "whereToFind": [
+            {"name": "Mrs Pho", "location": "Multiple outlets"},
+            {"name": "An Viet", "location": "Golden Mile Complex"}
+          ]
+        },
+        {
+          "dish": "Goi Cuon (Fresh Spring Rolls)",
+          "calories": "~100-120 kcal per roll",
+          "whyHealthy": "Fresh rice paper rolls with shrimp, vermicelli, and herbs. Not fried.",
+          "tips": "Much healthier than fried spring rolls. Dip sparingly in sauce.",
+          "whereToFind": [
+            {"name": "Sen Vietnamese", "location": "Multiple outlets"},
+            {"name": "Pho Street", "location": "Multiple food courts"}
+          ]
+        },
+        {
+          "dish": "Bun Cha (Grilled Pork Vermicelli)",
+          "calories": "~400 kcal",
+          "whyHealthy": "Grilled lean pork with fresh herbs, pickled vegetables, and rice vermicelli in light broth.",
+          "tips": "Eat with plenty of fresh lettuce and herbs. The light dipping broth is lower in fat than curries.",
+          "whereToFind": [
+            {"name": "Co Chung Vietnamese", "location": "15 Purvis St"},
+            {"name": "Long Phung Vietnamese", "location": "159 Thomson Rd"}
+          ]
+        },
+        {
+          "dish": "Banh Mi (Vietnamese Baguette - Light version)",
+          "calories": "~350-400 kcal",
+          "whyHealthy": "Grilled meat with pickled vegetables and fresh herbs in a light baguette.",
+          "tips": "Choose grilled chicken over pate-heavy versions. Fresh vegetables add fibre and crunch.",
+          "whereToFind": [
+            {"name": "Banh Mi Thit", "location": "Bali Lane, Kampong Glam"},
+            {"name": "Sen Vietnamese", "location": "Multiple outlets"}
+          ]
+        }
+      ]
+    },
+    {
+      "cuisine": "Mediterranean / Middle Eastern",
+      "healthierOptions": [
+        {
+          "dish": "Hummus with Whole Wheat Pita",
+          "calories": "~300 kcal",
+          "whyHealthy": "Chickpea-based dip rich in protein, fibre, and healthy fats from tahini and olive oil.",
+          "tips": "A nutrient-dense option. Chickpeas provide plant protein and fibre.",
+          "whereToFind": [
+            {"name": "Alaturka Mediterranean Restaurant", "location": "16 Bussorah St"},
+            {"name": "Blu Kouzina", "location": "10 Dempsey Rd"}
+          ]
+        },
+        {
+          "dish": "Greek Salad",
+          "calories": "~200 kcal",
+          "whyHealthy": "Fresh tomatoes, cucumbers, olives, and feta. Rich in antioxidants and healthy fats.",
+          "tips": "Ask for dressing on the side. Olives and olive oil provide heart-healthy monounsaturated fats.",
+          "whereToFind": [
+            {"name": "Zorba The Greek Taverna", "location": "Clarke Quay"},
+            {"name": "Alati Greek Cuisine", "location": "Amoy Street"}
+          ]
+        },
+        {
+          "dish": "Grilled Kebab Plate",
+          "calories": "~400-450 kcal",
+          "whyHealthy": "Lean grilled meat with salad and grains. High protein, moderate carbs.",
+          "tips": "Choose chicken or lamb shish over doner. Pair with tabbouleh or fattoush for extra vegetables.",
+          "whereToFind": [
+            {"name": "Alaturka", "location": "16 Bussorah St, Kampong Glam"},
+            {"name": "Hapiha Mediterranean Taverna", "location": "Ridgewood Condominium"}
+          ]
+        },
+        {
+          "dish": "Falafel Wrap",
+          "calories": "~400 kcal",
+          "whyHealthy": "Chickpea-based protein, baked or lightly fried. Good plant-based protein source.",
+          "tips": "Choose baked falafel if available. Load with salad and tahini instead of mayo.",
+          "whereToFind": [
+            {"name": "Pita Tree Mediterranean Kitchen", "location": "60 Robertson Quay"},
+            {"name": "Alaturka", "location": "16 Bussorah St"}
+          ]
+        },
+        {
+          "dish": "Grilled Fish (Mediterranean Style)",
+          "calories": "~300-350 kcal",
+          "whyHealthy": "Fresh fish grilled with olive oil, lemon, and herbs. Rich in omega-3.",
+          "tips": "Mediterranean diet staple. Pair with roasted vegetables for a complete meal.",
+          "whereToFind": [
+            {"name": "Blu Kouzina", "location": "10 Dempsey Rd"},
+            {"name": "Alati", "location": "Amoy Street"}
+          ]
+        }
+      ]
+    },
+    {
+      "cuisine": "Western / Healthy Cafes",
+      "healthierOptions": [
+        {
+          "dish": "Grain Bowls / Poke Bowls",
+          "calories": "~450-550 kcal",
+          "whyHealthy": "Customizable bowls with lean protein, grains, and vegetables. Balanced macros.",
+          "tips": "Choose brown rice or quinoa base. Load up on greens. Go easy on creamy dressings.",
+          "whereToFind": [
+            {"name": "The Daily Cut", "location": "CBD - various outlets"},
+            {"name": "Grain Traders", "location": "CBD area"}
+          ]
+        },
+        {
+          "dish": "Acai Bowls",
+          "calories": "~350-400 kcal",
+          "whyHealthy": "Rich in antioxidants, fibre, and healthy fats from nuts and seeds.",
+          "tips": "Watch portion size and added granola/honey. Choose fresh fruit toppings.",
+          "whereToFind": [
+            {"name": "An Acai Affair", "location": "Multiple outlets"},
+            {"name": "Project Acai", "location": "Multiple outlets"}
+          ]
+        },
+        {
+          "dish": "Grilled Chicken Salad",
+          "calories": "~350-450 kcal",
+          "whyHealthy": "Lean protein with fresh vegetables. High fibre, low in processed carbs.",
+          "tips": "Ask for dressing on the side. Choose vinaigrette over creamy dressings.",
+          "whereToFind": [
+            {"name": "SaladStop!", "location": "Multiple outlets island-wide"},
+            {"name": "Carrotsticks & Cravings", "location": "Dempsey"}
+          ]
+        },
+        {
+          "dish": "Overnight Oats / Smoothie Bowls",
+          "calories": "~300-400 kcal",
+          "whyHealthy": "Whole grain oats with fruits, nuts, and seeds. Sustained energy release.",
+          "tips": "Good breakfast option. Check sugar content in cafe versions.",
+          "whereToFind": [
+            {"name": "The Butcher's Wife (gluten-free)", "location": "19 Yong Siak St"},
+            {"name": "Grain Traders", "location": "Marina Bay area"}
+          ]
+        },
+        {
+          "dish": "Bamboo Bowls (Meal Prep Bowls)",
+          "calories": "~400-500 kcal",
+          "whyHealthy": "Pre-portioned balanced meals with lean protein, complex carbs, and vegetables.",
+          "tips": "Great for busy professionals. Consistent nutrition with eco-friendly packaging.",
+          "whereToFind": [
+            {"name": "Bamboo Bowls", "location": "Delivery island-wide"},
+            {"name": "Ambrosia", "location": "Delivery-based"}
+          ]
+        }
+      ]
+    },
+    {
+      "cuisine": "Peranakan / Nonya",
+      "healthierOptions": [
+        {
+          "dish": "Nonya Chap Chye (Mixed Vegetable Stew)",
+          "calories": "~150-200 kcal",
+          "whyHealthy": "Braised mixed vegetables with mushrooms and glass noodles. High fibre, plant-based.",
+          "tips": "A naturally vegetable-heavy dish. Good source of dietary fibre.",
+          "whereToFind": [
+            {"name": "Whole Earth", "location": "76 Peck Seah St"},
+            {"name": "True Blue Cuisine", "location": "47/49 Armenian St"}
+          ]
+        },
+        {
+          "dish": "Ayam Buah Keluak",
+          "calories": "~350 kcal per serving",
+          "whyHealthy": "Chicken braised with buah keluak nuts - rich in minerals. Moderate portions recommended.",
+          "tips": "Unique Peranakan dish. Buah keluak nuts are rich in minerals. Share the dish.",
+          "whereToFind": [
+            {"name": "Candlenut", "location": "17A Dempsey Rd"},
+            {"name": "Chilli Padi Nonya", "location": "11 Upper East Coast Rd"}
+          ]
+        },
+        {
+          "dish": "Kueh Pie Tee (Top Hats)",
+          "calories": "~100-120 kcal (3 pieces)",
+          "whyHealthy": "Small crispy shells filled with shredded turnip and shrimp. Small portions, balanced flavours.",
+          "tips": "Good appetizer option. Small portions help with calorie control.",
+          "whereToFind": [
+            {"name": "True Blue Cuisine", "location": "47/49 Armenian St"},
+            {"name": "Whole Earth", "location": "76 Peck Seah St"}
+          ]
+        }
+      ]
+    },
+    {
+      "cuisine": "Vegetarian / Plant-Based",
+      "healthierOptions": [
+        {
+          "dish": "Plant-Based Omakase",
+          "calories": "~400-500 kcal (full course)",
+          "whyHealthy": "Creative plant-based cuisine using seasonal vegetables. Low in saturated fat.",
+          "tips": "A fine-dining healthy experience. All plant-based ingredients prepared with minimal processing.",
+          "whereToFind": [
+            {"name": "Ki Su", "location": "Downtown area"},
+            {"name": "Teng Bespoke (Japanese vegetarian)", "location": "Tras St"}
+          ]
+        },
+        {
+          "dish": "Buddha Bowl / Nourish Bowl",
+          "calories": "~400-500 kcal",
+          "whyHealthy": "Whole grains, legumes, roasted vegetables, and plant protein. Complete nutrition.",
+          "tips": "Look for bowls with diverse colours for maximum nutrient variety.",
+          "whereToFind": [
+            {"name": "Whole Earth", "location": "76 Peck Seah St"},
+            {"name": "Real Food", "location": "Multiple outlets"}
+          ]
+        },
+        {
+          "dish": "Mushroom-Based Dishes",
+          "calories": "~250-350 kcal",
+          "whyHealthy": "Mushrooms are low calorie, high in B vitamins, and provide umami without added fat.",
+          "tips": "Great meat substitute. Look for lion's mane, shiitake, or king oyster mushroom dishes.",
+          "whereToFind": [
+            {"name": "Whole Earth", "location": "76 Peck Seah St"},
+            {"name": "Original Sin", "location": "43 Jln Merah Saga, Holland Village"}
+          ]
+        }
+      ]
+    }
+  ],
+  "generalTips": {
+    "hpbGuidelines": [
+      "Look for the Healthier Choice Symbol (HCS) logo at hawker stalls and restaurants",
+      "The Healthier Dining Programme (HDP) covers 300+ brands and 2,600+ touchpoints in Singapore",
+      "Choose steamed, grilled, or soupy dishes instead of fried",
+      "Pick brown rice or wholegrains when available",
+      "Watch out for hidden sugars in drinks and sauces",
+      "Balance portion sizes - hawker plates are often carb-heavy",
+      "Ask for less oil, salt, and sugar when ordering",
+      "Choose water, unsweetened tea, or Nutri-Grade A/B drinks"
+    ],
+    "cookingMethodRanking": [
+      {"method": "Steamed", "healthRating": 5, "description": "No added fat, preserves nutrients"},
+      {"method": "Grilled/Roasted", "healthRating": 4, "description": "Minimal fat, good flavour development"},
+      {"method": "Stir-fried", "healthRating": 3, "description": "Some oil used but quick cooking preserves nutrients"},
+      {"method": "Braised", "healthRating": 3, "description": "Can be low fat depending on sauce"},
+      {"method": "Pan-fried", "healthRating": 2, "description": "Moderate oil usage"},
+      {"method": "Deep-fried", "healthRating": 1, "description": "High fat, high calories - avoid when possible"}
+    ],
+    "hawkerCentresWithHealthyOptions": [
+      {"name": "Maxwell Food Centre", "location": "1 Kadayanallur St", "area": "Chinatown/Tanjong Pagar"},
+      {"name": "Tiong Bahru Market", "location": "30 Seng Poh Rd", "area": "Tiong Bahru"},
+      {"name": "Old Airport Road Food Centre", "location": "51 Old Airport Rd", "area": "Dakota"},
+      {"name": "Adam Road Food Centre", "location": "2 Adam Rd", "area": "Bukit Timah"},
+      {"name": "Chinatown Complex Food Centre", "location": "335 Smith St", "area": "Chinatown"},
+      {"name": "Tekka Centre", "location": "665 Buffalo Rd", "area": "Little India"},
+      {"name": "Geylang Serai Market", "location": "1 Geylang Serai", "area": "Geylang"},
+      {"name": "Whampoa Makan Place", "location": "90 Whampoa Dr", "area": "Novena/Balestier"},
+      {"name": "Lau Pa Sat", "location": "18 Raffles Quay", "area": "CBD"},
+      {"name": "Amoy Street Food Centre", "location": "7 Maxwell Rd", "area": "Tanjong Pagar"}
+    ]
+  }
+}
