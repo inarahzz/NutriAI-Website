@@ -69,6 +69,7 @@
                 <h2 class="section-title">Browse by Category</h2>
                 <div class="category-tabs" id="category-tabs">
                     <button class="category-tab active" data-category="all">All</button>
+                    <button class="category-tab" data-category="sg-hawker">🇸🇬 SG Hawker</button>
                     <button class="category-tab" data-category="rice">🍚 Rice</button>
                     <button class="category-tab" data-category="noodles">🍜 Noodles</button>
                     <button class="category-tab" data-category="fast-food">🍔 Fast Food</button>
@@ -81,6 +82,19 @@
 
             <!-- Swap Cards (rendered by JS) -->
             <div class="comparison-list" id="alternatives-list"></div>
+
+            <!-- Data Sources Note -->
+            <div class="data-sources" style="max-width: 800px; margin: 40px auto 0; padding: 20px; background: rgba(52,152,219,0.04); border-radius: 12px; border: 1px solid rgba(52,152,219,0.1);">
+                <h3 style="font-size: 0.9rem; font-family: 'Fredoka', sans-serif; margin-bottom: 8px;">📋 Data Sources</h3>
+                <p style="font-size: 0.78rem; color: #666; line-height: 1.6; margin: 0;">
+                    Hawker stall information and healthier dining recommendations sourced from 
+                    <a href="https://www.healthhub.sg/live-healthy/healthyhawkerfood" target="_blank" rel="noopener">HPB HealthHub</a>, 
+                    <a href="https://www.hpb.gov.sg/healthy-living/food-and-beverage/" target="_blank" rel="noopener">Health Promotion Board's Healthier Dining Programme</a>, and 
+                    <a href="https://www.moh.gov.sg/newsroom/initiatives-to-support-tasty-and-healthier-hawker-food/" target="_blank" rel="noopener">MOH Singapore</a>. 
+                    Ingredient pricing from NTUC FairPrice and Sheng Siong (estimated, subject to change). 
+                    Calorie data are standardised estimates and may vary by portion and preparation.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -97,6 +111,317 @@
     <script>
         // Food alternatives database - categorised
         const alternatives = [
+            // === SINGAPORE HAWKER HEALTHIER CHOICES ===
+            {
+                category: 'sg-hawker',
+                keywords: ['chicken rice', 'hainanese chicken rice', 'roasted chicken rice'],
+                original: { name: 'Roasted Chicken Rice', emoji: '🍗', calories: 607, protein: 28, fat: 22 },
+                alternative: { name: 'Steamed Chicken Breast on Brown Rice', emoji: '🥒', calories: 390, protein: 38, fat: 6 },
+                benefits: ['Steaming removes all oil from roasting process', 'Skinless breast saves ~120 kcal', 'Brown rice adds 3.5g fibre per serving'],
+                hawkerSpots: [
+                    { name: 'Tian Tian Hainanese Chicken Rice (ask for steamed)', location: 'Maxwell Food Centre, #01-10, 1 Kadayanallur St' },
+                    { name: 'Ah Tai Hainanese Chicken Rice', location: 'Maxwell Food Centre, #01-07' },
+                    { name: 'Boon Tong Kee (steamed option)', location: '399/401 Balestier Road' }
+                ],
+                recipe: {
+                    title: 'Healthier Hainanese Chicken Rice',
+                    servings: 2,
+                    prepTime: '15 min',
+                    cookTime: '35 min',
+                    ingredients: [
+                        '2 boneless, skinless chicken breasts (300g)',
+                        '1 cup brown rice (rinsed)',
+                        '3 slices fresh ginger',
+                        '2 stalks spring onion',
+                        '2 pandan leaves (knotted)',
+                        '1 tbsp sesame oil (reduced from traditional 3 tbsp)',
+                        '2 cloves garlic (minced)',
+                        '500ml low-sodium chicken stock',
+                        'Cucumber slices for garnish',
+                        'Fresh coriander leaves'
+                    ],
+                    steps: [
+                        'Bring chicken stock to a gentle simmer with ginger, spring onion, and pandan leaves.',
+                        'Poach chicken breasts in the broth for 20 minutes on low heat (do not boil). Remove and rest.',
+                        'Toast brown rice with 1 tsp sesame oil and garlic for 1 minute, then cook in the poaching broth using a rice cooker.',
+                        'Slice chicken across the grain. Serve over brown rice with cucumber.',
+                        'Make ginger-scallion sauce: finely mince ginger and spring onion, mix with remaining sesame oil and pinch of salt.'
+                    ],
+                    nutritionPer: { calories: 390, protein: 38, carbs: 42, fat: 6, fibre: 4 }
+                },
+                ingredients: [
+                    { item: 'Brown rice (FairPrice Housebrand Thai Brown Unpolished, 2.5kg)', where: 'NTUC FairPrice / FairPrice Online', price: '~$6.00' },
+                    { item: 'Skinless chicken breast (chilled)', where: 'NTUC FairPrice, Sheng Siong, Cold Storage', price: '~$4.50/pack' },
+                    { item: 'Low-sodium chicken stock', where: 'FairPrice (Swanson brand), Cold Storage', price: '~$3.50' },
+                    { item: 'Fresh ginger, pandan leaves', where: 'Any wet market (Tekka Market, Geylang Serai Market)', price: '~$1.00' }
+                ]
+            },
+            {
+                category: 'sg-hawker',
+                keywords: ['char kway teow', 'kway teow', 'ckw', 'fried kway teow'],
+                original: { name: 'Char Kway Teow', emoji: '🍝', calories: 740, protein: 18, fat: 38 },
+                alternative: { name: 'Kway Teow Soup with Fish Slices & Veg', emoji: '🍜', calories: 320, protein: 28, fat: 6 },
+                benefits: ['Soup-based eliminates lard and dark sauces', 'Fish provides lean protein + omega-3', 'Almost 60% fewer calories'],
+                hawkerSpots: [
+                    { name: 'First Street Teochew Fish Soup', location: 'Bukit Merah Central Food Centre, #01-81' },
+                    { name: 'Blanco Court Fish Soup', location: 'Blk 243 Simei St 5, Hawker Centre' },
+                    { name: 'Han Jiang Fish Soup', location: 'Bedok Food Centre, #01-23' }
+                ],
+                recipe: {
+                    title: 'Kway Teow Fish Soup',
+                    servings: 2,
+                    prepTime: '10 min',
+                    cookTime: '15 min',
+                    ingredients: [
+                        '200g flat rice noodles (kway teow)',
+                        '250g fresh batang (Spanish mackerel) fillet, sliced',
+                        '1L water or fish stock',
+                        '1 tomato (quartered)',
+                        '1 cup kangkong (water spinach)',
+                        '2 slices ginger',
+                        '1 tbsp fried shallots',
+                        'White pepper to taste',
+                        'Light soy sauce (1 tsp)',
+                        'Evaporated milk (1 tbsp, optional for creaminess)'
+                    ],
+                    steps: [
+                        'Boil water with ginger and tomato for 5 minutes to build broth.',
+                        'Add kway teow noodles and cook for 2 minutes until softened.',
+                        'Gently slide in fish slices — they cook in 2–3 minutes.',
+                        'Add kangkong in the last 30 seconds.',
+                        'Season with light soy, white pepper. Garnish with fried shallots.',
+                        'Optional: swirl in 1 tbsp evaporated milk for a richer broth.'
+                    ],
+                    nutritionPer: { calories: 320, protein: 28, carbs: 38, fat: 6, fibre: 2 }
+                },
+                ingredients: [
+                    { item: 'Fresh kway teow noodles', where: 'Any wet market noodle stall, FairPrice (chilled section)', price: '~$1.20' },
+                    { item: 'Fresh batang fish fillet', where: 'Tekka Market, Tiong Bahru Market wet section, Sheng Siong', price: '~$6.00/300g' },
+                    { item: 'Kangkong (water spinach)', where: 'Any wet market or supermarket', price: '~$1.00/bunch' },
+                    { item: 'Fried shallots', where: 'NTUC FairPrice (cooking aisle)', price: '~$2.50' }
+                ]
+            },
+            {
+                category: 'sg-hawker',
+                keywords: ['nasi lemak', 'nasi', 'coconut rice', 'lemak'],
+                original: { name: 'Nasi Lemak with Fried Chicken Wing', emoji: '🍛', calories: 640, protein: 18, fat: 32 },
+                alternative: { name: 'Thunder Tea Rice (Lei Cha Fan)', emoji: '🥗', calories: 280, protein: 12, fat: 8 },
+                benefits: ['Plant-based meal loaded with 6+ vegetables', 'Brown rice base with higher fibre', 'Tea paste is full of antioxidants from green tea and basil'],
+                hawkerSpots: [
+                    { name: 'Hakka Leipopo Lei Cha', location: 'Lau Pa Sat, 18 Raffles Quay, #01-K4' },
+                    { name: 'Thunder Tea Rice stall', location: 'Anchorvale Village Hawker Centre, Sengkang' },
+                    { name: 'Hakka Rice at Margaret Drive', location: 'Margaret Drive Hawker Centre, #02-30' }
+                ],
+                recipe: {
+                    title: 'Thunder Tea Rice (Lei Cha Fan)',
+                    servings: 2,
+                    prepTime: '20 min',
+                    cookTime: '15 min',
+                    ingredients: [
+                        '1.5 cups cooked brown rice',
+                        '1 cup kangkong, chopped',
+                        '1 cup chye sim (mustard greens), chopped',
+                        '½ cup long beans, sliced thin',
+                        '¼ cup dried shrimp (toasted)',
+                        '2 tbsp unsalted peanuts (toasted)',
+                        '1 block firm tofu, diced and dry-fried',
+                        'For tea paste: 50g green tea leaves, 20g basil leaves, 10g mint, 2 tbsp sesame seeds',
+                        '500ml hot water'
+                    ],
+                    steps: [
+                        'Prepare tea paste: pound green tea leaves, basil, mint, and sesame seeds in a mortar until a thick paste forms. Add hot water and stir well.',
+                        'Blanch kangkong and chye sim separately for 1 minute. Drain and set aside.',
+                        'Stir-fry long beans with a tiny bit of oil until just cooked (2 min).',
+                        'Dry-fry diced tofu until golden on all sides.',
+                        'Assemble: place brown rice in a bowl, arrange all toppings neatly on top.',
+                        'Pour warm tea broth over the rice and enjoy. Mix everything together as you eat.'
+                    ],
+                    nutritionPer: { calories: 280, protein: 12, carbs: 34, fat: 8, fibre: 7 }
+                },
+                ingredients: [
+                    { item: 'Green tea leaves (lei cha powder available)', where: 'Sheng Siong (Asian groceries aisle), Scarlett Supermarket', price: '~$3.50' },
+                    { item: 'Brown rice (FairPrice Thai Brown)', where: 'NTUC FairPrice, Giant', price: '~$6.00/2.5kg' },
+                    { item: 'Fresh kangkong, chye sim, long beans', where: 'Tekka Market, Geylang Serai Market, any wet market', price: '~$1–2/bunch' },
+                    { item: 'Firm tofu', where: 'NTUC FairPrice, Sheng Siong', price: '~$1.50/block' }
+                ]
+            },
+            {
+                category: 'sg-hawker',
+                keywords: ['laksa', 'curry laksa', 'coconut noodle'],
+                original: { name: 'Curry Laksa', emoji: '🍜', calories: 680, protein: 20, fat: 35 },
+                alternative: { name: 'Sliced Fish Soup with Bee Hoon', emoji: '🥣', calories: 290, protein: 30, fat: 5 },
+                benefits: ['Clear broth instead of coconut milk cuts 30g fat', 'Fish provides lean protein + omega-3', 'Bee hoon (rice vermicelli) is lighter than yellow noodles'],
+                hawkerSpots: [
+                    { name: 'First Street Teochew Fish Soup', location: 'Bukit Merah Central Food Centre, #01-81' },
+                    { name: 'T.G. Fish Porridge & Soup', location: 'Amoy Street Food Centre, #02-100' },
+                    { name: 'Whampoa 87 Fish Soup', location: 'Blk 91 Whampoa Drive, #01-38' }
+                ],
+                recipe: {
+                    title: 'Teochew-style Sliced Fish Soup',
+                    servings: 2,
+                    prepTime: '10 min',
+                    cookTime: '12 min',
+                    ingredients: [
+                        '200g fresh batang (Spanish mackerel) or red garoupa fillet, sliced thin',
+                        '100g rice vermicelli (bee hoon)',
+                        '1L water',
+                        '2 slices ginger',
+                        '1 tomato (cut into wedges)',
+                        '1 cup napa cabbage, chopped',
+                        '2 stalks Chinese celery',
+                        '1 tsp sesame oil',
+                        'White pepper, fried garlic bits for topping'
+                    ],
+                    steps: [
+                        'Soak bee hoon in hot water for 5 minutes, drain.',
+                        'Bring water to boil with ginger and tomato wedges for flavour.',
+                        'Add napa cabbage, cook 2 minutes.',
+                        'Slide in fish slices gently — they cook in 2 minutes. Do not stir vigorously.',
+                        'Season with a dash of sesame oil, white pepper.',
+                        'Place bee hoon in a bowl, ladle soup and fish over. Top with Chinese celery and fried garlic.'
+                    ],
+                    nutritionPer: { calories: 290, protein: 30, carbs: 30, fat: 5, fibre: 2 }
+                },
+                ingredients: [
+                    { item: 'Fresh batang/garoupa fillet', where: 'Tekka Market, Chinatown Complex wet market, any wet market fishmonger', price: '~$6–8/300g' },
+                    { item: 'Rice vermicelli (bee hoon)', where: 'NTUC FairPrice, Sheng Siong', price: '~$1.50/pack' },
+                    { item: 'Chinese celery, napa cabbage', where: 'Any wet market or supermarket', price: '~$1–2' },
+                    { item: 'Sesame oil', where: 'NTUC FairPrice (Yeo\'s or FairPrice brand)', price: '~$3.00' }
+                ]
+            },
+            {
+                category: 'sg-hawker',
+                keywords: ['roti prata', 'prata', 'roti canai'],
+                original: { name: 'Roti Prata (2 pieces) with Curry', emoji: '🫓', calories: 520, protein: 10, fat: 28 },
+                alternative: { name: 'Chapati with Dhal & Vegetables', emoji: '🥙', calories: 260, protein: 14, fat: 6 },
+                benefits: ['Chapati uses no lard/ghee in dough', 'Dhal adds plant-based protein and fibre', 'Vegetables boost vitamin intake by 3x'],
+                hawkerSpots: [
+                    { name: 'Springleaf Prata Place (chapati option)', location: '1 Thong Soon Ave' },
+                    { name: 'Mr & Mrs Mohgan\'s Super Crispy Prata', location: 'Thasevi Food, 237 Jalan Kayu (ask for chapati)' },
+                    { name: 'Al-Azhar Eating Restaurant (chapati with dhal)', location: '11 Cheong Chin Nam Road' }
+                ],
+                recipe: {
+                    title: 'Wholemeal Chapati with Lentil Dhal',
+                    servings: 2,
+                    prepTime: '15 min',
+                    cookTime: '20 min',
+                    ingredients: [
+                        'For Chapati: 1 cup wholemeal atta flour, ½ cup warm water, pinch of salt',
+                        'For Dhal: ½ cup red lentils (masoor dal), 2 cups water',
+                        '1 tomato (chopped)',
+                        '½ onion (diced)',
+                        '1 tsp cumin seeds',
+                        '½ tsp turmeric powder',
+                        '1 clove garlic (minced)',
+                        'Fresh coriander for garnish',
+                        '1 tsp olive oil (for tempering)'
+                    ],
+                    steps: [
+                        'Chapati: mix flour, salt, and water. Knead into a smooth dough. Rest 10 mins.',
+                        'Dhal: rinse lentils, boil in 2 cups water with turmeric until soft (12 mins).',
+                        'Heat olive oil, add cumin seeds until they splutter. Add onion and garlic, sauté 2 mins.',
+                        'Add tomato, cook until soft. Pour into the cooked lentils, stir well.',
+                        'Divide dough into 4 balls, roll out thin. Dry-roast on a hot pan — no oil needed. Flip when bubbles form.',
+                        'Serve chapati with dhal. Garnish with fresh coriander.'
+                    ],
+                    nutritionPer: { calories: 260, protein: 14, carbs: 42, fat: 6, fibre: 8 }
+                },
+                ingredients: [
+                    { item: 'Wholemeal atta flour', where: 'NTUC FairPrice (Pillsbury or FairPrice brand), Mustafa Centre (Little India)', price: '~$2.80/1kg' },
+                    { item: 'Red lentils (masoor dal)', where: 'Mustafa Centre, FairPrice, Sheng Siong (Indian groceries section)', price: '~$3.50/500g' },
+                    { item: 'Cumin seeds, turmeric powder', where: 'Mustafa Centre (cheapest), any supermarket spice section', price: '~$2–3' },
+                    { item: 'Olive oil (healthier cooking option)', where: 'NTUC FairPrice, Cold Storage', price: '~$7–10' }
+                ]
+            },
+            {
+                category: 'sg-hawker',
+                keywords: ['yong tau foo', 'yong tau fu', 'ytf', 'stuffed tofu'],
+                original: { name: 'Yong Tau Foo (Fried, with Laksa gravy)', emoji: '🍢', calories: 550, protein: 18, fat: 25 },
+                alternative: { name: 'Yong Tau Foo (Soup, with fresh picks)', emoji: '🥬', calories: 300, protein: 22, fat: 8 },
+                benefits: ['Clear soup base cuts 200+ kcal vs laksa gravy', 'Choose fresh ingredients over processed fishball items', 'Add tofu and leafy greens for plant-based protein and iron'],
+                hawkerSpots: [
+                    { name: 'Gem Fresh Yong Tau Foo', location: 'Bugis Cube, #01-K1, 470 North Bridge Rd' },
+                    { name: 'Orchard Yong Tau Foo', location: 'Far East Plaza, 14 Scotts Rd, #05-121' },
+                    { name: 'Fu Lin Fried Yong Tau Foo (soup option)', location: '721 East Coast Road' }
+                ],
+                recipe: {
+                    title: 'Healthy Yong Tau Foo (Soup Base)',
+                    servings: 2,
+                    prepTime: '10 min',
+                    cookTime: '10 min',
+                    ingredients: [
+                        '6 pieces fresh vegetables (bitter gourd, ladies\' finger, eggplant, chilli)',
+                        '100g firm tofu (cut into triangles)',
+                        '2 pieces tau kee (beancurd skin)',
+                        '1 bunch kangkong or chye sim',
+                        '100g wholegrain bee hoon or brown rice',
+                        '1L clear ikan bilis (anchovy) stock',
+                        'Fresh fish paste (for stuffing): 100g minced fish, 1 tsp cornflour, white pepper',
+                        'Light soy sauce and chilli sauce for dipping'
+                    ],
+                    steps: [
+                        'Mix minced fish with cornflour and white pepper. Stuff into bitter gourd slices, chilli, and ladies\' finger.',
+                        'Bring ikan bilis stock to a boil.',
+                        'Add stuffed vegetables and tofu. Simmer 5 minutes.',
+                        'Add leafy greens in the last minute.',
+                        'Cook bee hoon or brown rice separately. Place in bowl, ladle soup over.',
+                        'Serve with light soy and chilli on the side.'
+                    ],
+                    nutritionPer: { calories: 300, protein: 22, carbs: 32, fat: 8, fibre: 5 }
+                },
+                ingredients: [
+                    { item: 'Fresh fish paste (ready-made)', where: 'Any wet market fishmonger, NTUC FairPrice (chilled section)', price: '~$3–4' },
+                    { item: 'Firm tofu, tau kee (beancurd skin)', where: 'NTUC FairPrice, Sheng Siong, any wet market', price: '~$1–2/pack' },
+                    { item: 'Wholegrain bee hoon', where: 'NTUC FairPrice (Healthier Choice section)', price: '~$2.00' },
+                    { item: 'Bitter gourd, ladies\' finger, eggplant', where: 'Tekka Market, Geylang Serai Market, any wet market', price: '~$1–2 each' }
+                ]
+            },
+            {
+                category: 'sg-hawker',
+                keywords: ['mee goreng', 'indian mee goreng', 'fried noodle'],
+                original: { name: 'Indian Mee Goreng', emoji: '🍜', calories: 660, protein: 16, fat: 30 },
+                alternative: { name: 'Mee Soto (Chicken Noodle Soup)', emoji: '🍲', calories: 350, protein: 24, fat: 10 },
+                benefits: ['Soup-based with light turmeric broth', 'Shredded chicken provides lean protein', 'Ask for bee hoon instead of yellow noodles to cut further calories'],
+                hawkerSpots: [
+                    { name: 'Inspirasi stall (Mee Soto Ayam)', location: 'Adam Road Food Centre, #01-31' },
+                    { name: 'Haji M. Abdul Rajak', location: 'Haig Road Market & Food Centre, #01-14' },
+                    { name: 'Selera Rasa Nasi Lemak (mee soto option)', location: 'Adam Road Food Centre' }
+                ],
+                recipe: {
+                    title: 'Mee Soto Ayam (Turmeric Chicken Soup)',
+                    servings: 2,
+                    prepTime: '10 min',
+                    cookTime: '25 min',
+                    ingredients: [
+                        '200g chicken thigh (skinless, bone-in for flavour)',
+                        '100g rice vermicelli (bee hoon)',
+                        '1L water',
+                        '1 stalk lemongrass (bruised)',
+                        '½ tsp turmeric powder',
+                        '2 shallots (sliced)',
+                        '1 clove garlic',
+                        'Bean sprouts (1 cup)',
+                        'Fried shallots, Chinese celery, lime wedge for garnish',
+                        '1 tsp canola oil'
+                    ],
+                    steps: [
+                        'Sauté shallots and garlic in canola oil until fragrant.',
+                        'Add water, lemongrass, and turmeric. Bring to boil.',
+                        'Add chicken thigh, simmer for 20 minutes. Remove, shred meat, discard bone.',
+                        'Cook bee hoon in the broth for 2 minutes.',
+                        'Assemble: noodles in bowl, shredded chicken on top, bean sprouts, ladle hot broth over.',
+                        'Garnish with fried shallots, celery leaves, and a squeeze of lime.'
+                    ],
+                    nutritionPer: { calories: 350, protein: 24, carbs: 36, fat: 10, fibre: 2 }
+                },
+                ingredients: [
+                    { item: 'Skinless chicken thigh (bone-in)', where: 'NTUC FairPrice, Sheng Siong (fresh poultry section)', price: '~$4.00/pack' },
+                    { item: 'Rice vermicelli (bee hoon)', where: 'NTUC FairPrice, Sheng Siong, Giant', price: '~$1.50' },
+                    { item: 'Lemongrass, turmeric, shallots', where: 'Any wet market (Tekka, Geylang Serai), supermarket', price: '~$1–2' },
+                    { item: 'Canola oil (Healthier Choice)', where: 'NTUC FairPrice (Healthier Choice Symbol section)', price: '~$6.00' }
+                ]
+            },
+
             // === RICE ===
             {
                 category: 'rice',
@@ -326,9 +651,88 @@
             const proteinDiff = match.alternative.protein - match.original.protein;
             const fatDiff = match.original.fat - match.alternative.fat;
 
+            // Build extra sections for SG Hawker items
+            let hawkerSection = '';
+            if (match.hawkerSpots) {
+                hawkerSection = `
+                    <div class="hawker-spots-section">
+                        <h4 class="section-label">📍 Where to Get This Healthier Option</h4>
+                        <ul class="hawker-spot-list">
+                            ${match.hawkerSpots.map(spot => `
+                                <li>
+                                    <strong>${spot.name}</strong>
+                                    <span class="spot-location">${spot.location}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            let recipeSection = '';
+            if (match.recipe) {
+                recipeSection = `
+                    <div class="recipe-section">
+                        <h4 class="section-label">👨‍🍳 DIY Recipe: ${match.recipe.title}</h4>
+                        <div class="recipe-meta">
+                            <span>🍽 ${match.recipe.servings} servings</span>
+                            <span>⏱ Prep: ${match.recipe.prepTime}</span>
+                            <span>🔥 Cook: ${match.recipe.cookTime}</span>
+                        </div>
+                        <div class="recipe-ingredients">
+                            <strong>Ingredients:</strong>
+                            <ul>
+                                ${match.recipe.ingredients.map(ing => `<li>${ing}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="recipe-steps">
+                            <strong>Steps:</strong>
+                            <ol>
+                                ${match.recipe.steps.map(step => `<li>${step}</li>`).join('')}
+                            </ol>
+                        </div>
+                        <div class="recipe-nutrition">
+                            <span>Per serving: <strong>${match.recipe.nutritionPer.calories} kcal</strong></span>
+                            <span>P: ${match.recipe.nutritionPer.protein}g</span>
+                            <span>C: ${match.recipe.nutritionPer.carbs}g</span>
+                            <span>F: ${match.recipe.nutritionPer.fat}g</span>
+                            <span>Fibre: ${match.recipe.nutritionPer.fibre}g</span>
+                        </div>
+                    </div>
+                `;
+            }
+
+            let ingredientsSection = '';
+            if (match.ingredients) {
+                ingredientsSection = `
+                    <div class="buy-ingredients-section">
+                        <h4 class="section-label">🛒 Where to Buy Ingredients in SG</h4>
+                        <table class="ingredients-table">
+                            <thead>
+                                <tr>
+                                    <th>Ingredient</th>
+                                    <th>Where to Buy</th>
+                                    <th>Est. Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${match.ingredients.map(ing => `
+                                    <tr>
+                                        <td>${ing.item}</td>
+                                        <td>${ing.where}</td>
+                                        <td>${ing.price}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            }
+
             searchResult.style.display = 'block';
             searchResult.innerHTML = `
-                <div class="swap-card result-card">
+                <div class="swap-card result-card ${match.hawkerSpots ? 'sg-hawker-card' : ''}">
+                    ${match.hawkerSpots ? '<div class="sg-badge">🇸🇬 Singapore Hawker Healthier Choice</div>' : ''}
                     <div class="swap-top">
                         <div class="swap-meal original-meal">
                             <span class="meal-emoji">${match.original.emoji}</span>
@@ -359,6 +763,9 @@
                             ${match.benefits.map(b => `<li>${b}</li>`).join('')}
                         </ul>
                     </div>
+                    ${hawkerSection}
+                    ${recipeSection}
+                    ${ingredientsSection}
                 </div>
             `;
 
@@ -376,8 +783,87 @@
                 const proteinDiff = item.alternative.protein - item.original.protein;
                 const fatDiff = item.original.fat - item.alternative.fat;
 
+                // Build extra sections for SG Hawker items
+                let hawkerSection = '';
+                if (item.hawkerSpots) {
+                    hawkerSection = `
+                        <div class="hawker-spots-section">
+                            <h4 class="section-label">📍 Where to Get This Healthier Option</h4>
+                            <ul class="hawker-spot-list">
+                                ${item.hawkerSpots.map(spot => `
+                                    <li>
+                                        <strong>${spot.name}</strong>
+                                        <span class="spot-location">${spot.location}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    `;
+                }
+
+                let recipeSection = '';
+                if (item.recipe) {
+                    recipeSection = `
+                        <div class="recipe-section">
+                            <h4 class="section-label">👨‍🍳 DIY Recipe: ${item.recipe.title}</h4>
+                            <div class="recipe-meta">
+                                <span>🍽 ${item.recipe.servings} servings</span>
+                                <span>⏱ Prep: ${item.recipe.prepTime}</span>
+                                <span>🔥 Cook: ${item.recipe.cookTime}</span>
+                            </div>
+                            <div class="recipe-ingredients">
+                                <strong>Ingredients:</strong>
+                                <ul>
+                                    ${item.recipe.ingredients.map(ing => `<li>${ing}</li>`).join('')}
+                                </ul>
+                            </div>
+                            <div class="recipe-steps">
+                                <strong>Steps:</strong>
+                                <ol>
+                                    ${item.recipe.steps.map(step => `<li>${step}</li>`).join('')}
+                                </ol>
+                            </div>
+                            <div class="recipe-nutrition">
+                                <span>Per serving: <strong>${item.recipe.nutritionPer.calories} kcal</strong></span>
+                                <span>P: ${item.recipe.nutritionPer.protein}g</span>
+                                <span>C: ${item.recipe.nutritionPer.carbs}g</span>
+                                <span>F: ${item.recipe.nutritionPer.fat}g</span>
+                                <span>Fibre: ${item.recipe.nutritionPer.fibre}g</span>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                let ingredientsSection = '';
+                if (item.ingredients) {
+                    ingredientsSection = `
+                        <div class="buy-ingredients-section">
+                            <h4 class="section-label">🛒 Where to Buy Ingredients in SG</h4>
+                            <table class="ingredients-table">
+                                <thead>
+                                    <tr>
+                                        <th>Ingredient</th>
+                                        <th>Where to Buy</th>
+                                        <th>Est. Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${item.ingredients.map(ing => `
+                                        <tr>
+                                            <td>${ing.item}</td>
+                                            <td>${ing.where}</td>
+                                            <td>${ing.price}</td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    `;
+                }
+
                 return `
-                    <div class="swap-card">
+                    <div class="swap-card ${item.hawkerSpots ? 'sg-hawker-card' : ''}">
+                        ${item.hawkerSpots ? '<div class="sg-badge">🇸🇬 Singapore Hawker Healthier Choice</div>' : ''}
                         <div class="swap-top">
                             <div class="swap-meal original-meal">
                                 <span class="meal-emoji">${item.original.emoji}</span>
@@ -408,6 +894,8 @@
                                 ${item.benefits.map(b => `<li>${b}</li>`).join('')}
                             </ul>
                         </details>
+                        ${hawkerSection}
+                        ${item.recipe ? `<details class="swap-details recipe-details"><summary>📖 View Full Recipe & Ingredients</summary>${recipeSection}${ingredientsSection}</details>` : ''}
                     </div>
                 `;
             }).join('');
