@@ -446,6 +446,9 @@ function getAllergies() {
 // Chat Functionality
 // ============================
 function initChat() {
+    // Skip if the new chat.js is handling things
+    if (document.getElementById('chat-history')) return;
+
     const chatInput = document.querySelector('.chat-input');
     const sendBtn = document.querySelector('.send-btn');
     const chatMessages = document.querySelector('.chat-messages');

@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="css/chat.css">
 </head>
 <body>
-    <!-- Navigation (hidden on chat - sidebar handles navigation) -->
+    <!-- Navigation -->
     <nav class="navbar chat-navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
                 <img src="images/logo.svg" alt="NutriAI Logo" class="logo-img">
             </a>
-            <a href="index.html" class="nav-cta" style="background: var(--ai-blue);">← Back to Home</a>
+            <a href="index.html" class="nav-cta">← Back to Home</a>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
@@ -29,10 +29,10 @@
     <!-- Chat Layout -->
     <div class="chat-layout">
         <!-- Sidebar -->
-        <aside class="chat-sidebar">
+        <aside class="chat-sidebar" id="chat-sidebar">
             <div class="sidebar-header">
-                <h3>NutriAI Chat</h3>
-                <button class="new-chat-btn">+ New Chat</button>
+                <h3>NutriAI</h3>
+                <button class="new-chat-btn" id="new-chat-btn">+ New Chat</button>
             </div>
 
             <nav class="sidebar-nav">
@@ -44,65 +44,64 @@
                     <span class="nav-icon">💬</span>
                     <span>Chat</span>
                 </a>
-
                 <a href="profile.html" class="sidebar-nav-item">
                     <span class="nav-icon">👤</span>
                     <span>Profile</span>
                 </a>
-                <a href="#" class="sidebar-nav-item">
-                    <span class="nav-icon">⚙️</span>
-                    <span>Settings</span>
-                </a>
             </nav>
 
-            <div class="chat-history">
-                <h4>Recent Chats</h4>
-                <div class="history-item">Nasi Lemak analysis</div>
-                <div class="history-item">Healthy lunch ideas</div>
-                <div class="history-item">Breakfast suggestions</div>
-                <div class="history-item">Mee goreng alternatives</div>
-                <div class="history-item">Protein-rich meals</div>
+            <div class="chat-history" id="chat-history">
+                <div class="history-header">
+                    <h4>Recent Chats</h4>
+                    <button class="export-all-btn" id="export-all-btn" title="Export all chats">📥</button>
+                </div>
+                <div class="history-list" id="history-list">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <button class="delete-all-btn" id="delete-all-btn">🗑️ Delete All Chats</button>
             </div>
         </aside>
 
         <!-- Main Chat Area -->
         <main class="chat-main">
             <div class="chat-header">
-                <h2>💬 Chat with NutriAI</h2>
-                <button class="clear-chat-btn">Clear Chat</button>
-            </div>
-
-            <div class="chat-messages">
-                <div class="message message-ai">
-                    <div class="message-avatar">🤖</div>
-                    <div class="message-bubble">Hello! 👋 I'm NutriAI, your smart meal assistant. Tell me what you ate today, and I'll help analyse the nutrition and suggest healthier alternatives!</div>
-                </div>
-                <div class="message message-user">
-                    <div class="message-avatar">👤</div>
-                    <div class="message-bubble">I ate nasi lemak for lunch today.</div>
-                </div>
-                <div class="message message-ai">
-                    <div class="message-avatar">🤖</div>
-                    <div class="message-bubble">Nasi lemak is a popular local dish, but it's typically high in calories (~640 kcal) and saturated fat due to the coconut rice and fried items. Here are some suggestions:<br><br>✅ Choose grilled chicken instead of fried chicken<br>✅ Add extra vegetables or cucumber<br>✅ Ask for less sambal to reduce sodium<br>✅ Consider brown rice as a base<br><br>Would you like me to suggest a healthier alternative meal?</div>
+                <button class="sidebar-toggle-btn" id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+                <h2 id="chat-title">New Chat</h2>
+                <div class="chat-actions">
+                    <button class="chat-action-btn" id="export-chat-btn" title="Export this chat as PDF">📄 Export PDF</button>
+                    <button class="chat-action-btn danger" id="delete-chat-btn" title="Delete this chat">🗑️ Delete</button>
                 </div>
             </div>
 
-            <div class="suggested-prompts">
-                <button class="prompt-chip">I ate mee goreng</button>
+            <div class="chat-messages" id="chat-messages">
+                <!-- Welcome state -->
+                <div class="welcome-state" id="welcome-state">
+                    <div class="welcome-icon">🥗</div>
+                    <h2>How can I help you eat better today?</h2>
+                    <p>Ask me about any meal, get nutrition analysis, or find healthier alternatives.</p>
+                </div>
+            </div>
+
+            <div class="suggested-prompts" id="suggested-prompts">
+                <button class="prompt-chip">What did I eat today — nasi lemak</button>
                 <button class="prompt-chip">Suggest a healthy lunch</button>
                 <button class="prompt-chip">What's a good breakfast?</button>
-                <button class="prompt-chip">High protein meals</button>
+                <button class="prompt-chip">High protein meals under $5</button>
             </div>
 
             <div class="chat-input-area">
                 <div class="chat-input-wrapper">
-                    <input type="text" class="chat-input" placeholder="Tell me what you ate today...">
-                    <button class="send-btn" aria-label="Send message">➤</button>
+                    <input type="text" class="chat-input" id="chat-input" placeholder="Ask about any meal or nutrition topic...">
+                    <button class="send-btn" id="send-btn" aria-label="Send message">➤</button>
                 </div>
             </div>
         </main>
     </div>
 
     <script src="js/main.js"></script>
+    <script src="js/chat.js"></script>
 </body>
 </html>
