@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI & Calorie Calculator – NutriAI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/calculator.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.svg" alt="NutriAI Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="meal-analysis.html">Meal Analysis</a></li>
+                <li><a href="alternatives.html">Healthy Alternatives</a></li>
+                <li><a href="tips.html">Nutrition Tips</a></li>
+                <li><a href="compare.html">Compare Meals</a></li>
+                <li><a href="calculator.html" class="active">Calculator</a></li>
+            </ul>
+            <a href="chat.html" class="nav-cta">Start Chat</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="calculator-page">
+        <!-- Hero -->
+        <section class="calculator-hero">
+            <div class="container">
+                <h1>BMI & Calorie Calculator 📊</h1>
+                <p>Know your numbers. Get personalised daily calorie recommendations based on your body and lifestyle.</p>
+            </div>
+        </section>
+
+        <!-- Calculator Grid -->
+        <section class="container">
+            <div class="calculator-grid">
+                <!-- Input Card -->
+                <div class="calc-input-card">
+                    <h2>Your Details</h2>
+                    <p class="card-subtitle">Enter your information for personalised results</p>
+
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <div class="gender-toggle">
+                            <button type="button" class="gender-btn active" data-gender="male">♂️ Male</button>
+                            <button type="button" class="gender-btn" data-gender="female">♀️ Female</button>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="calc-age">Age</label>
+                            <input type="number" id="calc-age" placeholder="e.g. 19" min="13" max="80">
+                        </div>
+                        <div class="form-group">
+                            <label for="calc-height">Height (cm)</label>
+                            <input type="number" id="calc-height" placeholder="e.g. 170" min="100" max="250">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calc-weight">Weight (kg)</label>
+                        <input type="number" id="calc-weight" placeholder="e.g. 65" min="30" max="250">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calc-activity">Activity Level</label>
+                        <select id="calc-activity">
+                            <option value="" disabled selected>Select your activity level</option>
+                            <option value="1.2">Sedentary (little or no exercise)</option>
+                            <option value="1.375">Lightly active (1–3 days/week)</option>
+                            <option value="1.55">Moderately active (3–5 days/week)</option>
+                            <option value="1.725">Very active (6–7 days/week)</option>
+                            <option value="1.9">Extra active (athlete / physical job)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calc-goal">Goal</label>
+                        <select id="calc-goal">
+                            <option value="maintain">Maintain weight</option>
+                            <option value="lose">Lose weight (mild deficit)</option>
+                            <option value="gain">Gain weight (mild surplus)</option>
+                        </select>
+                    </div>
+
+                    <button type="button" class="calculate-btn" id="calculate-btn">Calculate My Results ✨</button>
+                </div>
+
+                <!-- Results Card -->
+                <div class="calc-results-card">
+                    <h2>Your Results</h2>
+                    <p class="card-subtitle">Personalised to your body and goals</p>
+
+                    <!-- Placeholder -->
+                    <div class="results-placeholder" id="results-placeholder">
+                        <span class="placeholder-icon">🧮</span>
+                        <h3>Enter your details</h3>
+                        <p>Fill in the form and click calculate to see your BMI and daily calorie recommendation.</p>
+                    </div>
+
+                    <!-- Actual Results -->
+                    <div class="results-content" id="results-content">
+                        <!-- BMI -->
+                        <div class="bmi-section">
+                            <div class="bmi-value" id="bmi-value">--</div>
+                            <div class="bmi-category" id="bmi-category">--</div>
+                            <div class="bmi-bar">
+                                <div class="bmi-indicator" id="bmi-indicator" style="left: 50%"></div>
+                            </div>
+                            <div class="bmi-labels">
+                                <span>Under 18.5</span>
+                                <span>18.5–22.9</span>
+                                <span>23–27.4</span>
+                                <span>27.5+</span>
+                            </div>
+                        </div>
+
+                        <!-- Calories -->
+                        <div class="calorie-section">
+                            <h3>Daily Calorie Target</h3>
+                            <p class="calorie-subtitle">Mifflin-St Jeor (1990) × Activity Level</p>
+                            <div class="calorie-value" id="calorie-value">--</div>
+                            <span class="calorie-unit">kcal / day</span>
+                        </div>
+
+                        <!-- Macros -->
+                        <div class="macro-breakdown">
+                            <div class="macro-item">
+                                <div class="macro-icon">🥩</div>
+                                <div class="macro-value" id="macro-protein">--</div>
+                                <div class="macro-label">Protein (g)</div>
+                            </div>
+                            <div class="macro-item">
+                                <div class="macro-icon">🍚</div>
+                                <div class="macro-value" id="macro-carbs">--</div>
+                                <div class="macro-label">Carbs (g)</div>
+                            </div>
+                            <div class="macro-item">
+                                <div class="macro-icon">🥑</div>
+                                <div class="macro-value" id="macro-fat">--</div>
+                                <div class="macro-label">Fat (g)</div>
+                            </div>
+                        </div>
+
+                        <!-- Insight -->
+                        <div class="insight-box" id="insight-box">
+                            <p><span class="insight-icon">💡</span> <span id="insight-text">Your personalised insight will appear here.</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Section -->
+        <section class="calc-info-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Understanding Your Numbers</h2>
+                    <p>Science-backed calculations using established medical formulas.</p>
+                </div>
+                <div class="info-grid">
+                    <div class="info-box">
+                        <div class="info-icon">📏</div>
+                        <h3>BMI (Asian Cutoffs)</h3>
+                        <p>We use WHO's Asian BMI cutoffs (Underweight &lt;18.5, Normal 18.5–22.9, Overweight ≥23, Obese ≥27.5) as recommended by HPB Singapore — Asian populations face higher metabolic risks at lower BMI than Western populations.</p>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-icon">🔥</div>
+                        <h3>Mifflin-St Jeor Equation</h3>
+                        <p>Your BMR is calculated using the Mifflin-St Jeor equation (1990), recommended by the Academy of Nutrition and Dietetics as the most accurate formula. TDEE = BMR × activity factor.</p>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-icon">🥗</div>
+                        <h3>Macro Split (HPB Guidelines)</h3>
+                        <p>Macros follow the IOM Acceptable Macronutrient Distribution Ranges and HPB Singapore's "My Healthy Plate": 25% protein, 50% carbohydrates, 25% fats — balanced for active students.</p>
+                    </div>
+                </div>
+                <div class="info-grid" style="margin-top: 24px;">
+                    <div class="info-box">
+                        <div class="info-icon">📚</div>
+                        <h3>Scientific Sources</h3>
+                        <p>• Mifflin MD et al. Am J Clin Nutr. 1990;51(2):241-247<br>• WHO Expert Consultation. Lancet. 2004;363(9403)<br>• HPB Singapore BMI Guidelines<br>• IOM Dietary Reference Intakes, 2005</p>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-icon">⚖️</div>
+                        <h3>Weight Change Science</h3>
+                        <p>1 kg of body fat ≈ 7,700 kcal (Wishnofsky, 1958). A 500 kcal/day deficit produces ~0.45 kg/week loss. We enforce minimum intakes (1,500 kcal for males, 1,200 for females) per NHS and HPB safety guidelines.</p>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-icon">⚠️</div>
+                        <h3>Important Disclaimer</h3>
+                        <p>These are estimates based on population averages. Individual metabolism, genetics, and health conditions cause variation. For medical or dietary conditions, please consult a qualified healthcare professional.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo.svg" alt="NutriAI Logo" class="logo-img footer-logo-img">
+                    </div>
+                    <p>Helping students eat smarter and live better through AI-powered meal recommendations. Start your nutrition journey today.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="chat.html">Chat</a></li>
+                        <li><a href="meal-analysis.html">Meal Analysis</a></li>
+                        <li><a href="alternatives.html">Healthy Alternatives</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact & FAQ</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="calculator.html">BMI Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>📧 nutriai@unexpected4.sg</p>
+                    <p>📍 Republic Polytechnic, Singapore</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 NutriAI by Team Unexpected4. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/calculator.js"></script>
+</body>
+</html>

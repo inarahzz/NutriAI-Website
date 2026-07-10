@@ -1,6 +1,5 @@
 /* ============================
    Profile Page Styles
-   Fresh, nature-themed design
    ============================ */
 
 .profile-page {
@@ -11,70 +10,71 @@
 
 .profile-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 36px;
 }
 
 .profile-header h1 {
     font-size: 2rem;
     margin-bottom: 8px;
-    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
 }
 
 .profile-header p {
     color: var(--text-muted);
+    font-size: 0.95rem;
 }
 
 /* Profile Layout */
 .profile-layout {
     display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 30px;
+    grid-template-columns: 300px 1fr;
+    gap: 24px;
 }
 
 /* Profile Card */
 .profile-card {
     background: var(--white);
     border-radius: var(--radius-lg);
-    padding: 36px;
+    padding: 32px;
     box-shadow: var(--shadow-card);
     text-align: center;
     height: fit-content;
-    border: 1.5px solid rgba(45, 138, 78, 0.06);
+    border: 1px solid rgba(45, 138, 78, 0.05);
 }
 
 .profile-avatar {
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(135deg, var(--primary-green), var(--accent-yellow));
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 20px;
-    font-size: 2.5rem;
+    margin: 0 auto 16px;
+    font-size: 2rem;
     color: var(--white);
-    box-shadow: 0 4px 16px rgba(45, 138, 78, 0.2);
+    box-shadow: 0 2px 8px rgba(45, 138, 78, 0.15);
 }
 
 .profile-card h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-bottom: 4px;
-    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
 }
 
 .profile-card .profile-email {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     color: var(--text-muted);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .profile-stats {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1.5px solid rgba(45, 138, 78, 0.08);
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(45, 138, 78, 0.06);
 }
 
 .profile-stat {
@@ -82,73 +82,73 @@
 }
 
 .profile-stat .stat-number {
-    font-family: 'Fredoka', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
     color: var(--primary-green);
 }
 
 .profile-stat .stat-text {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     color: var(--text-muted);
     margin-top: 2px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 /* Settings */
 .profile-settings {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
 }
 
 .settings-section {
     background: var(--white);
     border-radius: var(--radius-lg);
-    padding: 28px;
+    padding: 24px;
     box-shadow: var(--shadow-card);
-    border: 1.5px solid rgba(45, 138, 78, 0.06);
+    border: 1px solid rgba(45, 138, 78, 0.05);
 }
 
 .settings-section h3 {
-    font-size: 1.05rem;
-    margin-bottom: 20px;
+    font-size: 1rem;
+    margin-bottom: 18px;
     display: flex;
     align-items: center;
     gap: 8px;
-    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
 }
 
 /* Form Styles */
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .form-group label {
     display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.82rem;
+    font-weight: 500;
     color: var(--text-body);
-    margin-bottom: 8px;
-    font-family: 'Nunito', sans-serif;
+    margin-bottom: 6px;
+    font-family: 'Inter', sans-serif;
 }
 
 .form-input {
     width: 100%;
-    padding: 12px 16px;
-    border: 1.5px solid rgba(45, 138, 78, 0.12);
-    border-radius: var(--radius-md);
-    font-family: 'Nunito', sans-serif;
-    font-size: 0.9rem;
+    padding: 11px 14px;
+    border: 1.5px solid rgba(45, 138, 78, 0.1);
+    border-radius: var(--radius-sm);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
     color: var(--dark-grey);
     transition: var(--transition);
-    background: var(--warm-cream);
+    background: var(--light-grey);
 }
 
 .form-input:focus {
     outline: none;
     border-color: var(--primary-green);
-    box-shadow: 0 0 0 3px rgba(45, 138, 78, 0.08);
+    box-shadow: 0 0 0 3px rgba(45, 138, 78, 0.06);
     background: var(--white);
 }
 
@@ -158,36 +158,36 @@
 
 select.form-input {
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232d8a4e' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%237a7a7a' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 16px center;
-    padding-right: 40px;
+    background-position: right 14px center;
+    padding-right: 36px;
 }
 
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    gap: 14px;
 }
 
 /* Tags */
 .tags-input {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 12px;
+    gap: 6px;
+    margin-bottom: 10px;
 }
 
 .tag {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 14px;
-    background: rgba(45, 138, 78, 0.06);
+    gap: 5px;
+    padding: 5px 12px;
+    background: rgba(45, 138, 78, 0.05);
     border-radius: var(--radius-full);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--primary-green);
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .tag .remove-tag {
@@ -205,9 +205,9 @@ select.form-input {
 }
 
 .add-tag-input {
-    max-width: 250px;
-    font-size: 0.85rem !important;
-    padding: 8px 14px !important;
+    max-width: 240px;
+    font-size: 0.82rem !important;
+    padding: 8px 12px !important;
 }
 
 /* Toggle Switch */
@@ -215,8 +215,8 @@ select.form-input {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 0;
-    border-bottom: 1px solid rgba(45, 138, 78, 0.06);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(45, 138, 78, 0.05);
 }
 
 .toggle-row:last-child {
@@ -229,22 +229,22 @@ select.form-input {
 }
 
 .toggle-label {
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 0.88rem;
+    font-weight: 500;
     color: var(--dark-grey);
 }
 
 .toggle-desc {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--text-muted);
     margin-top: 2px;
 }
 
 .toggle-switch {
-    width: 48px;
-    height: 26px;
+    width: 44px;
+    height: 24px;
     background: #ddd;
-    border-radius: 13px;
+    border-radius: 12px;
     position: relative;
     cursor: pointer;
     transition: var(--transition);
@@ -257,18 +257,18 @@ select.form-input {
 .toggle-switch::after {
     content: '';
     position: absolute;
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     background: var(--white);
     border-radius: 50%;
     top: 2px;
     left: 2px;
     transition: var(--transition);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .toggle-switch.active::after {
-    left: 24px;
+    left: 22px;
 }
 
 /* Save Button */

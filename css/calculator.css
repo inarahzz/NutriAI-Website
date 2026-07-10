@@ -1,0 +1,460 @@
+/* ============================
+   NutriAI - BMI & Calorie Calculator
+   ============================ */
+
+.calculator-page {
+    padding-top: 100px;
+    min-height: 100vh;
+}
+
+/* Page Header */
+.calculator-hero {
+    text-align: center;
+    padding: 60px 0 40px;
+}
+
+.calculator-hero h1 {
+    font-size: 2.5rem;
+    color: var(--dark-grey);
+    margin-bottom: 12px;
+}
+
+.calculator-hero p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+/* Calculator Layout */
+.calculator-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 60px;
+}
+
+/* Input Card */
+.calc-input-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(45, 138, 78, 0.08);
+}
+
+.calc-input-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: var(--dark-grey);
+}
+
+.calc-input-card .card-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--dark-grey);
+    margin-bottom: 8px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid rgba(45, 138, 78, 0.15);
+    border-radius: var(--radius-sm);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: var(--dark-grey);
+    background: var(--light-grey);
+    transition: var(--transition);
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(45, 138, 78, 0.1);
+    background: var(--white);
+}
+
+.form-group input::placeholder {
+    color: var(--text-muted);
+}
+
+/* Gender Toggle */
+.gender-toggle {
+    display: flex;
+    gap: 12px;
+}
+
+.gender-btn {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid rgba(45, 138, 78, 0.15);
+    border-radius: var(--radius-sm);
+    background: var(--light-grey);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.gender-btn:hover {
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+}
+
+.gender-btn.active {
+    background: var(--primary-green);
+    border-color: var(--primary-green);
+    color: white;
+}
+
+/* Two-column row */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Calculate Button */
+.calculate-btn {
+    width: 100%;
+    padding: 16px;
+    margin-top: 8px;
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: var(--radius-full);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 16px rgba(45, 138, 78, 0.3);
+}
+
+.calculate-btn:hover {
+    background: #236b3e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(45, 138, 78, 0.4);
+}
+
+/* Results Card */
+.calc-results-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(45, 138, 78, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.calc-results-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: var(--dark-grey);
+}
+
+.calc-results-card .card-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+}
+
+/* Placeholder State */
+.results-placeholder {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.results-placeholder .placeholder-icon {
+    font-size: 3.5rem;
+    margin-bottom: 16px;
+}
+
+.results-placeholder h3 {
+    font-size: 1.1rem;
+    color: var(--dark-grey);
+    margin-bottom: 8px;
+}
+
+.results-placeholder p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Results Content */
+.results-content {
+    display: none;
+    flex-direction: column;
+    gap: 24px;
+    flex: 1;
+}
+
+.results-content.visible {
+    display: flex;
+}
+
+/* BMI Section */
+.bmi-section {
+    text-align: center;
+    padding: 24px;
+    background: var(--light-grey);
+    border-radius: var(--radius-md);
+}
+
+.bmi-value {
+    font-size: 2.8rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.bmi-category {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.bmi-bar {
+    height: 10px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #4caf50 0%, #8bc34a 25%, #ffc107 50%, #ff9800 75%, #f44336 100%);
+    position: relative;
+    margin: 16px 0 8px;
+}
+
+.bmi-indicator {
+    position: absolute;
+    top: -4px;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border: 3px solid var(--dark-grey);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    transition: left 0.6s ease;
+}
+
+.bmi-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+/* Calorie Section */
+.calorie-section {
+    padding: 24px;
+    background: var(--light-grey);
+    border-radius: var(--radius-md);
+    text-align: center;
+}
+
+.calorie-section h3 {
+    font-size: 1rem;
+    color: var(--dark-grey);
+    margin-bottom: 4px;
+}
+
+.calorie-section .calorie-subtitle {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.calorie-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-green);
+    line-height: 1;
+}
+
+.calorie-unit {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Macro Breakdown */
+.macro-breakdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+}
+
+.macro-item {
+    text-align: center;
+    padding: 16px 8px;
+    background: var(--light-grey);
+    border-radius: var(--radius-sm);
+}
+
+.macro-item .macro-icon {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+}
+
+.macro-item .macro-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-grey);
+}
+
+.macro-item .macro-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+/* Insight Box */
+.insight-box {
+    padding: 16px 20px;
+    background: rgba(45, 138, 78, 0.06);
+    border-radius: var(--radius-sm);
+    border-left: 4px solid var(--primary-green);
+}
+
+.insight-box p {
+    font-size: 0.85rem;
+    color: var(--text-body);
+    line-height: 1.6;
+}
+
+.insight-box .insight-icon {
+    font-size: 1rem;
+    margin-right: 6px;
+}
+
+/* Info Section */
+.calc-info-section {
+    padding: 60px 0 80px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+}
+
+.info-box {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 28px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(45, 138, 78, 0.08);
+}
+
+.info-box .info-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.info-box h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--dark-grey);
+}
+
+.info-box p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Dark Mode */
+body.dark-mode .calc-input-card,
+body.dark-mode .calc-results-card,
+body.dark-mode .info-box {
+    background: #1e3a1e;
+    border-color: rgba(76, 175, 80, 0.2);
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select {
+    background: #162816;
+    border-color: rgba(76, 175, 80, 0.3);
+    color: #e8f5e9;
+}
+
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group select:focus {
+    border-color: var(--primary-green);
+    background: #1e3a1e;
+}
+
+body.dark-mode .gender-btn {
+    background: #162816;
+    border-color: rgba(76, 175, 80, 0.3);
+    color: #a5d6a7;
+}
+
+body.dark-mode .gender-btn.active {
+    background: var(--primary-green);
+    color: white;
+}
+
+body.dark-mode .bmi-section,
+body.dark-mode .calorie-section,
+body.dark-mode .macro-item {
+    background: #162816;
+}
+
+body.dark-mode .bmi-indicator {
+    background: #1e3a1e;
+    border-color: #e8f5e9;
+}
+
+body.dark-mode .insight-box {
+    background: rgba(76, 175, 80, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .calculator-hero h1 {
+        font-size: 1.85rem;
+    }
+
+    .calculator-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .macro-breakdown {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
