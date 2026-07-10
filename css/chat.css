@@ -349,6 +349,13 @@
     flex-direction: row-reverse;
 }
 
+.message-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
 .message-avatar {
     width: 32px;
     height: 32px;
@@ -388,6 +395,36 @@
     color: var(--text-body);
     border-bottom-left-radius: 3px;
     border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* Message Actions (below AI responses) */
+.message-actions {
+    display: flex;
+    gap: 4px;
+    padding: 2px 0 0 2px;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.message:hover .message-actions {
+    opacity: 1;
+}
+
+.msg-export-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: var(--text-muted);
+    transition: var(--transition);
+    font-family: 'Inter', sans-serif;
+}
+
+.msg-export-btn:hover {
+    background: rgba(45, 138, 78, 0.08);
+    color: var(--primary-green);
 }
 
 /* Typing indicator */
