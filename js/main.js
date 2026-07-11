@@ -417,10 +417,36 @@ function initProfile() {
         });
     }
 
+    // Disliked foods tag input
+    const dislikedFoodInput = document.getElementById('disliked-food-input');
+    if (dislikedFoodInput) {
+        dislikedFoodInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const value = dislikedFoodInput.value.trim();
+                if (value) {
+                    const container = document.getElementById('disliked-foods-container');
+                    addAllergyTag(container, value);
+                    dislikedFoodInput.value = '';
+                }
+            }
+        });
+    }
+
     // Remove tag event delegation
     const allergiesContainer = document.getElementById('allergies-container');
     if (allergiesContainer) {
         allergiesContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('remove-tag')) {
+                e.target.parentElement.remove();
+            }
+        });
+    }
+
+    // Remove tag for disliked foods
+    const dislikedContainer = document.getElementById('disliked-foods-container');
+    if (dislikedContainer) {
+        dislikedContainer.addEventListener('click', (e) => {
             if (e.target.classList.contains('remove-tag')) {
                 e.target.parentElement.remove();
             }
@@ -802,6 +828,9 @@ function showToast(message) {
         setTimeout(() => toast.remove(), 300);
     }, 3000);
 }
+
+// Make showToast globally accessible
+window.showToast = showToast;
 
 function animateNutrientBars() {
     const bars = document.querySelectorAll('.nutrient-fill');

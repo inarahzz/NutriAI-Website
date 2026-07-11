@@ -294,3 +294,41 @@ select.form-input {
         grid-template-columns: 1fr;
     }
 }
+
+/* Checkbox & Radio Grid - Food Preferences */
+.checkbox-grid,
+.radio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.checkbox-item,
+.radio-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: var(--light-grey);
+    border: 1px solid rgba(45, 138, 78, 0.08);
+    border-radius: var(--radius-sm);
+    font-size: 0.82rem;
+    color: var(--text-body);
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Inter', sans-serif;
+}
+
+.checkbox-item:hover,
+.radio-item:hover {
+    border-color: var(--primary-green);
+    background: rgba(45, 138, 78, 0.03);
+}
+
+.checkbox-item input[type="checkbox"],
+.radio-item input[type="radio"] {
+    accent-color: var(--primary-green);
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}

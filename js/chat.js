@@ -266,7 +266,7 @@
             rice: "Instead of white rice, try:<br>✅ <strong>Brown rice</strong> — same calories, 3× more fibre<br>✅ <strong>Cauliflower rice</strong> — 25 kcal vs 240 kcal<br>✅ <strong>Quinoa</strong> — more protein, complete amino acids"
         };
         const key = Object.keys(alts).find(k => (food || '').includes(k));
-        if (key) return `<strong>Healthier alternatives to ${key}:</strong><br><br>${alts[key]}<br><br>Check our <a href="alternatives.html" style="color:#2d8a4e;font-weight:500;">Healthy Alternatives</a> page for 20+ swap guides!`;
+        if (key) return `<strong>Healthier alternatives to ${key}:</strong><br><br>${alts[key]}<br><br>Want a recipe for any of these? Just ask!`;
         return `Healthier alternatives for <strong>${f}</strong>:<br><br>General swaps that always work:<br>✅ Grilled/steamed instead of fried<br>✅ Brown rice/whole wheat instead of white<br>✅ Water/green tea instead of sugary drinks<br>✅ More vegetables, less sauce<br>✅ Smaller portion + side salad<br><br>Tell me the specific food and I'll give you targeted alternatives!`;
     }
 

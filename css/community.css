@@ -1,0 +1,284 @@
+/* ============================
+   Community Hub Page Styles
+   ============================ */
+
+.community-page {
+    padding: 100px 0 60px;
+    background: var(--light-grey);
+    min-height: 100vh;
+}
+
+.community-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.community-header h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.community-header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+/* Category Filters */
+.community-filters {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.community-filter-btn {
+    padding: 8px 18px;
+    background: var(--white);
+    border: 1px solid rgba(45, 138, 78, 0.1);
+    border-radius: var(--radius-full);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Inter', sans-serif;
+}
+
+.community-filter-btn:hover {
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+}
+
+.community-filter-btn.active {
+    background: var(--primary-green);
+    color: var(--white);
+    border-color: var(--primary-green);
+}
+
+/* Post Form */
+.community-post-form {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    box-shadow: var(--shadow-sm);
+}
+
+.community-post-form h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--dark-grey);
+}
+
+.community-post-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.community-post-form .form-group {
+    margin-bottom: 0;
+}
+
+.community-post-form .form-group label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-body);
+    margin-bottom: 6px;
+}
+
+.community-post-form .form-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--radius-sm);
+    font-size: 0.88rem;
+    font-family: 'Inter', sans-serif;
+    background: var(--light-grey);
+    color: var(--text-body);
+    transition: var(--transition);
+}
+
+.community-post-form .form-input:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(45, 138, 78, 0.08);
+}
+
+.community-post-form .form-textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.community-post-form .form-group:last-of-type {
+    margin-bottom: 16px;
+}
+
+/* Community Posts */
+.community-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.community-post-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.community-post-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.post-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.post-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    color: white;
+    font-weight: 600;
+}
+
+.post-author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-author-name {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--dark-grey);
+}
+
+.post-timestamp {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+.post-category-tag {
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    font-size: 0.72rem;
+    font-weight: 500;
+    background: var(--light-grey);
+    color: var(--text-muted);
+}
+
+.post-category-tag.recipes { background: #fff3e0; color: #e65100; }
+.post-category-tag.tips { background: #e8f5e9; color: #2e7d32; }
+.post-category-tag.motivation { background: #e3f2fd; color: #1565c0; }
+.post-category-tag.questions { background: #fce4ec; color: #c62828; }
+
+.post-content {
+    font-size: 0.9rem;
+    color: var(--text-body);
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.post-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.post-like-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: var(--radius-full);
+    background: var(--light-grey);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Inter', sans-serif;
+}
+
+.post-like-btn:hover {
+    border-color: var(--accent-orange);
+    color: var(--accent-orange);
+    background: rgba(244, 132, 95, 0.05);
+}
+
+.post-like-btn.liked {
+    border-color: var(--accent-orange);
+    color: var(--accent-orange);
+    background: rgba(244, 132, 95, 0.08);
+}
+
+/* Empty State */
+.community-empty {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.community-empty .empty-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.community-empty h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--dark-grey);
+}
+
+.community-empty p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .community-page {
+        padding: 90px 0 40px;
+    }
+
+    .community-post-form .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .community-post-form {
+        padding: 20px;
+    }
+
+    .post-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}

@@ -220,3 +220,174 @@
         padding: 24px;
     }
 }
+
+/* ============================
+   10 Healthy Eating Tips
+   ============================ */
+
+.healthy-tips-section {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 48px;
+}
+
+.healthy-tips-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.numbered-tips-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.numbered-tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: var(--light-grey);
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.numbered-tip:hover {
+    background: rgba(45, 138, 78, 0.04);
+    transform: translateX(2px);
+}
+
+.tip-number {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    background: var(--primary-green);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.78rem;
+}
+
+.numbered-tip p {
+    font-size: 0.85rem;
+    color: var(--text-body);
+    line-height: 1.6;
+    margin: 0;
+    padding-top: 3px;
+}
+
+/* ============================
+   FAQ Accordion - Tips Page
+   ============================ */
+
+.tips-faq-section {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 48px;
+}
+
+.tips-faq-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tips-faq-subtitle {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.tips-faq-section .faq-list {
+    max-width: 100%;
+}
+
+.tips-faq-section .faq-item {
+    background: var(--light-grey);
+    border-radius: var(--radius-md);
+    margin-bottom: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(45, 138, 78, 0.05);
+    transition: var(--transition);
+}
+
+.tips-faq-section .faq-item:hover {
+    border-color: rgba(45, 138, 78, 0.12);
+}
+
+.tips-faq-section .faq-item.active {
+    border-color: var(--primary-green);
+    box-shadow: var(--shadow-md);
+    background: var(--white);
+}
+
+.tips-faq-section .faq-question {
+    width: 100%;
+    padding: 18px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--dark-grey);
+    text-align: left;
+    transition: var(--transition);
+}
+
+.tips-faq-section .faq-question:hover {
+    color: var(--primary-green);
+}
+
+.tips-faq-section .faq-toggle {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--accent-orange);
+    transition: var(--transition);
+}
+
+.tips-faq-section .faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.tips-faq-section .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.tips-faq-section .faq-item.active .faq-answer {
+    max-height: 200px;
+    padding: 0 22px 18px;
+}
+
+.tips-faq-section .faq-answer p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* Responsive additions */
+@media (max-width: 768px) {
+    .numbered-tips-grid {
+        grid-template-columns: 1fr;
+    }
+}
