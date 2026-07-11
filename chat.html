@@ -9,6 +9,62 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/chat.css">
+    <style>
+        /* Make the main chat area a positioning context */
+        .chat-main {
+            position: relative;
+        }
+
+        .botpress-embed {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Force the Botpress webchat widget into the main chat area */
+        /* Hide the floating button */
+        .bpFab,
+        [class*="FabContainer"],
+        [class*="fab-container"],
+        button[aria-label="Open chat"],
+        button[aria-label="Close chat"] {
+            display: none !important;
+        }
+
+        /* Force the chat window to fill the botpress-embed container */
+        .bpChat,
+        [class*="ChatContainer"],
+        [class*="chat-container"],
+        [class*="WebchatContainer"],
+        [class*="webchat-container"] {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            max-width: 100% !important;
+            max-height: 100% !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            transform: none !important;
+            transition: none !important;
+        }
+
+        /* Target the Botpress shadow host element */
+        #bp-web-widget {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        /* Move the Botpress widget into the embed container via JS below */
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -53,10 +109,9 @@
             <div class="chat-history" id="chat-history">
                 <div class="history-header">
                     <h4>Recent Chats</h4>
-                    <button class="export-all-btn" id="export-all-btn" title="Export all chats">📥</button>
                 </div>
                 <div class="history-list" id="history-list">
-                    <!-- Populated by JS -->
+                    <p class="no-chats">No conversations yet</p>
                 </div>
             </div>
 
@@ -65,43 +120,59 @@
             </div>
         </aside>
 
-        <!-- Main Chat Area -->
+        <!-- Main Chat Area with Botpress -->
         <main class="chat-main">
             <div class="chat-header">
                 <button class="sidebar-toggle-btn" id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
-                <h2 id="chat-title">New Chat</h2>
-                <div class="chat-actions">
-                    <button class="chat-action-btn" id="export-chat-btn" title="Export this chat as PDF">📄 Export PDF</button>
-                    <button class="chat-action-btn danger" id="delete-chat-btn" title="Delete this chat">🗑️ Delete</button>
-                </div>
+                <h2 id="chat-title">NutriAI Chat</h2>
             </div>
 
-            <div class="chat-messages" id="chat-messages">
-                <!-- Welcome state -->
-                <div class="welcome-state" id="welcome-state">
-                    <div class="welcome-icon">🥗</div>
-                    <h2>How can I help you eat better today?</h2>
-                    <p>Ask me about any meal, get nutrition analysis, or find healthier alternatives.</p>
-                </div>
-            </div>
-
-            <div class="suggested-prompts" id="suggested-prompts">
-                <button class="prompt-chip">What did I eat today — nasi lemak</button>
-                <button class="prompt-chip">Suggest a healthy lunch</button>
-                <button class="prompt-chip">What's a good breakfast?</button>
-                <button class="prompt-chip">High protein meals under $5</button>
-            </div>
-
-            <div class="chat-input-area">
-                <div class="chat-input-wrapper">
-                    <input type="text" class="chat-input" id="chat-input" placeholder="Ask about any meal or nutrition topic...">
-                    <button class="send-btn" id="send-btn" aria-label="Send message">➤</button>
-                </div>
-            </div>
+            <!-- Botpress embedded here -->
+            <div class="botpress-embed" id="botpress-embed"></div>
         </main>
     </div>
 
     <script src="js/main.js"></script>
-    <script src="js/chat.js"></script>
+    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2026/07/08/13/20260708135932-6JVHL9Y3.js" defer></script>
+    <script>
+        // Sidebar toggle for mobile
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const chatSidebar = document.getElementById('chat-sidebar');
+        if (sidebarToggle) {
+            sidebarToggle.addEventListener('click', () => {
+                chatSidebar.classList.toggle('open');
+            });
+        }
+
+        // Wait for Botpress to inject, then move it into our container and auto-open
+        window.addEventListener('load', function() {
+            const tryEmbed = setInterval(function() {
+                const bpWidget = document.getElementById('bp-web-widget');
+                const container = document.getElementById('botpress-embed');
+                
+                if (bpWidget && container) {
+                    // Move the widget inside our container
+                    container.appendChild(bpWidget);
+                    
+                    // Auto-open the chat
+                    if (window.botpress) {
+                        window.botpress.open();
+                    }
+                    clearInterval(tryEmbed);
+                }
+            }, 300);
+            
+            // Also keep trying to open it
+            const tryOpen = setInterval(function() {
+                if (window.botpress) {
+                    window.botpress.open();
+                    clearInterval(tryOpen);
+                }
+            }, 500);
+
+            setTimeout(() => { clearInterval(tryEmbed); clearInterval(tryOpen); }, 15000);
+        });
+    </script>
 </body>
 </html>
