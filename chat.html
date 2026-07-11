@@ -10,60 +10,31 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/chat.css">
     <style>
-        /* Make the main chat area a positioning context */
-        .chat-main {
-            position: relative;
+        /* Override: make the main chat area hold the iframe */
+        .chat-messages {
+            padding: 0 !important;
+            gap: 0 !important;
         }
 
-        .botpress-embed {
+        .botpress-iframe-container {
+            width: 100%;
+            height: 100%;
             flex: 1;
-            position: relative;
-            overflow: hidden;
+            display: flex;
         }
 
-        /* Force the Botpress webchat widget into the main chat area */
-        /* Hide the floating button */
-        .bpFab,
-        [class*="FabContainer"],
-        [class*="fab-container"],
-        button[aria-label="Open chat"],
-        button[aria-label="Close chat"] {
+        .botpress-iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* Hide the old suggested prompts and input since Botpress handles that */
+        .suggested-prompts,
+        .chat-input-area {
             display: none !important;
         }
-
-        /* Force the chat window to fill the botpress-embed container */
-        .bpChat,
-        [class*="ChatContainer"],
-        [class*="chat-container"],
-        [class*="WebchatContainer"],
-        [class*="webchat-container"] {
-            position: absolute !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            bottom: 0 !important;
-            width: 100% !important;
-            height: 100% !important;
-            max-width: 100% !important;
-            max-height: 100% !important;
-            border-radius: 0 !important;
-            box-shadow: none !important;
-            transform: none !important;
-            transition: none !important;
-        }
-
-        /* Target the Botpress shadow host element */
-        #bp-web-widget {
-            position: absolute !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            bottom: 0 !important;
-            width: 100% !important;
-            height: 100% !important;
-        }
-
-        /* Move the Botpress widget into the embed container via JS below */
     </style>
 </head>
 <body>
@@ -120,21 +91,26 @@
             </div>
         </aside>
 
-        <!-- Main Chat Area with Botpress -->
+        <!-- Main Chat Area -->
         <main class="chat-main">
             <div class="chat-header">
                 <button class="sidebar-toggle-btn" id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
                 <h2 id="chat-title">NutriAI Chat</h2>
             </div>
 
-            <!-- Botpress embedded here -->
-            <div class="botpress-embed" id="botpress-embed"></div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="botpress-iframe-container">
+                    <iframe 
+                        src="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/07/08/13/20260708135933-7O32B0QO.json"
+                        title="NutriAI Chatbot"
+                        allow="microphone"
+                    ></iframe>
+                </div>
+            </div>
         </main>
     </div>
 
     <script src="js/main.js"></script>
-    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
-    <script src="https://files.bpcontent.cloud/2026/07/08/13/20260708135932-6JVHL9Y3.js" defer></script>
     <script>
         // Sidebar toggle for mobile
         const sidebarToggle = document.getElementById('sidebar-toggle');
@@ -144,35 +120,6 @@
                 chatSidebar.classList.toggle('open');
             });
         }
-
-        // Wait for Botpress to inject, then move it into our container and auto-open
-        window.addEventListener('load', function() {
-            const tryEmbed = setInterval(function() {
-                const bpWidget = document.getElementById('bp-web-widget');
-                const container = document.getElementById('botpress-embed');
-                
-                if (bpWidget && container) {
-                    // Move the widget inside our container
-                    container.appendChild(bpWidget);
-                    
-                    // Auto-open the chat
-                    if (window.botpress) {
-                        window.botpress.open();
-                    }
-                    clearInterval(tryEmbed);
-                }
-            }, 300);
-            
-            // Also keep trying to open it
-            const tryOpen = setInterval(function() {
-                if (window.botpress) {
-                    window.botpress.open();
-                    clearInterval(tryOpen);
-                }
-            }, 500);
-
-            setTimeout(() => { clearInterval(tryEmbed); clearInterval(tryOpen); }, 15000);
-        });
     </script>
 </body>
 </html>
