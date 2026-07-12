@@ -299,22 +299,22 @@
 
             // New chat button
             if (newChatBtn) {
-    newChatBtn.addEventListener('click', () => {
-        autoSaveSession();
+                newChatBtn.addEventListener('click', () => {
+                    autoSaveSession();
 
-        // Click Botpress "New Conversation"
-        const iframe = document.querySelector("iframe");
-
-        if (!iframe) return;
-
-        iframe.contentWindow.postMessage(
-            {
-                type: "resetConversation"
-            },
-            "*"
-        );
-    });
-}
+                    // Click Botpress "New Conversation"
+                    const iframe = document.querySelector("iframe");
+            
+                    if (!iframe) return;
+            
+                    iframe.contentWindow.postMessage(
+                        {
+                            type: "resetConversation"
+                        },
+                        "*"
+                    );
+                });
+            }
 
             // Delete all button
             if (deleteAllBtn) {
