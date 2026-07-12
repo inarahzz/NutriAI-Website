@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMI & Calorie Calculator – NutriAI</title>
+    <title>Health Calculator – NutriAI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,16 +15,13 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
-                <img src="images/logo.svg" alt="NutriAI Logo" class="logo-img">
+                <img src="images/image-removebg-preview.png" alt="NutriAI Logo" class="logo-img">
             </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="chat.html">Chat</a></li>
-                <li><a href="meal-analysis.html">Meal Analysis</a></li>
-                <li><a href="tips.html">Nutrition Tips</a></li>
-                <li><a href="compare.html">Compare Meals</a></li>
+                <li><a href="chat.html">AI Chat</a></li>
                 <li><a href="community.html">Community</a></li>
-                <li><a href="calculator.html" class="active">Calculator</a></li>
+                <li><a href="calculator.html" class="active">Health Calculator</a></li>
             </ul>
             <a href="chat.html" class="nav-cta">Start Chat</a>
             <button class="nav-toggle" aria-label="Toggle navigation">
@@ -39,8 +36,8 @@
         <!-- Hero -->
         <section class="calculator-hero">
             <div class="container">
-                <h1>BMI & Calorie Calculator 📊</h1>
-                <p>Know your numbers. Get personalised daily calorie recommendations based on your body and lifestyle.</p>
+                <h1>Health Calculator 📊</h1>
+                <p>Know your numbers. Get personalised BMI, daily calories, water intake, and protein recommendations.</p>
             </div>
         </section>
 
@@ -208,6 +205,63 @@
                 </div>
             </div>
         </section>
+
+        <!-- Additional Calculators -->
+        <section class="container" style="padding-bottom: 64px;">
+            <div class="section-header" style="margin-top: 64px;">
+                <h2>More Health Calculators</h2>
+                <p>Quick tools to help you understand your daily requirements.</p>
+            </div>
+            <div class="calculator-grid">
+                <!-- Water Intake Calculator -->
+                <div class="calc-input-card">
+                    <h2>💧 Daily Water Intake</h2>
+                    <p class="card-subtitle">How much water should you drink?</p>
+
+                    <div class="form-group">
+                        <label for="water-weight">Your Weight (kg)</label>
+                        <input type="number" id="water-weight" placeholder="e.g. 65" min="30" max="200">
+                    </div>
+                    <div class="form-group">
+                        <label for="water-activity">Activity Level</label>
+                        <select id="water-activity">
+                            <option value="30">Sedentary (mostly sitting)</option>
+                            <option value="35">Lightly active</option>
+                            <option value="40" selected>Moderately active</option>
+                            <option value="45">Very active / hot climate</option>
+                        </select>
+                    </div>
+                    <button type="button" class="calculate-btn" id="water-calc-btn">Calculate Water Intake 💧</button>
+                    <div class="insight-box" id="water-result" style="display:none; margin-top: 16px;">
+                        <p><span class="insight-icon">💧</span> <span id="water-result-text"></span></p>
+                    </div>
+                </div>
+
+                <!-- Protein Calculator -->
+                <div class="calc-input-card">
+                    <h2>🥩 Daily Protein Requirement</h2>
+                    <p class="card-subtitle">How much protein do you need?</p>
+
+                    <div class="form-group">
+                        <label for="protein-weight">Your Weight (kg)</label>
+                        <input type="number" id="protein-weight" placeholder="e.g. 65" min="30" max="200">
+                    </div>
+                    <div class="form-group">
+                        <label for="protein-goal">Your Goal</label>
+                        <select id="protein-goal">
+                            <option value="0.8">General health (sedentary)</option>
+                            <option value="1.2">Maintain muscle (moderate activity)</option>
+                            <option value="1.6" selected>Build muscle / active</option>
+                            <option value="2.0">Intense training / athlete</option>
+                        </select>
+                    </div>
+                    <button type="button" class="calculate-btn" id="protein-calc-btn">Calculate Protein 🥩</button>
+                    <div class="insight-box" id="protein-result" style="display:none; margin-top: 16px;">
+                        <p><span class="insight-icon">🥩</span> <span id="protein-result-text"></span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -216,7 +270,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <img src="images/logo.svg" alt="NutriAI Logo" class="logo-img footer-logo-img">
+                        <img src="images/image-removebg-preview.png" alt="NutriAI Logo" class="logo-img footer-logo-img">
                     </div>
                     <p>Helping students eat smarter and live better through AI-powered meal recommendations. Start your nutrition journey today.</p>
                 </div>
@@ -224,16 +278,17 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="chat.html">Chat</a></li>
-                        <li><a href="meal-analysis.html">Meal Analysis</a></li>
-                            </ul>
+                        <li><a href="chat.html">AI Chat</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="calculator.html">Health Calculator</a></li>
+                    </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Support</h4>
                     <ul>
                         <li><a href="contact.html">Contact & FAQ</a></li>
                         <li><a href="profile.html">Profile</a></li>
-                        <li><a href="calculator.html">BMI Calculator</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
@@ -255,5 +310,38 @@
 
     <script src="js/main.js"></script>
     <script src="js/calculator.js"></script>
+    <script>
+        // Water Intake Calculator
+        document.getElementById('water-calc-btn').addEventListener('click', function() {
+            const weight = parseFloat(document.getElementById('water-weight').value);
+            const factor = parseInt(document.getElementById('water-activity').value);
+            if (!weight || weight < 30) { alert('Please enter a valid weight.'); return; }
+            
+            const waterMl = Math.round(weight * factor);
+            const waterLitres = (waterMl / 1000).toFixed(1);
+            const glasses = Math.round(waterMl / 250);
+            
+            const resultEl = document.getElementById('water-result');
+            document.getElementById('water-result-text').innerHTML = 
+                `You should drink approximately <strong>${waterLitres} litres</strong> (${waterMl} ml) of water per day — that's about <strong>${glasses} glasses</strong>. Increase intake during hot weather or exercise.`;
+            resultEl.style.display = 'block';
+        });
+
+        // Protein Calculator
+        document.getElementById('protein-calc-btn').addEventListener('click', function() {
+            const weight = parseFloat(document.getElementById('protein-weight').value);
+            const factor = parseFloat(document.getElementById('protein-goal').value);
+            if (!weight || weight < 30) { alert('Please enter a valid weight.'); return; }
+            
+            const proteinG = Math.round(weight * factor);
+            const eggs = Math.round(proteinG / 6);
+            const chicken = Math.round(proteinG / 31 * 100);
+            
+            const resultEl = document.getElementById('protein-result');
+            document.getElementById('protein-result-text').innerHTML = 
+                `You need approximately <strong>${proteinG}g of protein</strong> per day. That's equivalent to about <strong>${eggs} eggs</strong> or <strong>${chicken}g of chicken breast</strong>. Spread intake across meals for optimal absorption.`;
+            resultEl.style.display = 'block';
+        });
+    </script>
 </body>
 </html>

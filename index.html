@@ -19,14 +19,13 @@
             </a>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="chat.html">Chat</a></li>
-                <li><a href="meal-analysis.html">Meal Analysis</a></li>
-                <li><a href="tips.html">Nutrition Tips</a></li>
-                <li><a href="compare.html">Compare Meals</a></li>
+                <li><a href="chat.html">AI Chat</a></li>
                 <li><a href="community.html">Community</a></li>
-                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="calculator.html">Health Calculator</a></li>
             </ul>
-            <a href="chat.html" class="nav-cta">Start Chat</a>
+            <div class="nav-right">
+                <a href="profile.html" class="nav-profile" aria-label="Profile">👤</a>
+            </div>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
@@ -40,103 +39,146 @@
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-problem">
-                    <span class="hero-badge">� Your Guide to Healthy Eating</span>
+                    <span class="hero-badge">🍃 Your AI-Powered Nutrition Assistant</span>
                 </div>
-                <h1 class="hero-title">Welcome to NutriAI: <span>Fresh Food, Better Life.</span></h1>
-                <p class="hero-subtitle">Making nutrition simple, accessible, and enjoyable for students. Your AI-powered guide to a healthier, happier life — one meal at a time.</p>
+                <h1 class="hero-title">Eat Smarter, <span>Live Better.</span></h1>
+                <p class="hero-subtitle">Analyse meals, discover healthier alternatives, and build lasting habits — all through one simple conversation.</p>
                 <div class="hero-buttons">
-                    <a href="chat.html" class="btn btn-primary">Start Your Journey 🍃</a>
-                    <a href="#mission" class="btn btn-secondary">Learn More</a>
+                    <a href="chat.html" class="btn btn-primary btn-lg">Chat with NutriAI 🤖</a>
+                    <a href="#popular-questions" class="btn btn-secondary">Explore</a>
                 </div>
             </div>
             <div class="hero-illustration">
-                <div class="hero-image-wrapper">
-                    <div class="floating-card card-1">
-                        <span class="card-icon">🥦</span>
-                        <span class="card-text">Balanced</span>
+                <div class="hero-preview-wrapper">
+                    <!-- Chat Preview Card -->
+                    <a href="chat.html" class="hero-chat-preview">
+                        <div class="chat-preview-header">
+                            <div class="chat-preview-dot"></div>
+                            <div class="chat-preview-dot"></div>
+                            <div class="chat-preview-dot"></div>
+                            <span class="chat-preview-title">NutriAI Chat</span>
+                        </div>
+                        <div class="chat-preview-body">
+                            <!-- User message -->
+                            <div class="preview-msg preview-msg-user">
+                                <div class="preview-bubble preview-bubble-user">Analyse Chicken Rice</div>
+                            </div>
+                            <!-- AI response -->
+                            <div class="preview-msg preview-msg-ai">
+                                <div class="preview-avatar">🤖</div>
+                                <div class="preview-bubble preview-bubble-ai">
+                                    <div class="preview-ai-title">🍚 Chicken Rice — Analysis</div>
+                                    <div class="preview-stats-row">
+                                        <div class="preview-stat">
+                                            <span class="preview-stat-val">607</span>
+                                            <span class="preview-stat-lbl">kcal</span>
+                                        </div>
+                                        <div class="preview-stat">
+                                            <span class="preview-stat-val">27g</span>
+                                            <span class="preview-stat-lbl">protein</span>
+                                        </div>
+                                        <div class="preview-stat">
+                                            <span class="preview-stat-val">23g</span>
+                                            <span class="preview-stat-lbl">fat</span>
+                                        </div>
+                                        <div class="preview-stat">
+                                            <span class="preview-stat-val">6.2</span>
+                                            <span class="preview-stat-lbl">score</span>
+                                        </div>
+                                    </div>
+                                    <div class="preview-recs">
+                                        <span>✓ Choose steamed over roasted</span>
+                                        <span>✓ Ask for less oily rice</span>
+                                        <span>✓ Add a side of vegetables</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-preview-footer">
+                            <span class="chat-preview-input">Type your meal...</span>
+                            <span class="chat-preview-send">↑</span>
+                        </div>
+                        <div class="chat-preview-cta">Try it in AI Chat →</div>
+                    </a>
+
+                    <!-- Floating Glassmorphism Cards -->
+                    <div class="hero-float-card float-1">
+                        <span>🥗</span> Healthy Choice
                     </div>
-                    <div class="floating-card card-2">
-                        <span class="card-icon">🍊</span>
-                        <span class="card-text">Fresh</span>
+                    <div class="hero-float-card float-2">
+                        <span>💪</span> High Protein
                     </div>
-                    <div class="floating-card card-3">
-                        <span class="card-icon">🥗</span>
-                        <span class="card-text">Nutritious</span>
-                    </div>
-                    <div class="hero-circle"></div>
-                    <div class="hero-plate">
-                        <span class="plate-emoji">🥬</span>
+                    <div class="hero-float-card float-3">
+                        <span>🔥</span> Lower Calories
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mission Section -->
-    <section class="problem-section" id="mission">
+    <!-- Popular Questions Section -->
+    <section class="popular-questions" id="popular-questions">
         <div class="container">
             <div class="section-header">
-                <h2>Our Mission</h2>
-                <p>Making nutrition simple, accessible, and enjoyable for everyone — your guide to a healthier, happier life.</p>
+                <h2>Popular Questions</h2>
+                <p>Click any question to get instant answers from NutriAI.</p>
             </div>
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <div class="problem-icon">🌱</div>
-                    <h3>Whole Foods First</h3>
-                    <p>Balanced plates every day and habits that last a lifetime — simple principles for lasting wellness.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">🤖</div>
-                    <h3>Smart AI Guidance</h3>
-                    <p>Our AI understands your meals and gives you personalised, actionable suggestions that fit your student lifestyle.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">💚</div>
-                    <h3>Built for Students</h3>
-                    <p>Budget-friendly recommendations that work with your busy schedule, limited kitchen access, and local food options.</p>
-                </div>
+            <div class="questions-grid">
+                <a href="chat.html?q=Is+Chicken+Rice+healthy%3F" class="question-card">
+                    <span class="question-icon">🍚</span>
+                    <span class="question-text">Is Chicken Rice healthy?</span>
+                    <span class="question-arrow">→</span>
+                </a>
+                <a href="chat.html?q=Compare+Nasi+Lemak+and+Chicken+Rice" class="question-card">
+                    <span class="question-icon">⚖️</span>
+                    <span class="question-text">Compare Nasi Lemak and Chicken Rice</span>
+                    <span class="question-arrow">→</span>
+                </a>
+                <a href="chat.html?q=Suggest+a+healthier+breakfast" class="question-card">
+                    <span class="question-icon">🌅</span>
+                    <span class="question-text">Suggest a healthier breakfast</span>
+                    <span class="question-arrow">→</span>
+                </a>
+                <a href="chat.html?q=Can+I+eat+fast+food+while+dieting%3F" class="question-card">
+                    <span class="question-icon">🍔</span>
+                    <span class="question-text">Can I eat fast food while dieting?</span>
+                    <span class="question-arrow">→</span>
+                </a>
+                <a href="chat.html?q=How+much+protein+do+I+need%3F" class="question-card">
+                    <span class="question-icon">🥩</span>
+                    <span class="question-text">How much protein do I need?</span>
+                    <span class="question-arrow">→</span>
+                </a>
+                <a href="chat.html?q=What+are+the+healthiest+hawker+food+options%3F" class="question-card">
+                    <span class="question-icon">🏪</span>
+                    <span class="question-text">Healthiest hawker food options?</span>
+                    <span class="question-arrow">→</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Our Approach Section -->
-    <section class="approach-section">
+    <!-- Quick Meal Analysis Section -->
+    <section class="quick-analysis">
         <div class="container">
             <div class="section-header">
-                <h2>Our Approach</h2>
-                <p>Whole foods first, balanced plates every day — habits that last a lifetime.</p>
+                <h2>Analyse Your Meal Instantly</h2>
+                <p>Select a meal to get a full nutritional breakdown from NutriAI.</p>
+            </div>
+            <div class="meal-chips">
+                <a href="chat.html?q=Analyse+Chicken+Rice+nutrition" class="meal-chip">🍚 Chicken Rice</a>
+                <a href="chat.html?q=Analyse+Nasi+Lemak+nutrition" class="meal-chip">🍛 Nasi Lemak</a>
+                <a href="chat.html?q=Analyse+Mee+Goreng+nutrition" class="meal-chip">🍜 Mee Goreng</a>
+                <a href="chat.html?q=Analyse+Burger+and+Fries+nutrition" class="meal-chip">🍔 Burger & Fries</a>
+                <a href="chat.html?q=Analyse+Mixed+Rice+nutrition" class="meal-chip">🍱 Mixed Rice</a>
+                <a href="chat.html?q=Analyse+Oatmeal+nutrition" class="meal-chip">🥣 Oatmeal</a>
+                <a href="chat.html?q=Analyse+Salad+nutrition" class="meal-chip">🥗 Salad</a>
+                <a href="chat.html?q=Analyse+Roti+Prata+nutrition" class="meal-chip">🫓 Roti Prata</a>
             </div>
         </div>
     </section>
 
-    <!-- Features of NutriAI -->
-    <section class="features" id="features">
-        <div class="container">
-            <div class="section-header">
-                <h2>The Features of NutriAI</h2>
-                <p>Powerful AI tools to support your nutrition journey every day.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>AI Meal Analysis</h3>
-                    <p>Get instant calorie counts, nutrient breakdowns, and health scores for any meal you eat.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Personalised Recommendations</h3>
-                    <p>Tailored suggestions based on your dietary preferences, goals, and lifestyle.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
-                    <h3>Smart Chatbot</h3>
-                    <p>Ask anything food-related — recipes, calories, alternatives, ingredients — and get instant answers.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features of NutriAI -->
+    <!-- How It Works -->
     <section class="how-it-works" id="how-it-works">
         <div class="container">
             <div class="section-header">
@@ -147,8 +189,8 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3>Enter Your Meal</h3>
-                        <p>Just type what you ate — local food, fast food, anything!</p>
+                        <h3>Ask Anything</h3>
+                        <p>Type a meal, ask a question, or request a recipe — NutriAI understands it all.</p>
                     </div>
                 </div>
                 <div class="step-connector">
@@ -159,8 +201,8 @@
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3>AI Analyses Nutrition</h3>
-                        <p>Get instant calories, nutrients, and a health score breakdown.</p>
+                        <h3>AI Analyses & Responds</h3>
+                        <p>Get instant calories, nutrients, health scores, and personalised advice.</p>
                     </div>
                 </div>
                 <div class="step-connector">
@@ -172,53 +214,64 @@
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <h3>Get Better Options</h3>
-                        <p>Receive personalised healthier alternatives that fit your budget.</p>
+                        <p>Receive healthier alternatives, recipes, and actionable tips.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Daily Nutrition Tips -->
-    <section class="testimonials">
+    <!-- Featured Healthy Tip -->
+    <section class="featured-tip">
+        <div class="container">
+            <div class="tip-card">
+                <div class="tip-icon">🌾</div>
+                <div class="tip-content">
+                    <h3>The Power of Fibre</h3>
+                    <p>Fibre keeps you fuller longer and supports digestive health. Aim for 25–30g daily through whole grains, fruits, and vegetables.</p>
+                    <a href="chat.html?q=Tell+me+more+about+the+benefits+of+fibre+and+how+to+get+enough" class="btn btn-primary btn-sm">Learn More from NutriAI →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features of NutriAI -->
+    <section class="features" id="features">
         <div class="container">
             <div class="section-header">
-                <h2>Daily Nutrition Tips</h2>
-                <p>Quick, practical advice for eating better as a student.</p>
+                <h2>Everything in One Chat</h2>
+                <p>No need to navigate between pages — NutriAI handles it all.</p>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">🥤</div>
-                    <p>"Stay hydrated! Drink at least 8 glasses of water daily. Swap sugary drinks for water with lemon or herbal tea."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">💧</div>
-                        <div class="author-info">
-                            <strong>Hydration</strong>
-                            <span>Daily Essential</span>
-                        </div>
-                    </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Meal Analysis</h3>
+                    <p>Get instant calorie counts, nutrient breakdowns, and health scores for any meal.</p>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">🍎</div>
-                    <p>"Practice portion control and eat mindfully. Take your time and enjoy your meals for optimal energy and wellness."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">🧘</div>
-                        <div class="author-info">
-                            <strong>Mindful Eating</strong>
-                            <span>Healthy Habit</span>
-                        </div>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Compare & Swap</h3>
+                    <p>Compare meals side-by-side and discover healthier alternatives you'll enjoy.</p>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">🥕</div>
-                    <p>"Load up on leafy greens and colourful vegetables — rich in vitamins, minerals, and antioxidants for peak health."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">🌈</div>
-                        <div class="author-info">
-                            <strong>Eat the Rainbow</strong>
-                            <span>Nutrition Tip</span>
-                        </div>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🍳</div>
+                    <h3>Healthy Recipes</h3>
+                    <p>Get budget-friendly, student-friendly recipes tailored to your preferences.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Personalised Tips</h3>
+                    <p>Receive nutrition advice based on your goals, dietary needs, and lifestyle.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏪</div>
+                    <h3>Local Food Guide</h3>
+                    <p>Discover the healthiest options at hawker centres and food courts near you.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Smart Chatbot</h3>
+                    <p>Ask anything food-related — available 24/7, instant answers, no judgement.</p>
                 </div>
             </div>
         </div>
@@ -268,7 +321,6 @@
                         <p>Our AI provides estimates based on standard nutritional databases. While not exact, they give you a good overview of your meal's nutritional profile.</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -278,7 +330,7 @@
         <div class="container">
             <div class="disclaimer-box">
                 <span class="disclaimer-icon">⚕️</span>
-                <p>NutriAI is an interactive assistant to promote healthy eating habits and does not replace professional medical advice.</p>
+                <p><strong>Disclaimer:</strong> NutriAI provides AI-generated nutrition guidance for educational purposes only and should not replace advice from qualified healthcare professionals or registered dietitians.</p>
             </div>
         </div>
     </section>
@@ -297,9 +349,10 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="chat.html">Chat</a></li>
-                        <li><a href="meal-analysis.html">Meal Analysis</a></li>
-                            </ul>
+                        <li><a href="chat.html">AI Chat</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="calculator.html">Health Calculator</a></li>
+                    </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Support</h4>

@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NutriAI – Chat</title>
+    <title>NutriAI – AI Chat</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/chat.css">
     <style>
-        /* Override: make the main chat area hold the iframe */
+        /* Chat page overrides */
         .chat-messages {
             padding: 0 !important;
             gap: 0 !important;
+            overflow: hidden;
         }
 
         .botpress-iframe-container {
@@ -30,10 +31,94 @@
             display: block;
         }
 
-        /* Hide the old suggested prompts and input since Botpress handles that */
         .suggested-prompts,
         .chat-input-area {
             display: none !important;
+        }
+
+        /* Quick Prompt Chips */
+        .quick-prompts {
+            padding: 12px 20px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            background: var(--light-grey);
+            flex-shrink: 0;
+        }
+
+        .quick-prompt-chip {
+            padding: 7px 14px;
+            background: var(--white);
+            border: 1px solid rgba(45, 138, 78, 0.15);
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            color: var(--text-body);
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .quick-prompt-chip:hover {
+            border-color: var(--primary-green);
+            color: var(--primary-green);
+            background: rgba(45, 138, 78, 0.04);
+            transform: translateY(-1px);
+        }
+
+        /* Chat header */
+        .chat-header {
+            padding: 14px 24px !important;
+        }
+
+        .chat-actions {
+            display: flex !important;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .export-pdf-btn {
+            padding: 8px 16px;
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            border-radius: var(--radius-full);
+            font-size: 0.78rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .export-pdf-btn:hover {
+            background: #236b3e;
+            transform: translateY(-1px);
+        }
+
+        /* Sidebar scrollable history */
+        .chat-history {
+            flex: 1;
+            overflow-y: auto;
+            min-height: 0;
+        }
+
+        /* Print styles */
+        @media print {
+            .navbar, .chat-sidebar, .chat-header, .quick-prompts {
+                display: none !important;
+            }
+            .chat-layout {
+                grid-template-columns: 1fr !important;
+                padding-top: 0 !important;
+            }
+            .chat-messages {
+                height: auto !important;
+                overflow: visible !important;
+            }
         }
     </style>
 </head>
@@ -42,8 +127,14 @@
     <nav class="navbar chat-navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
-                <img src="images/logo.svg" alt="NutriAI Logo" class="logo-img">
+                <img src="images/image-removebg-preview.png" alt="NutriAI Logo" class="logo-img">
             </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="chat.html" class="active">AI Chat</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="calculator.html">Health Calculator</a></li>
+            </ul>
             <a href="index.html" class="nav-cta">← Back to Home</a>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
@@ -69,11 +160,15 @@
                 </a>
                 <a href="chat.html" class="sidebar-nav-item active">
                     <span class="nav-icon">💬</span>
-                    <span>Chat</span>
+                    <span>AI Chat</span>
                 </a>
-                <a href="profile.html" class="sidebar-nav-item">
-                    <span class="nav-icon">👤</span>
-                    <span>Profile</span>
+                <a href="community.html" class="sidebar-nav-item">
+                    <span class="nav-icon">🤝</span>
+                    <span>Community</span>
+                </a>
+                <a href="calculator.html" class="sidebar-nav-item">
+                    <span class="nav-icon">🧮</span>
+                    <span>Health Calculator</span>
                 </a>
             </nav>
 
@@ -87,7 +182,7 @@
             </div>
 
             <div class="sidebar-footer">
-                <button class="delete-all-btn" id="delete-all-btn">🗑️ Delete All Chats</button>
+                <button class="delete-all-btn" id="delete-all-btn">🗑️ Clear All History</button>
             </div>
         </aside>
 
@@ -96,10 +191,27 @@
             <div class="chat-header">
                 <button class="sidebar-toggle-btn" id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
                 <h2 id="chat-title">NutriAI Chat</h2>
+                <div class="chat-actions">
+                    <button class="export-pdf-btn" id="export-current-btn">📄 Export to PDF</button>
+                </div>
             </div>
 
+            <!-- Quick Prompt Chips -->
+            <div class="quick-prompts" id="quick-prompts">
+                <a href="#" class="quick-prompt-chip" data-prompt="Analyse Chicken Rice nutrition">📊 Analyse Chicken Rice</a>
+                <a href="#" class="quick-prompt-chip" data-prompt="Compare Nasi Lemak and Chicken Rice">⚖️ Compare Meals</a>
+                <a href="#" class="quick-prompt-chip" data-prompt="Give me a healthier alternative to my meal">🔄 Healthy Alternatives</a>
+                <a href="#" class="quick-prompt-chip" data-prompt="Give me a healthy recipe for students">🍳 Healthy Recipes</a>
+                <a href="#" class="quick-prompt-chip" data-prompt="How many calories should I eat per day?">🔥 Calories Calculator</a>
+                <a href="#" class="quick-prompt-chip" data-prompt="What are the healthiest fast food options?">🍔 Fast Food Options</a>
+                <a href="#" class="quick-prompt-chip" data-prompt="Suggest high protein meals for weight loss">💪 Weight Loss Meals</a>
+                <a href="#" class="quick-prompt-chip" data-prompt="What are the best protein-rich meals?">🥩 Protein-rich Meals</a>
+                <a href="#" class="quick-prompt-chip" data-prompt="What are the healthiest hawker food in Singapore?">🏪 Healthy Hawker Food</a>
+            </div>
+
+            <!-- Chat Messages / Botpress -->
             <div class="chat-messages" id="chat-messages">
-                <div class="botpress-iframe-container">
+                <div class="botpress-iframe-container" id="botpress-container">
                     <iframe 
                         src="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/07/08/13/20260708135933-7O32B0QO.json"
                         title="NutriAI Chatbot"
@@ -120,6 +232,138 @@
                 chatSidebar.classList.toggle('open');
             });
         }
+
+        // =============================
+        // RECENT CHATS & EXPORT SYSTEM
+        // =============================
+        (function() {
+            const historyList = document.getElementById('history-list');
+            const newChatBtn = document.getElementById('new-chat-btn');
+            const deleteAllBtn = document.getElementById('delete-all-btn');
+            const exportCurrentBtn = document.getElementById('export-current-btn');
+
+            let recentChats = JSON.parse(localStorage.getItem('nutriai_recent_chats') || '[]');
+            let currentChatId = null;
+
+            function renderRecentChats() {
+                if (!historyList) return;
+                if (recentChats.length === 0) {
+                    historyList.innerHTML = '<p class="no-chats">No conversations yet</p>';
+                    return;
+                }
+                historyList.innerHTML = '';
+                recentChats.forEach((chat, index) => {
+                    const item = document.createElement('div');
+                    item.className = `history-item${chat.id === currentChatId ? ' active' : ''}`;
+                    item.innerHTML = `
+                        <span class="history-item-text" title="${chat.title}">${chat.title}</span>
+                        <button class="history-item-delete" title="Delete">×</button>
+                    `;
+                    item.querySelector('.history-item-delete').addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        recentChats.splice(index, 1);
+                        saveChats();
+                        renderRecentChats();
+                    });
+                    item.addEventListener('click', () => {
+                        currentChatId = chat.id;
+                        renderRecentChats();
+                    });
+                    historyList.appendChild(item);
+                });
+            }
+
+            function saveChats() {
+                localStorage.setItem('nutriai_recent_chats', JSON.stringify(recentChats));
+            }
+
+            function autoSaveSession(title) {
+                const chat = {
+                    id: 'chat_' + Date.now(),
+                    title: title || 'Chat — ' + new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}),
+                    createdAt: Date.now()
+                };
+                recentChats.unshift(chat);
+                if (recentChats.length > 20) recentChats = recentChats.slice(0, 20);
+                currentChatId = chat.id;
+                saveChats();
+                renderRecentChats();
+            }
+
+            // Handle URL query parameter (from home page cards)
+            const urlParams = new URLSearchParams(window.location.search);
+            const queryPrompt = urlParams.get('q');
+            if (queryPrompt) {
+                autoSaveSession(queryPrompt.substring(0, 45));
+            }
+
+            // New chat button
+            if (newChatBtn) {
+                newChatBtn.addEventListener('click', () => {
+                    autoSaveSession();
+                    const iframe = document.querySelector('.botpress-iframe-container iframe');
+                    if (iframe) iframe.src = iframe.src;
+                });
+            }
+
+            // Delete all button
+            if (deleteAllBtn) {
+                deleteAllBtn.addEventListener('click', () => {
+                    if (!recentChats.length) return;
+                    if (!confirm('Delete all conversation history?')) return;
+                    recentChats = [];
+                    currentChatId = null;
+                    saveChats();
+                    renderRecentChats();
+                });
+            }
+
+            // Export button
+            if (exportCurrentBtn) {
+                exportCurrentBtn.addEventListener('click', () => {
+                    window.print();
+                });
+            }
+
+            // Quick prompt chips
+            document.querySelectorAll('.quick-prompt-chip').forEach(chip => {
+                chip.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const prompt = chip.dataset.prompt;
+                    autoSaveSession(prompt.substring(0, 45));
+                    // Reload iframe — Botpress doesn't support external prompt injection
+                    // But we save it in history for tracking
+                });
+            });
+
+            // Initial render
+            if (!queryPrompt) {
+                if (!recentChats.length || (Date.now() - recentChats[0].createdAt) > 300000) {
+                    autoSaveSession();
+                } else {
+                    currentChatId = recentChats[0].id;
+                }
+            }
+            renderRecentChats();
+
+            // Listen for Botpress messages
+            window.addEventListener('message', function(event) {
+                if (event.data && typeof event.data === 'object') {
+                    const data = event.data;
+                    if (data.type && (data.type.includes('message') || data.type.includes('MESSAGE'))) {
+                        const text = data.payload?.text || data.text || '';
+                        if (text && currentChatId) {
+                            const chat = recentChats.find(c => c.id === currentChatId);
+                            if (chat && chat.title.startsWith('Chat —')) {
+                                chat.title = text.substring(0, 40) + (text.length > 40 ? '...' : '');
+                                saveChats();
+                                renderRecentChats();
+                            }
+                        }
+                    }
+                }
+            });
+        })();
     </script>
 </body>
 </html>

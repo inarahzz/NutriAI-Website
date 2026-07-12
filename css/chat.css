@@ -12,7 +12,7 @@
 
 /* Chat Navbar */
 .chat-navbar .nav-links {
-    display: none;
+    display: flex;
 }
 
 .chat-navbar .nav-toggle {
