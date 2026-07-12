@@ -17,18 +17,24 @@
             overflow: hidden;
         }
 
-        .botpress-iframe-container {
+       #webchat-container {
+            position: relative;
             width: 100%;
             height: 100%;
             flex: 1;
-            display: flex;
+            overflow: hidden;
         }
-
-        .botpress-iframe-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
+        
+        .bpFab {
+            display: none !important;
+        }
+        
+        .bpWebchat {
+            position: absolute !important;
+            inset: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            max-height: 100% !important;
         }
 
         .suggested-prompts,
@@ -211,17 +217,28 @@
 
             <!-- Chat Messages / Botpress -->
             <div class="chat-messages" id="chat-messages">
-                <div class="botpress-iframe-container" id="botpress-container">
-                    <iframe 
-                        src="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/07/08/13/20260708135933-7O32B0QO.json"
-                        title="NutriAI Chatbot"
-                        allow="microphone"
-                    ></iframe>
-                </div>
+                <div id="webchat-container"></div>
             </div>
         </main>
     </div>
+    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
 
+    <script>
+        window.botpress.on('webchat:initialized', function () {
+            window.botpress.open();
+        });
+    
+        window.botpress.init({
+            botId: "<script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>",
+            clientId: "<script src="https://files.bpcontent.cloud/2026/07/08/13/20260708135932-6JVHL9Y3.js" defer></script>",
+            configuration: {
+                botName: "NutriAI",
+                themeMode: "dark",
+                fontFamily: "inter",
+                storageLocation: "localStorage"
+            }
+        });
+    </script>
     <script src="js/main.js"></script>
     <script>
         // Sidebar toggle for mobile
@@ -299,20 +316,19 @@
 
             // New chat button
             if (newChatBtn) {
-                newChatBtn.addEventListener('click', () => {
-                    autoSaveSession();
-
-                    // Click Botpress "New Conversation"
-                    const iframe = document.querySelector("iframe");
+                newChatBtn.addEventListener('click', async () => {
+                    try {
+                        if (!window.botpress || !window.botpress.restartConversation) {
+                            alert('The chatbot is still loading. Please try again in a moment.');
+                            return;
+                        }
             
-                    if (!iframe) return;
-            
-                    iframe.contentWindow.postMessage(
-                        {
-                            type: "resetConversation"
-                        },
-                        "*"
-                    );
+                        await window.botpress.restartConversation();
+                        autoSaveSession();
+                    } catch (error) {
+                        console.error('Failed to start a new conversation:', error);
+                        alert('Unable to start a new conversation. Please try again.');
+                    }
                 });
             }
 
@@ -357,23 +373,28 @@
             renderRecentChats();
 
             // Listen for Botpress messages
-            window.addEventListener('message', function(event) {
-                if (event.data && typeof event.data === 'object') {
-                    const data = event.data;
-                    if (data.type && (data.type.includes('message') || data.type.includes('MESSAGE'))) {
-                        const text = data.payload?.text || data.text || '';
-                        if (text && currentChatId) {
-                            const chat = recentChats.find(c => c.id === currentChatId);
-                            if (chat && chat.title.startsWith('Chat —')) {
-                                chat.title = text.substring(0, 40) + (text.length > 40 ? '...' : '');
-                                saveChats();
-                                renderRecentChats();
-                            }
-                        }
+            if (window.botpress && window.botpress.on) {
+                window.botpress.on('message', function(event) {
+                    const text =
+                        event?.message?.payload?.text ||
+                        event?.payload?.text ||
+                        event?.text ||
+                        '';
+            
+                    if (!text || !currentChatId) return;
+            
+                    const chat = recentChats.find(c => c.id === currentChatId);
+            
+                    if (chat && chat.title.startsWith('Chat —')) {
+                        chat.title =
+                            text.substring(0, 40) +
+                            (text.length > 40 ? '...' : '');
+            
+                        saveChats();
+                        renderRecentChats();
                     }
-                }
-            });
-        })();
+                });
+            }
     </script>
 </body>
 </html>
