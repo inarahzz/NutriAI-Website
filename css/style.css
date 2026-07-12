@@ -370,7 +370,7 @@ img {
 }
 
 .logo-img {
-    height: 34px;
+    height: 60px;
     width: auto;
 }
 
@@ -381,7 +381,7 @@ img {
 }
 
 .nav-links a {
-    font-size: 0.8rem;
+    font-size: 0.95rem;
     font-weight: 500;
     color: var(--text-muted);
     position: relative;
@@ -414,10 +414,10 @@ img {
 .nav-cta {
     background-color: var(--primary-green);
     color: var(--white);
-    padding: 9px 20px;
+    padding: 10px 22px;
     border-radius: var(--radius-full);
     font-weight: 500;
-    font-size: 0.8rem;
+    font-size: 0.95rem;
     font-family: 'Inter', sans-serif;
     box-shadow: 0 1px 4px rgba(45, 138, 78, 0.15);
     transition: var(--transition);
@@ -490,7 +490,7 @@ img {
 }
 
 .footer-logo-img {
-    filter: brightness(10);
+    filter: none;
 }
 
 .footer-links h4,
